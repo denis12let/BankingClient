@@ -17,4 +17,6 @@ function App() {
   );
 }
 
+//сделать поле description в bank на серваке
+
 export default App;
