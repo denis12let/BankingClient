@@ -1,0 +1,28 @@
+.tooltip__box {
+  position: relative;
+}
+
+.tooltip__trigger {
+  cursor: pointer;
+  color: #323442;
+}
+
+.tooltip {
+  position: absolute;
+  left: -15px;
+  top: 30px;
+  width: 180px;
+  padding: 10px;
+  background-color: #fefefe;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}

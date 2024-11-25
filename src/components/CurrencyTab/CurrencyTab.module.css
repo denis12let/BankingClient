@@ -1,0 +1,65 @@
+.currencies {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.currencies__title {
+  color: #534f59;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.currencies__inner {
+  display: flex;
+  gap: 25px;
+}
+
+.currencies__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.currencies__listTitle {
+  color: #9b9fa0;
+}
+
+.currencies__price,
+.currencies__currency {
+  position: relative;
+  color: #333542;
+}
+
+.currencies__currency {
+  padding-left: 13px;
+}
+
+.currencies__currency::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.currencies__currency_usd::before {
+  background-image: url('./../../assets/icons/currency/USA.png');
+}
+
+.currencies__currency_eur::before {
+  background-image: url('./../../assets/icons/currency/EUR.png');
+}
+
+.currencies__currency_rub::before {
+  background-image: url('./../../assets/icons/currency/RUB.png');
+}

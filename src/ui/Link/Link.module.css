@@ -1,0 +1,16 @@
+.navLink {
+  color: #323442;
+}
+
+.navLink:hover {
+  color: #90929e;
+}
+
+.navLink:active {
+  color: #a9abb8;
+}
+
+.img {
+  width: 32px;
+  height: 27px;
+}
