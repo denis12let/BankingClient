@@ -1,4 +1,4 @@
-export const AppRoutes = {
+export const APP_ROUTES = {
   MAIN: '/main',
   ABOUT: '/about',
   LOANS: '/loans',
@@ -6,7 +6,6 @@ export const AppRoutes = {
   DEPOSIT: '/deposit',
   LOAN: '/loan',
 
-  OFFERS: '/offers',
   PARTNER: '/partner',
 
   REGISTRATION: '/registration',
