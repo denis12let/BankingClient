@@ -1,5 +1,5 @@
 .header__img {
-  width: 180px;
+  width: 260px;
   height: 45px;
   cursor: pointer;
 }
@@ -9,6 +9,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #fefefe;
 }
 
 .header__inner {
@@ -29,8 +30,8 @@
 }
 
 .header__icon {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -38,8 +39,8 @@
 
 .icon__container {
   position: relative;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
 
 .icon {

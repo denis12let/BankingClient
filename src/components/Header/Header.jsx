@@ -5,8 +5,8 @@ import HeaderNavbar from './Navbar/Navbar';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';
 import Avatar from 'ui/Avatar/Avatar';
 import Button from 'ui/Button/Button';
-import nightTheme from './../../assets/icons/dark-theme.svg';
-import lightTheme from './../../assets/icons/light-theme.svg';
+import nightTheme from './../../assets/icons/themes/dark-theme.svg';
+import lightTheme from './../../assets/icons/themes/light-theme.svg';
 import { THEME, useTheme } from 'context';
 
 const Header = () => {

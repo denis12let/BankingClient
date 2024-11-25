@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  gap: 25px;
+  max-width: 1230px;
+  padding: 0 15px;
+  width: 100%;
+}
