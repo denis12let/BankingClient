@@ -4,7 +4,7 @@ const BANK_URL = BASE_URL + '/bank';
 const ACCOUNT_URL = BASE_URL + '/accounts';
 const USER_URL = BASE_URL + '/users';
 
-export const API_ROUTES = {
+export const API_URL = {
   BANK_URL,
   ACCOUNT_URL,
   USER_URL,
