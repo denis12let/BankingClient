@@ -1,10 +1,7 @@
 import { createAction, createReducer, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { apiService } from 'api/service';
-
-export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
-  const { data } = await apiService.get(`/bank/news/`);
-  return data;
-});
+import { NewsServices } from 'api/services/NewsServices';
+import { fetchNews } from './../actions/newsActions';
 
 const newsSlice = createSlice({
   name: 'news',

@@ -1,7 +1,5 @@
 export const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-console.log(process.env);
-
 const BANK_URL = BASE_URL + '/bank';
 const ACCOUNT_URL = BASE_URL + '/accounts';
 const USER_URL = BASE_URL + '/users';
