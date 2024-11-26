@@ -1,9 +1,9 @@
 import Card from 'components/Card/Card';
 import styles from './MobileBankingPromo.module.css';
 import React from 'react';
-import logo2 from './../../assets/images/mobile/logo-2.png';
-import googlePlay from './../../assets/images/mobile/googlePlay.png';
-import appStore from './../../assets/images/mobile/appStore.png';
+import logo2 from './../../../assets/images/mobile/logo-2.png';
+import googlePlay from './../../../assets/images/mobile/googlePlay.png';
+import appStore from './../../../assets/images/mobile/appStore.png';
 const MobileBankingPromo = () => {
   return (
     <Card styles={{ maxWidth: '300px' }}>

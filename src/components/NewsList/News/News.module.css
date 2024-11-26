@@ -1,0 +1,37 @@
+.newsWrapper {
+  position: relative;
+  color: #fff;
+}
+
+.newsInner {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 15px;
+}
+
+.newsInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.newsTitle {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.newsImg {
+  max-width: 200px;
+  max-height: 60px;
+}
+
+.newsBtnClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 20px;
+  transform-origin: top right;
+  transform: rotate(180deg);
+}

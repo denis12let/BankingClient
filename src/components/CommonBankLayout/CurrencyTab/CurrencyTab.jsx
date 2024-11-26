@@ -4,7 +4,7 @@ import Card from 'components/Card/Card';
 
 const CurrencyTab = () => {
   return (
-    <Card styles={{ maxWidth: '300px' }}>
+    <Card styles={{ maxWidth: '300px', marginBottom: '25px' }}>
       <div className={currencies.currencies}>
         <h2 className={currencies.currencies__title}>Курсы валют</h2>
         <div className={currencies.currencies__inner}>

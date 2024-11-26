@@ -49,13 +49,13 @@
 }
 
 .currencies__currency_usd::before {
-  background-image: url('./../../assets/icons/currency/USA.png');
+  background-image: url('./../../../assets/icons/currency/USA.png');
 }
 
 .currencies__currency_eur::before {
-  background-image: url('./../../assets/icons/currency/EUR.png');
+  background-image: url('./../../../assets/icons/currency/EUR.png');
 }
 
 .currencies__currency_rub::before {
-  background-image: url('./../../assets/icons/currency/RUB.png');
+  background-image: url('./../../../assets/icons/currency/RUB.png');
 }
