@@ -2,7 +2,7 @@ import { createAction, createReducer, createSlice, createAsyncThunk } from '@red
 
 import { NewsServices } from 'api/services/NewsServices';
 
-export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
+export const getNewsThunk = createAsyncThunk('news/getNews', async () => {
   const data = await NewsServices.getAll();
   return data;
 });

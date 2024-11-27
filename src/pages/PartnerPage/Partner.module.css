@@ -1,0 +1,40 @@
+.partnerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  gap: 15px;
+}
+
+.partnerTop {
+  display: flex;
+  gap: 20px;
+}
+
+.img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+}
+
+.returnBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.returnBtnInner {
+  display: flex;
+  gap: 10px;
+  color: #9b9fa0;
+  align-items: center;
+}
+
+.returnBtnInner:hover {
+  color: #b9bbbb;
+}
+
+.btnIcon {
+  width: 20px;
+  transform: translateY(2px);
+}

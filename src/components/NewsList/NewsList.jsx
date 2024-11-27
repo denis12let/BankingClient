@@ -3,9 +3,9 @@ import styles from './NewsList.module.css';
 import News from 'components/NewsList/News/News';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove } from 'store/reducers/newsSlice';
-import Loader from 'components/Loader/Loader';
+import Loader from 'ui/Loader/Loader';
 import { FETCH_STATUS } from 'constants/fetchStatus';
-import { fetchNews } from 'store/actions/newsActions';
+import { getNewsThunk } from 'store/actions/newsActions';
 
 const NewsList = () => {
   const dispatch = useDispatch();
@@ -14,17 +14,17 @@ const NewsList = () => {
 
   useEffect(() => {
     if (newsStatus === 'idle') {
-      dispatch(fetchNews());
+      dispatch(getNewsThunk());
     }
-  }, [newsStatus, dispatch]);
+  }, [newsStatus]);
 
   const removeNews = (id) => {
     dispatch(remove(id));
   };
 
-  const newsArray = news.map((item) => <News {...item} removeNews={removeNews} key={item.id} />);
+  const newsList = news.map((item) => <News {...item} removeNews={removeNews} key={item.id} />);
 
-  return <div className={styles.newsList}>{newsStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : newsArray}</div>;
+  return <>{news.length > 0 && <div className={styles.newsList}>{newsStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : newsList}</div>}</>;
 };
 
 export default NewsList;

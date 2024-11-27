@@ -31,10 +31,10 @@ export const APP_ROUTES_PATH = {
   ABOUT: '/about',
   LOANS: '/loans',
   DEPOSITS: '/deposits',
-  DEPOSIT: '/deposit/:id',
+  DEPOSIT: '/deposit/',
   LOAN: '/loan/:id',
 
-  PARTNER: '/partner/:id',
+  PARTNER: '/partner/',
 
   REGISTRATION: '/registration',
   LOGIN: '/login',
@@ -42,14 +42,14 @@ export const APP_ROUTES_PATH = {
   ACCOUNT: '/account',
   SETTINGS: '/settings',
 
-  CARD: '/card/:id',
+  CARD: '/card/',
   USER_SERVICES: '/user_services',
   INTERNAL_TRANSFER: '/internal_transfer',
   EXTERNAL_TRANSFER: '/external_transfer',
   ACCOUNT_STATEMENT: '/account_statement',
   CALENDAR: '/calendar',
   TRANSACTIONS: '/transactions',
-  TRANSACTION: '/transaction/:id',
+  TRANSACTION: '/transaction/',
 
   NOT_FOUND: '/not_found',
 };

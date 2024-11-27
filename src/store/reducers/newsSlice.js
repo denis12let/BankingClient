@@ -1,7 +1,7 @@
 import { createAction, createReducer, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { apiService } from 'api/service';
 import { NewsServices } from 'api/services/NewsServices';
-import { fetchNews } from './../actions/newsActions';
+import { getNewsThunk } from './../actions/newsActions';
 
 const newsSlice = createSlice({
   name: 'news',
@@ -18,14 +18,15 @@ const newsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchNews.pending, (state) => {
+      //getNews
+      .addCase(getNewsThunk.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchNews.fulfilled, (state, action) => {
+      .addCase(getNewsThunk.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.news = action.payload.bankNews;
       })
-      .addCase(fetchNews.rejected, (state, action) => {
+      .addCase(getNewsThunk.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });

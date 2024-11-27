@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import styles from './News.module.css';
 import closeBtn from './../../../assets/icons/common/close.svg';
 
-const News = ({ removeNews, style, ...props }) => {
+const News = ({ removeNews, ...props }) => {
   const stylesValues = {
     width: '100%',
-    backgroundColor: '#E96551',
-    ...style,
+    ...props,
   };
 
   return (

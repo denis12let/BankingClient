@@ -2,14 +2,14 @@ import CommonBankLayout from 'components/CommonBankLayout/CommonBankLayout';
 import React from 'react';
 import styles from './Main.module.css';
 import NewsList from 'components/NewsList/NewsList';
-import ServicesList from 'components/ServicesList/ServicesList';
+import PartnersList from 'components/PartnersList/PartnersList';
 
 const Main = () => {
   return (
     <CommonBankLayout>
       <div className={styles.content}>
         <NewsList />
-        <ServicesList />
+        <PartnersList />
       </div>
     </CommonBankLayout>
   );

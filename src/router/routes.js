@@ -32,19 +32,19 @@ export const routeConfig = {
     element: <Loans />,
   },
   [APP_ROUTES.LOAN]: {
-    path: APP_ROUTES_PATH.LOAN,
+    path: APP_ROUTES_PATH.LOAN + ':id',
     element: <Loan />,
   },
   [APP_ROUTES.DEPOSITS]: {
-    path: APP_ROUTES_PATH.DEPOSIT,
+    path: APP_ROUTES_PATH.DEPOSITS,
     element: <Deposits />,
   },
   [APP_ROUTES.DEPOSIT]: {
-    path: APP_ROUTES_PATH.DEPOSITS,
+    path: APP_ROUTES_PATH.DEPOSIT + ':id',
     element: <Deposit />,
   },
   [APP_ROUTES.PARTNER]: {
-    path: APP_ROUTES_PATH.PARTNER,
+    path: APP_ROUTES_PATH.PARTNER + ':id',
     element: <Partner />,
   },
   [APP_ROUTES.REGISTRATION]: {
@@ -64,7 +64,7 @@ export const routeConfig = {
     element: <Profile />,
   },
   [APP_ROUTES.CARD]: {
-    path: APP_ROUTES_PATH.CARD,
+    path: APP_ROUTES_PATH.CARD + ':id',
     element: <Cards />,
   },
   [APP_ROUTES.USER_SERVICES]: {
@@ -88,7 +88,7 @@ export const routeConfig = {
     element: <Transactions />,
   },
   [APP_ROUTES.TRANSACTION]: {
-    path: APP_ROUTES_PATH.TRANSACTION,
+    path: APP_ROUTES_PATH.TRANSACTION + ':id',
     element: <Transaction />,
   },
   [APP_ROUTES.NOT_FOUND]: {
