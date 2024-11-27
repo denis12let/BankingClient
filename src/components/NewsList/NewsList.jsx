@@ -11,10 +11,10 @@ const NewsList = () => {
   const dispatch = useDispatch();
   const news = useSelector((state) => state.news.news);
   const newsStatus = useSelector((state) => state.news.status);
-  const error = useSelector((state) => state.news.error);
+
   useEffect(() => {
     if (newsStatus === 'idle') {
-      dispatch(fetchNews()); // Загружаем новости, если статус idle
+      dispatch(fetchNews());
     }
   }, [newsStatus, dispatch]);
 

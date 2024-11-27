@@ -6,7 +6,7 @@ const Avatar = () => {
   const url = '';
   return (
     <div>
-      <img className={avatar.avatar} src={url || avatarIcon} />
+      <img className={avatar.avatar} src={url || avatarIcon} alt="" />
     </div>
   );
 };
