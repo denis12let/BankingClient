@@ -7,7 +7,7 @@ export const getPartnersThunk = createAsyncThunk('partners/getPartners', async (
   return data;
 });
 
-export const getPartnerThunk = createAsyncThunk('partner/getPartner', async (id) => {
+export const getPartnerThunk = createAsyncThunk('partners/getPartner', async (id) => {
   const data = await PartnersServices.getOne(id);
   return data;
 });

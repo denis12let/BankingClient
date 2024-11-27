@@ -17,7 +17,7 @@ const PartnersList = () => {
     }
   }, [partnersStatus, dispatch]);
 
-  const partnersList = partners.map((item) => <Partner {...item} />);
+  const partnersList = partners.map((item) => <Partner {...item} key={item.id} />);
 
   console.log(partnersList);
   return <div className={styles.list}>{partnersStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : partnersList}</div>;
