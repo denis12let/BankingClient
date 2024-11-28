@@ -37,8 +37,8 @@ const Partner = () => {
           <Loader />
         ) : (
           <Card styles={blockStyle}>
-            <div className={styles.partnerWrapper}>
-              <div className={styles.partnerTop}>
+            <div className={styles.wrapper}>
+              <div className={styles.top}>
                 <img src={partner.img || cardImg} className={styles.img} alt="" />
                 <div className={styles.preview}>
                   <h2 className={styles.title}>{partner.title}</h2>

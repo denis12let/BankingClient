@@ -13,7 +13,7 @@ const NewsList = () => {
   const newsStatus = useSelector((state) => state.news.status);
 
   useEffect(() => {
-    if (newsStatus === 'idle') {
+    if (newsStatus === FETCH_STATUS.IDLE) {
       dispatch(getNewsThunk());
     }
   }, [newsStatus]);
@@ -24,7 +24,7 @@ const NewsList = () => {
 
   const newsList = news.map((item) => <News {...item} removeNews={removeNews} key={item.id} />);
 
-  return <>{news.length > 0 && <div className={styles.newsList}>{newsStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : newsList}</div>}</>;
+  return <div className={styles.newsList}>{newsStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : newsList}</div>;
 };
 
 export default NewsList;

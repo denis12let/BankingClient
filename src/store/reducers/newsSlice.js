@@ -1,13 +1,12 @@
-import { createAction, createReducer, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { apiService } from 'api/service';
-import { NewsServices } from 'api/services/NewsServices';
-import { getNewsThunk } from './../actions/newsActions';
+import { createSlice } from '@reduxjs/toolkit';
+import { FETCH_STATUS } from 'constants/fetchStatus';
+import { getNewsThunk } from 'store/actions/newsActions';
 
 const newsSlice = createSlice({
   name: 'news',
   initialState: {
     news: [],
-    status: 'idle',
+    status: FETCH_STATUS.IDLE,
     error: null,
   },
   reducers: {
@@ -20,14 +19,14 @@ const newsSlice = createSlice({
     builder
       //getNews
       .addCase(getNewsThunk.pending, (state) => {
-        state.status = 'loading';
+        state.status = FETCH_STATUS.LOADING;
       })
       .addCase(getNewsThunk.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.status = FETCH_STATUS.SECCEEDED;
         state.news = action.payload.bankNews;
       })
       .addCase(getNewsThunk.rejected, (state, action) => {
-        state.status = 'failed';
+        state.status = FETCH_STATUS.FAILED;
         state.error = action.error.message;
       });
   },

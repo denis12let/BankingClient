@@ -32,7 +32,7 @@ export const APP_ROUTES_PATH = {
   LOANS: '/loans',
   DEPOSITS: '/deposits',
   DEPOSIT: '/deposit/',
-  LOAN: '/loan/:id',
+  LOAN: '/loan/',
 
   PARTNER: '/partner/',
 

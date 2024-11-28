@@ -1,5 +1,5 @@
 import React from 'react';
-import navbar from './Navbar.module.css';
+import navbar from './HeaderNavbar.module.css';
 import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
 

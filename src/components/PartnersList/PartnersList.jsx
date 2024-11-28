@@ -15,7 +15,7 @@ const PartnersList = () => {
     if (partnersStatus === FETCH_STATUS.IDLE) {
       dispatch(getPartnersThunk());
     }
-  }, [partnersStatus, dispatch]);
+  }, [partnersStatus]);
 
   const partnersList = partners.map((item) => <Partner {...item} key={item.id} />);
 
