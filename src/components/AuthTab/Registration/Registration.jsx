@@ -11,13 +11,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registrationThunk } from 'store/actions/userActions';
 import { validateAuth } from 'utils/authValidation';
 import Error from 'ui/Error/Error';
+import { setError } from 'store/reducers/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
-  const [email, setEmail] = useState('qwe@qw.qw');
-  const [password, setPassword] = useState('123123');
-  const [repeatedPassword, setRepeatedPassword] = useState('123123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatedPassword, setRepeatedPassword] = useState('');
   const [errors, setErrors] = useState(null);
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isLoading, error } = useSelector((state) => state.user);
 
@@ -25,6 +28,9 @@ const Registration = () => {
     if (error) {
       setErrors([<Error key="error">{error}</Error>]);
     }
+    return () => {
+      dispatch(setError(null));
+    };
   }, [error]);
 
   const registrationHandler = () => {
@@ -32,16 +38,22 @@ const Registration = () => {
       setErrors([<Error>{`Выйдите из аккаунта`}</Error>]);
       return;
     }
-    console.log(user);
+
     const candidate = { email, password, repeatedPassword };
     const errorsArray = validateAuth(candidate, error);
+
     if (errorsArray) {
       setErrors(Object.keys(errorsArray).map((key) => <Error key={key}>{errorsArray[key]}</Error>));
       return;
     } else {
       setErrors(null);
     }
+
     dispatch(registrationThunk(candidate));
+
+    if (!errors) {
+      navigate(APP_ROUTES_PATH.ACCOUNT);
+    }
   };
 
   const blockStyle = {

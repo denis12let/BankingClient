@@ -17,6 +17,9 @@ const Header = () => {
   const info = ['asd', 'qwe'];
   const [isLightTheme, setIsLightTheme] = useState(theme === THEME.LIGHT);
 
+  localStorage.setItem('token', '');
+  const isAuth = !!localStorage.getItem('token');
+
   const handleToggleTheme = () => {
     setIsLightTheme((prev) => !prev);
     toggleTheme();
@@ -37,7 +40,7 @@ const Header = () => {
               <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} />
             </div>
           </DefaultButton>
-          <Avatar />
+          <Avatar isAuth={isAuth} />
         </div>
       </div>
     </div>

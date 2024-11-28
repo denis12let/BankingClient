@@ -3,12 +3,13 @@ import { jwtDecode } from 'jwt-decode';
 
 export class UserServices {
   static async registration(user) {
-    try {
-      const { data } = await $host.post('/users/registration', { ...user });
-      localStorage.setItem('token', data.token);
-      return jwtDecode(data.token);
-    } catch (error) {
-      throw new Error(error.response.data.message);
-    }
+    const { data } = await $host.post('/users/registration', { ...user });
+    localStorage.setItem('token', data.token);
+    return jwtDecode(data.token);
+  }
+  static async login(user) {
+    const { data } = await $host.post('/users/login', { ...user });
+    localStorage.setItem('token', data.token);
+    return jwtDecode(data.token);
   }
 }

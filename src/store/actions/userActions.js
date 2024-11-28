@@ -6,6 +6,15 @@ export const registrationThunk = createAsyncThunk('/users/registration', async (
     const data = await UserServices.registration(user);
     return data;
   } catch (error) {
-    return rejectWithValue(error.message);
+    return rejectWithValue(error.response.data.message);
+  }
+});
+
+export const loginThunk = createAsyncThunk('/users/login', async (user, { rejectWithValue }) => {
+  try {
+    const data = await UserServices.login(user);
+    return data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
   }
 });
