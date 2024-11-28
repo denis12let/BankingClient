@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './../styles/authTab.module.css';
 import Card from 'components/Card/Card';
 import Input from 'ui/Input/Input';
@@ -6,11 +6,43 @@ import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
 import arrowLeft from './../../../assets/icons/common/arrow-left.svg';
 import CustomButton from 'ui/CustomButton/CustomButton';
+import { UserServices } from 'api/services/UserServices';
+import { useDispatch, useSelector } from 'react-redux';
+import { registrationThunk } from 'store/actions/userActions';
+import { validateAuth } from 'utils/authValidation';
+import Error from 'ui/Error/Error';
 
 const Registration = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatedPassword, setRepeatedPassword] = useState('');
+  const [email, setEmail] = useState('qwe@qw.qw');
+  const [password, setPassword] = useState('123123');
+  const [repeatedPassword, setRepeatedPassword] = useState('123123');
+  const [errors, setErrors] = useState(null);
+
+  const dispatch = useDispatch();
+  const { user, isLoading, error } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (error) {
+      setErrors([<Error key="error">{error}</Error>]);
+    }
+  }, [error]);
+
+  const registrationHandler = () => {
+    if (user) {
+      setErrors([<Error>{`Выйдите из аккаунта`}</Error>]);
+      return;
+    }
+    console.log(user);
+    const candidate = { email, password, repeatedPassword };
+    const errorsArray = validateAuth(candidate, error);
+    if (errorsArray) {
+      setErrors(Object.keys(errorsArray).map((key) => <Error key={key}>{errorsArray[key]}</Error>));
+      return;
+    } else {
+      setErrors(null);
+    }
+    dispatch(registrationThunk(candidate));
+  };
 
   const blockStyle = {
     maxWidth: '400px',
@@ -35,6 +67,7 @@ const Registration = () => {
             <Input type={'password'} required={true} text={repeatedPassword} setText={setRepeatedPassword} />
           </div>
         </form>
+        {errors ? <div className={styles.errors}>{errors}</div> : <></>}
         <div className={styles.regCheck}>
           <p>Уже зарегистрированы?</p>
           <p className={styles.link}>
@@ -42,7 +75,9 @@ const Registration = () => {
           </p>
         </div>
         <div className={styles.regBtn}>
-          <CustomButton>Зарегистрироваться</CustomButton>
+          <CustomButton disabled={isLoading === true ? true : false} onClick={() => registrationHandler()}>
+            Зарегистрироваться
+          </CustomButton>
         </div>
       </Card>
       <div className={styles.returnBtn}>

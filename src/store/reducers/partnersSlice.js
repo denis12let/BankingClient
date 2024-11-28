@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FETCH_STATUS } from 'constants/fetchStatus';
 import { getPartnersThunk, getPartnerThunk } from 'store/actions/partnersActions';
 
 const partnersSlice = createSlice({

@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 5px;
+  /* color: #9b9fa0; */
 }
 
 .subtitle {
@@ -72,4 +73,8 @@
   position: absolute;
   color: red;
   padding-left: 1px;
+}
+
+.errors {
+  margin-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASE_URL } from 'constants/api';
 
-export const apiService = axios.create({
+const apiService = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
@@ -9,3 +9,15 @@ export const apiService = axios.create({
     Accept: 'application/json',
   },
 });
+
+const $host = apiService;
+const $authHost = apiService;
+
+const authInterceptor = (config) => {
+  config.headers.authorization = `Bearer ${localStorage.getItem('token')}`;
+  return config;
+};
+
+$authHost.interceptors.request.use(authInterceptor);
+
+export { $host, $authHost };

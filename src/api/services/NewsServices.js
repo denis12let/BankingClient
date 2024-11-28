@@ -1,8 +1,8 @@
-import { apiService } from 'api/service';
+import { $host } from 'api/service';
 
 export class NewsServices {
   static async getAll() {
-    const { data } = await apiService.get(`/bank/news`);
+    const { data } = await $host.get(`/bank/news`);
     return data;
   }
 }
