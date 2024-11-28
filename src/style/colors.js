@@ -8,6 +8,8 @@ export const COLORS = {
   primaryColor: '#333542',
   secondaryColor: '#9B9FA0',
 
+  green: '#20BE69',
+
   black: '#000',
   black100: 'rgba(0,0,0,0.1)',
   black200: 'rgba(0,0,0,0.2)',

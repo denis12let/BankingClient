@@ -4,12 +4,13 @@ import header from './Header.module.css';
 import HeaderNavbar from './HeaderNavbar/HeaderNavbar';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';
 import Avatar from 'ui/Avatar/Avatar';
-import Button from 'ui/Button/Button';
+import Button from 'ui/CustomButton/CustomButton';
 import nightTheme from './../../assets/icons/themes/dark-theme.svg';
 import lightTheme from './../../assets/icons/themes/light-theme.svg';
 import { THEME, useTheme } from 'context';
 import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
+import DefaultButton from 'ui/DefaultButton/DefaultButton';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -30,12 +31,12 @@ const Header = () => {
         <HeaderNavbar />
         <TooltipTrigger text="+375 (44) 123 12 23" info={info} />
         <div className={header.settings}>
-          <Button onClick={handleToggleTheme}>
+          <DefaultButton onClick={handleToggleTheme}>
             <div className={header.icon__container}>
               <img src={nightTheme} className={`${header.icon} ${isLightTheme ? header.hidden : ''}`} />
               <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} />
             </div>
-          </Button>
+          </DefaultButton>
           <Avatar />
         </div>
       </div>
