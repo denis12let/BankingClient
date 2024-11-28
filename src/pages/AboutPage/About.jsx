@@ -12,23 +12,12 @@ import Loader from 'ui/Loader/Loader';
 import { getBankThunk } from 'store/actions/bankActions';
 
 const About = () => {
-  const partner = {
-    img: null,
-    telephoneNumber: '+124124214124',
-    title: 'qwet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, vero voluptate ut soluta consectetur dignissimos architecto ab quo eos aut sequi placeat assumenda illo minima, praesentium reprehenderit sint iusto maxime.',
-  };
-
   const dispatch = useDispatch();
-  const bank = useSelector((state) => state.bank.bank);
-  const bankStatus = useSelector((state) => state.bank.status);
+  const { bank, isLoading } = useSelector((state) => state.bank);
 
   useEffect(() => {
-    if (bankStatus === FETCH_STATUS.IDLE) {
-      dispatch(getBankThunk());
-    }
-  }, [bankStatus]);
+    dispatch(getBankThunk());
+  }, []);
 
   const blockStyle = {
     width: '100%',
@@ -36,29 +25,33 @@ const About = () => {
   };
   return (
     <CommonBankLayout>
-      <Card styles={blockStyle}>
-        <div className={styles.wrapper}>
-          <div className={styles.top}>
-            <img src={bank.img || cardImg} className={styles.img} alt="" />
-            <div className={styles.preview}>
-              <h2 className={styles.title}>{bank.name}</h2>
-              <div className={styles.info}>{bank.telephoneNumber}</div>
-              <div className={styles.info}>Работаем ежедневно</div>
-              <div className={styles.info}>Время работы банка: 9:00 - 19:00</div>
-              <div className={styles.info}>Время работы поддержки: 8:00 - 22:00</div>
+      {isLoading === true || bank === null ? (
+        <Loader />
+      ) : (
+        <Card styles={blockStyle}>
+          <div className={styles.wrapper}>
+            <div className={styles.top}>
+              <img src={bank.img || cardImg} className={styles.img} alt="" />
+              <div className={styles.preview}>
+                <h2 className={styles.title}>{bank.name}</h2>
+                <div className={styles.info}>{bank.telephoneNumber}</div>
+                <div className={styles.info}>Работаем ежедневно</div>
+                <div className={styles.info}>Время работы банка: 9:00 - 19:00</div>
+                <div className={styles.info}>Время работы поддержки: 8:00 - 22:00</div>
+              </div>
+            </div>
+            <div className={styles.description}>{bank.description}</div>
+            <div className={styles.returnBtn}>
+              <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+                <div className={styles.returnBtnInner}>
+                  <img src={arrowLeft} className={styles.btnIcon} alt="" />
+                  <span className={styles.btnText}>Вернуться на главную</span>
+                </div>
+              </NavLinkItem>
             </div>
           </div>
-          <div className={styles.description}>{bank.description}</div>
-          <div className={styles.returnBtn}>
-            <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
-              <div className={styles.returnBtnInner}>
-                <img src={arrowLeft} className={styles.btnIcon} alt="" />
-                <span className={styles.btnText}>Вернуться на главную</span>
-              </div>
-            </NavLinkItem>
-          </div>
-        </div>
-      </Card>
+        </Card>
+      )}
     </CommonBankLayout>
   );
 };

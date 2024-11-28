@@ -1,4 +1,4 @@
-import { createAction, createReducer, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { NewsServices } from 'api/services/NewsServices';
 

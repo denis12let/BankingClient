@@ -9,31 +9,27 @@ import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPartnerThunk } from 'store/actions/partnersActions';
-import { FETCH_STATUS } from 'constants/fetchStatus';
 import Loader from 'ui/Loader/Loader';
 
 const Partner = () => {
   const dispatch = useDispatch();
-  const partner = useSelector((state) => state.partners.partner);
-  const partnerStatus = useSelector((state) => state.partners.status);
+  const { partner, isLoading } = useSelector((state) => state.partners);
 
   const { id } = useParams();
 
   useEffect(() => {
-    if (id) {
-      dispatch(getPartnerThunk(id));
-    }
-  }, [id]);
+    dispatch(getPartnerThunk(id));
+  }, []);
 
   const blockStyle = {
     width: '100%',
     heigth: '100%',
   };
-  console.log(partner, partnerStatus);
+
   return (
     <CommonBankLayout>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {partnerStatus !== FETCH_STATUS.SECCEEDED ? (
+        {isLoading === true || partner === null ? (
           <Loader />
         ) : (
           <Card styles={blockStyle}>

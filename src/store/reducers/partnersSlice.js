@@ -6,7 +6,7 @@ const partnersSlice = createSlice({
   name: 'partners',
   initialState: {
     partners: [],
-    status: FETCH_STATUS.IDLE,
+    isLoading: false,
     error: null,
     partner: null,
   },
@@ -15,30 +15,30 @@ const partnersSlice = createSlice({
     builder
       //getPartners
       .addCase(getPartnersThunk.pending, (state) => {
-        state.status = FETCH_STATUS.LOADING;
+        state.isLoading = true;
       })
       .addCase(getPartnersThunk.fulfilled, (state, action) => {
-        state.status = FETCH_STATUS.SECCEEDED;
         state.partners = action.payload.partners;
+        state.isLoading = false;
       })
       .addCase(getPartnersThunk.rejected, (state, action) => {
-        state.status = FETCH_STATUS.FAILED;
         state.error = action.error.message;
+        state.isLoading = false;
       })
       //getPartner
       .addCase(getPartnerThunk.pending, (state) => {
-        state.status = FETCH_STATUS.LOADING;
+        state.isLoading = true;
       })
       .addCase(getPartnerThunk.fulfilled, (state, action) => {
-        state.status = FETCH_STATUS.SECCEEDED;
+        state.isLoading = false;
         state.partner = action.payload.partner;
       })
       .addCase(getPartnerThunk.rejected, (state, action) => {
-        state.status = FETCH_STATUS.FAILED;
+        state.isLoading = false;
         state.error = action.error.message;
       });
   },
 });
 
 export default partnersSlice.reducer;
-export const {} = partnersSlice.actions;
+// export const { resetPartnerStatus } = partnersSlice.actions;

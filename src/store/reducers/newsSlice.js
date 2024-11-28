@@ -6,7 +6,7 @@ const newsSlice = createSlice({
   name: 'news',
   initialState: {
     news: [],
-    status: FETCH_STATUS.IDLE,
+    isLoading: false,
     error: null,
   },
   reducers: {
@@ -19,14 +19,14 @@ const newsSlice = createSlice({
     builder
       //getNews
       .addCase(getNewsThunk.pending, (state) => {
-        state.status = FETCH_STATUS.LOADING;
+        state.isLoading = true;
       })
       .addCase(getNewsThunk.fulfilled, (state, action) => {
-        state.status = FETCH_STATUS.SECCEEDED;
+        state.isLoading = false;
         state.news = action.payload.bankNews;
       })
       .addCase(getNewsThunk.rejected, (state, action) => {
-        state.status = FETCH_STATUS.FAILED;
+        state.isLoading = false;
         state.error = action.error.message;
       });
   },

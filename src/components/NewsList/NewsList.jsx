@@ -9,14 +9,11 @@ import { getNewsThunk } from 'store/actions/newsActions';
 
 const NewsList = () => {
   const dispatch = useDispatch();
-  const news = useSelector((state) => state.news.news);
-  const newsStatus = useSelector((state) => state.news.status);
+  const { news, isLoading } = useSelector((state) => state.news);
 
   useEffect(() => {
-    if (newsStatus === FETCH_STATUS.IDLE) {
-      dispatch(getNewsThunk());
-    }
-  }, [newsStatus]);
+    dispatch(getNewsThunk());
+  }, []);
 
   const removeNews = (id) => {
     dispatch(remove(id));
@@ -24,7 +21,7 @@ const NewsList = () => {
 
   const newsList = news.map((item) => <News {...item} removeNews={removeNews} key={item.id} />);
 
-  return <div className={styles.newsList}>{newsStatus !== FETCH_STATUS.SECCEEDED ? <Loader /> : newsList}</div>;
+  return <div className={styles.newsList}>{isLoading === true ? <Loader /> : newsList}</div>;
 };
 
 export default NewsList;
