@@ -31,19 +31,23 @@ const Login = () => {
     };
   }, [error]);
 
-  const loginHandler = () => {
+  const loginHandler = async () => {
     const candidate = { email, password };
     const errorsArray = validateAuth(candidate, error);
     if (errorsArray) {
       setErrors(Object.keys(errorsArray).map((key) => <Error key={key}>{errorsArray[key]}</Error>));
+
       return;
     } else {
       setErrors(null);
     }
-    dispatch(loginThunk(candidate));
 
-    if (!errors) {
+    try {
+      await dispatch(loginThunk(candidate)).unwrap();
+
       navigate(APP_ROUTES_PATH.ACCOUNT);
+    } catch (error) {
+      setErrors([<Error key="error">{error}</Error>]);
     }
   };
 

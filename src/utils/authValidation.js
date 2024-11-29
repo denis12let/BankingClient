@@ -12,6 +12,10 @@ export const validateAuth = ({ email, password, repeatedPassword }, error) => {
     errors.password = 'Подтвердите пароль';
   }
 
+  if (repeatedPassword && repeatedPassword !== password) {
+    errors.password = 'Пароли не совпадают';
+  }
+
   if (password && password.length < 6) {
     errors.passwordLength = 'Пароль должен быть не менее 6 символов';
   }

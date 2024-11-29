@@ -15,9 +15,9 @@ import { setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatedPassword, setRepeatedPassword] = useState('');
+  const [email, setEmail] = useState('user2@mail.ru');
+  const [password, setPassword] = useState('111111');
+  const [repeatedPassword, setRepeatedPassword] = useState('111111');
   const [errors, setErrors] = useState(null);
 
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Registration = () => {
     };
   }, [error]);
 
-  const registrationHandler = () => {
+  const registrationHandler = async () => {
     if (user) {
       setErrors([<Error>{`Выйдите из аккаунта`}</Error>]);
       return;
@@ -49,10 +49,12 @@ const Registration = () => {
       setErrors(null);
     }
 
-    dispatch(registrationThunk(candidate));
+    try {
+      await dispatch(registrationThunk(candidate)).unwrap();
 
-    if (!errors) {
       navigate(APP_ROUTES_PATH.ACCOUNT);
+    } catch (error) {
+      setErrors([<Error key="error">{error}</Error>]);
     }
   };
 
