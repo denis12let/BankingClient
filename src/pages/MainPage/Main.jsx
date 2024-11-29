@@ -1,8 +1,8 @@
 import CommonBankLayout from 'components/CommonBankLayout/CommonBankLayout';
 import React from 'react';
 import styles from './Main.module.css';
-import NewsList from 'components/NewsList/NewsList';
-import PartnersList from 'components/PartnersList/PartnersList';
+import PartnersList from './PartnersList/PartnersList';
+import NewsList from './NewsList/NewsList';
 
 const Main = () => {
   return (

@@ -2,13 +2,13 @@ import { $authHost, $host } from 'api/service';
 import { jwtDecode } from 'jwt-decode';
 
 export class UserServices {
-  static async registration(user) {
-    const { data } = await $host.post('/users/registration', { ...user });
+  static async registration(userData) {
+    const { data } = await $host.post('/users/registration', { ...userData });
     localStorage.setItem('token', data.token);
     return jwtDecode(data.token);
   }
-  static async login(user) {
-    const { data } = await $host.post('/users/login', { ...user });
+  static async login(userData) {
+    const { data } = await $host.post('/users/login', { ...userData });
     localStorage.setItem('token', data.token);
     return jwtDecode(data.token);
   }
@@ -34,16 +34,16 @@ export class UserServices {
     const { data } = await $authHost.get('/users/admin/email/' + `${email}`);
     return data;
   }
-  static async getAll(email = '') {
+  static async getAll({ email = '' }) {
     const { data } = await $authHost.get('/users/admin/all', {
       params: {
-        email,
+        _email: email,
       },
     });
     return data;
   }
-  static async create(user) {
-    const { data } = await $authHost.post('/users/admin/', { ...user });
+  static async create(userData) {
+    const { data } = await $authHost.post('/users/admin/', { ...userData });
     return data;
   }
   static async delete(id) {

@@ -9,16 +9,16 @@ export class NewsServices {
     const { data } = await $host.get('/bank/news/' + `${id}`);
     return data;
   }
-  static async create() {
-    const { data } = await $authHost.get('/bank/news/admin/');
+  static async create(newsData) {
+    const { data } = await $authHost.post('/bank/news/admin/', { ...newsData });
     return data;
   }
-  static async update(id) {
-    const { data } = await $authHost.get('/bank/news/admin/' + `${id}`);
+  static async update(id, newsData) {
+    const { data } = await $authHost.put('/bank/news/admin/' + `${id}`, { ...newsData });
     return data;
   }
   static async delete(id) {
-    const { data } = await $authHost.get('/bank/news/admin/' + `${id}`);
+    const { data } = await $authHost.delete('/bank/news/admin/' + `${id}`);
     return data;
   }
 }

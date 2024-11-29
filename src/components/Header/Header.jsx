@@ -17,7 +17,6 @@ const Header = () => {
   const info = ['asd', 'qwe'];
   const [isLightTheme, setIsLightTheme] = useState(theme === THEME.LIGHT);
 
-  localStorage.setItem('token', '');
   const isAuth = !!localStorage.getItem('token');
 
   const handleToggleTheme = () => {

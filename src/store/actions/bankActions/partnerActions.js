@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { PartnersServices } from 'api/services/bankServices/PartnersServices';
+import { PartnerServices } from 'api/services/bankServices/PartnerServices';
 
 export const getPartnersThunk = createAsyncThunk('partners/getPartners', async () => {
-  const data = await PartnersServices.getAll();
+  const data = await PartnerServices.getAll();
   return data;
 });
 
 export const getPartnerThunk = createAsyncThunk('partners/getPartner', async (id) => {
-  const data = await PartnersServices.getOneById(id);
+  const data = await PartnerServices.getOneById(id);
   return data;
 });

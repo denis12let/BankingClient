@@ -5,8 +5,8 @@ export class BankServices {
     const { data } = await $host.get('/bank');
     return data;
   }
-  static async update() {
-    const { data } = await $authHost.put('/bank/admin');
+  static async update(bankData) {
+    const { data } = await $authHost.put('/bank/admin', { ...bankData });
     return data;
   }
 }
