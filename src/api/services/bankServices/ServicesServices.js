@@ -1,6 +1,6 @@
 import { $authHost, $host } from 'api/service';
 
-export class PartnersServices {
+export class ServicesServices {
   static async getAll() {
     const { data } = await $host.get('/bank/partners');
     return data;
