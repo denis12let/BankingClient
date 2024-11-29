@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FETCH_STATUS } from 'constants/fetchStatus';
-import { getNewsThunk } from 'store/actions/newsActions';
+import { getNewsThunk } from 'store/actions/bankActions/newsActions';
 
 const newsSlice = createSlice({
   name: 'news',

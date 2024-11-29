@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import newsSlice from './reducers/newsSlice';
-import partnersSlice from './reducers/partnersSlice';
-import bankSlice from './reducers/bankSlice';
-import userSlice from './reducers/userSlice';
+import newsSlice from './reducers/bankReducers/newsSlice';
+import partnersSlice from './reducers/bankReducers/partnersSlice';
+import bankSlice from './reducers/bankReducers/bankSlice';
+import userSlice from './reducers/userReducers/userSlice';
 
 const reducers = combineReducers({
   news: newsSlice,

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Partner from './Partner/Partner';
 import styles from './PartnersList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPartnersThunk } from 'store/actions/partnersActions';
+import { getPartnersThunk } from 'store/actions/bankActions/partnerActions';
 import Loader from 'ui/Loader/Loader';
 
 const PartnersList = () => {

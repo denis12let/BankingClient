@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, registrationThunk } from 'store/actions/userActions';
+import { loginThunk, registrationThunk } from 'store/actions/userActions/userActions';
 
 const userSlice = createSlice({
   name: 'user',

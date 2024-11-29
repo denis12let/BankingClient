@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { UserServices } from 'api/services/UserServices';
+import { UserServices } from 'api/services/userServices/UserServices';
 
 export const registrationThunk = createAsyncThunk('/users/registration', async (user, { rejectWithValue }) => {
   try {

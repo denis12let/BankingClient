@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getPartnersThunk, getPartnerThunk } from 'store/actions/partnersActions';
+import { getPartnersThunk, getPartnerThunk } from 'store/actions/bankActions/partnerActions';
 
 const partnersSlice = createSlice({
   name: 'partners',

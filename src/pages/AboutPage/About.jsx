@@ -7,9 +7,8 @@ import NavLinkItem from 'ui/Link/Link';
 import arrowLeft from './../../assets/icons/common/arrow-left.svg';
 import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
-import { FETCH_STATUS } from 'constants/fetchStatus';
 import Loader from 'ui/Loader/Loader';
-import { getBankThunk } from 'store/actions/bankActions';
+import { getBankThunk } from 'store/actions/bankActions/bankActions';
 
 const About = () => {
   const dispatch = useDispatch();

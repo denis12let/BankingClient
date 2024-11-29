@@ -6,12 +6,12 @@ import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
 import arrowLeft from './../../../assets/icons/common/arrow-left.svg';
 import CustomButton from 'ui/CustomButton/CustomButton';
-import { UserServices } from 'api/services/UserServices';
+import { UserServices } from 'api/services/userServices/UserServices';
 import { useDispatch, useSelector } from 'react-redux';
-import { registrationThunk } from 'store/actions/userActions';
+import { registrationThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
 import Error from 'ui/Error/Error';
-import { setError } from 'store/reducers/userSlice';
+import { setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {

@@ -8,7 +8,7 @@ import arrowLeft from './../../assets/icons/common/arrow-left.svg';
 import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPartnerThunk } from 'store/actions/partnersActions';
+import { getPartnerThunk } from 'store/actions/bankActions/partnerActions';
 import Loader from 'ui/Loader/Loader';
 
 const Partner = () => {

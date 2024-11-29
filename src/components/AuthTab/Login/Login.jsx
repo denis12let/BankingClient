@@ -8,9 +8,9 @@ import arrowLeft from './../../../assets/icons/common/arrow-left.svg';
 import CustomButton from 'ui/CustomButton/CustomButton';
 import { useDispatch, useSelector } from 'react-redux';
 import Error from 'ui/Error/Error';
-import { loginThunk } from 'store/actions/userActions';
+import { loginThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
-import { setError } from 'store/reducers/userSlice';
+import { setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {

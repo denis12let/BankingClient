@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { PartnersServices } from 'api/services/PartnersServices';
+import { PartnersServices } from 'api/services/bankServices/PartnersServices';
 
 export const getPartnersThunk = createAsyncThunk('partners/getPartners', async () => {
   const data = await PartnersServices.getAll();
