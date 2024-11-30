@@ -63,7 +63,7 @@ const Login = () => {
         <form className={styles.form}>
           <div className={`${styles.email} ${styles.field}`}>
             <span className={`${styles.subtitle} ${styles.required}`}>Email</span>
-            <Input placeholder="name@example.com" required={true} text={email} setText={setEmail} />
+            <Input placeholder="name@example.com" required={true} text={email} setText={setEmail} autoFocus />
           </div>
           <div className={`${styles.password} ${styles.field}`}>
             <span className={`${styles.subtitle} ${styles.required}`}>Пароль</span>
@@ -74,7 +74,9 @@ const Login = () => {
         <div className={styles.regCheck}>
           <p>Нет аккаунта?</p>
           <p className={styles.link}>
-            <NavLinkItem to={APP_ROUTES_PATH.REGISTRATION}>Зарегистрируйтесь сейчас</NavLinkItem>
+            <NavLinkItem to={APP_ROUTES_PATH.REGISTRATION}>
+              <p className={styles.linkText}>Зарегистрируйтесь сейчас</p>
+            </NavLinkItem>
           </p>
         </div>
         <div className={styles.regBtn}>

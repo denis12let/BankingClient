@@ -9,6 +9,7 @@ export const COLORS = {
   secondaryColor: '#9B9FA0',
 
   green: '#20BE69',
+  gray: '#f2f3f7',
 
   black: '#000',
   black100: 'rgba(0,0,0,0.1)',

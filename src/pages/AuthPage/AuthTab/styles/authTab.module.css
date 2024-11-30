@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  background-color: #f2f3f7;
 }
 
 .title {
@@ -41,11 +42,13 @@
   justify-content: center;
 }
 
-.link {
-  border-bottom: 1px solid gray;
+.linkText {
+  border-bottom: 1px solid #333542;
 }
 
-.returnBtn {
+.linkText:hover {
+  color: gray;
+  border-bottom: 1px solid gray;
 }
 
 .returnBtnInner {

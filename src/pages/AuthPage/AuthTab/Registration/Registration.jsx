@@ -14,9 +14,9 @@ import { setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
-  const [email, setEmail] = useState('user2@mail.ru');
-  const [password, setPassword] = useState('111111');
-  const [repeatedPassword, setRepeatedPassword] = useState('111111');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatedPassword, setRepeatedPassword] = useState('');
   const [errors, setErrors] = useState(null);
 
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ const Registration = () => {
         <form className={styles.form}>
           <div className={`${styles.email} ${styles.field}`}>
             <span className={`${styles.subtitle} ${styles.required}`}>Email</span>
-            <Input placeholder="name@example.com" required={true} text={email} setText={setEmail} />
+            <Input placeholder="name@example.com" required={true} text={email} setText={setEmail} autoFocus />
           </div>
           <div className={`${styles.password} ${styles.field}`}>
             <span className={`${styles.subtitle} ${styles.required}`}>Пароль</span>
@@ -84,7 +84,9 @@ const Registration = () => {
         <div className={styles.regCheck}>
           <p>Уже зарегистрированы?</p>
           <p className={styles.link}>
-            <NavLinkItem to={APP_ROUTES_PATH.LOGIN}>Войдите сейчас</NavLinkItem>
+            <NavLinkItem to={APP_ROUTES_PATH.LOGIN}>
+              <p className={styles.linkText}>Войдите сейчас</p>
+            </NavLinkItem>
           </p>
         </div>
         <div className={styles.regBtn}>

@@ -23,10 +23,11 @@
 
 .eyeIcon {
   position: absolute;
-  right: 10px;
-  top: 7px;
+  right: 0px;
+  top: -2px;
   cursor: pointer;
   height: 30px;
+  padding: 10px;
 }
 
 .eyeIconImg {

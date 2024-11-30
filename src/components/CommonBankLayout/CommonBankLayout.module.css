@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 60px;
   align-items: center;
+  background-color: #f2f3f7;
 }
 
 .main {
