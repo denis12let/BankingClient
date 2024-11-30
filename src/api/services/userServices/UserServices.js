@@ -27,11 +27,11 @@ export class UserServices {
     return data;
   }
   static async getOneById(id) {
-    const { data } = await $authHost.get('/users/admin/id/' + `${id}`);
+    const { data } = await $authHost.get('/users/admin/id/' + id);
     return data;
   }
   static async getOneByEmail(email) {
-    const { data } = await $authHost.get('/users/admin/email/' + `${email}`);
+    const { data } = await $authHost.get('/users/admin/email/' + email);
     return data;
   }
   static async getAll({ email = '' }) {
@@ -47,7 +47,7 @@ export class UserServices {
     return data;
   }
   static async delete(id) {
-    const { data } = await $authHost.delete('/users/admin/' + `${id}`);
+    const { data } = await $authHost.delete('/users/admin/' + id);
     return data;
   }
 }

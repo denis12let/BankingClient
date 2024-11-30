@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginThunk, registrationThunk } from 'store/actions/userActions/userActions';
+import { loginUserThunk, registerUserThunk } from 'store/actions';
 
 const userSlice = createSlice({
   name: 'user',
@@ -16,28 +16,28 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       //registration
-      .addCase(registrationThunk.pending, (state) => {
+      .addCase(registerUserThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(registrationThunk.fulfilled, (state, action) => {
+      .addCase(registerUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.user;
         state.error = null;
       })
-      .addCase(registrationThunk.rejected, (state, action) => {
+      .addCase(registerUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       })
       //login
-      .addCase(loginThunk.pending, (state) => {
+      .addCase(loginUserThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(loginThunk.fulfilled, (state, action) => {
+      .addCase(loginUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.user;
         state.error = null;
       })
-      .addCase(loginThunk.rejected, (state, action) => {
+      .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

@@ -16,7 +16,7 @@ export class TransactionServices {
     return data;
   }
   static async getOneById(id) {
-    const { data } = await $authHost.get('/accounts/transactions/' + `${id}`);
+    const { data } = await $authHost.get('/accounts/transactions/' + id);
     return data;
   }
   static async getCalendar({ month = 11, year = 2024 }) {
@@ -43,7 +43,7 @@ export class TransactionServices {
     return data;
   }
   static async delete(id) {
-    const { data } = await $authHost.delete('/accounts/transactions/' + `${id}`);
+    const { data } = await $authHost.delete('/accounts/transactions/' + id);
     return data;
   }
 }

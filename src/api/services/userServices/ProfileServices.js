@@ -5,8 +5,8 @@ export class ProfileServices {
     const { data } = await $authHost.get('/users/profile/admin/all');
     return data;
   }
-  static async getOneById(id) {
-    const { data } = await $authHost.get('/users/profile/admin/id/' + `${id}`);
+  static async getOneByUserId(id) {
+    const { data } = await $authHost.get('/users/profile/admin/id/' + id);
     return data;
   }
   static async get() {

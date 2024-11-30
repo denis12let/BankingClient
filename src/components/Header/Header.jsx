@@ -4,7 +4,6 @@ import header from './Header.module.css';
 import HeaderNavbar from './HeaderNavbar/HeaderNavbar';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';
 import Avatar from 'ui/Avatar/Avatar';
-import Button from 'ui/CustomButton/CustomButton';
 import nightTheme from './../../assets/icons/themes/dark-theme.svg';
 import lightTheme from './../../assets/icons/themes/light-theme.svg';
 import { THEME, useTheme } from 'context';
@@ -28,15 +27,15 @@ const Header = () => {
     <div className={header.header}>
       <div className={header.header__inner}>
         <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
-          <img src={fonbet} className={header.header__img} />
+          <img src={fonbet} className={header.header__img} alt="" />
         </NavLinkItem>
         <HeaderNavbar />
         <TooltipTrigger text="+375 (44) 123 12 23" info={info} />
         <div className={header.settings}>
           <DefaultButton onClick={handleToggleTheme}>
             <div className={header.icon__container}>
-              <img src={nightTheme} className={`${header.icon} ${isLightTheme ? header.hidden : ''}`} />
-              <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} />
+              <img src={nightTheme} className={`${header.icon} ${isLightTheme ? header.hidden : ''}`} alt="" />
+              <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} alt="" />
             </div>
           </DefaultButton>
           <Avatar isAuth={isAuth} />

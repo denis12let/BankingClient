@@ -8,15 +8,15 @@ import arrowLeft from './../../assets/icons/common/arrow-left.svg';
 import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'ui/Loader/Loader';
-import { getBankThunk } from 'store/actions/bankActions/bankActions';
+import { fetchBankThunk } from 'store/actions';
 
 const About = () => {
   const dispatch = useDispatch();
   const { bank, isLoading } = useSelector((state) => state.bank);
 
   useEffect(() => {
-    dispatch(getBankThunk());
-  }, []);
+    dispatch(fetchBankThunk());
+  }, [dispatch]);
 
   const blockStyle = {
     width: '100%',

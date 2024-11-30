@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getPartnersThunk, getPartnerThunk } from 'store/actions/bankActions/partnerActions';
+import { fetchAllPartnersThunk, fetchOnePartnerByIdThunk } from 'store/actions';
 
 const partnersSlice = createSlice({
   name: 'partners',
@@ -13,28 +13,28 @@ const partnersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       //getPartners
-      .addCase(getPartnersThunk.pending, (state) => {
+      .addCase(fetchAllPartnersThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getPartnersThunk.fulfilled, (state, action) => {
+      .addCase(fetchAllPartnersThunk.fulfilled, (state, action) => {
         state.partners = action.payload.partners;
         state.isLoading = false;
       })
-      .addCase(getPartnersThunk.rejected, (state, action) => {
+      .addCase(fetchAllPartnersThunk.rejected, (state, action) => {
         state.error = action.error.message;
         state.isLoading = false;
       })
       //getPartner
-      .addCase(getPartnerThunk.pending, (state) => {
+      .addCase(fetchOnePartnerByIdThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getPartnerThunk.fulfilled, (state, action) => {
+      .addCase(fetchOnePartnerByIdThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.partner = action.payload.partner;
       })
-      .addCase(getPartnerThunk.rejected, (state, action) => {
+      .addCase(fetchOnePartnerByIdThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message;
       });
   },
 });

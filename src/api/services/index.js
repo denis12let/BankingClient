@@ -1,0 +1,10 @@
+export { UserServices } from './userServices/UserServices';
+export { ProfileServices } from './userServices/ProfileServices';
+export { BankServices } from './bankServices/BankServices';
+export { PartnerServices } from './bankServices/PartnerServices';
+export { NewsServices } from './bankServices/NewsServices';
+export { ServiceServices } from './bankServices/ServiceServices';
+export { AccountServices } from './accountServices/AccountServices';
+export { BasketServices } from './accountServices/BasketServices';
+export { TransactionServices } from './accountServices/TransactionServices';
+export { CardServices } from './accountServices/CardServices';

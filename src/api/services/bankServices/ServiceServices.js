@@ -10,7 +10,7 @@ export class ServiceServices {
     return data;
   }
   static async getOneById(id) {
-    const { data } = await $host.get('/bank/services/' + `${id}`);
+    const { data } = await $host.get('/bank/services/' + id);
     return data;
   }
   static async create(partnerData) {
@@ -18,11 +18,11 @@ export class ServiceServices {
     return data;
   }
   static async update(id, partnerData) {
-    const { data } = await $authHost.put('/bank/services/admin/' + `${id}`, { ...partnerData });
+    const { data } = await $authHost.put('/bank/services/admin/' + id, { ...partnerData });
     return data;
   }
   static async delete(id) {
-    const { data } = await $authHost.delete('/bank/services/admin/' + `${id}`);
+    const { data } = await $authHost.delete('/bank/services/admin/' + id);
     return data;
   }
 }

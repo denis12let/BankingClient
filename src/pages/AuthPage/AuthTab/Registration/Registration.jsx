@@ -7,7 +7,7 @@ import { APP_ROUTES_PATH } from 'constants/app';
 import arrowLeft from './../../../../assets/icons/common/arrow-left.svg';
 import CustomButton from 'ui/CustomButton/CustomButton';
 import { useDispatch, useSelector } from 'react-redux';
-import { registrationThunk } from 'store/actions/userActions/userActions';
+import { registerUserThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
 import Error from 'ui/Error/Error';
 import { setError } from 'store/reducers/userReducers/userSlice';
@@ -30,7 +30,7 @@ const Registration = () => {
     return () => {
       dispatch(setError(null));
     };
-  }, [error]);
+  }, [error, dispatch]);
 
   const registrationHandler = async () => {
     if (user) {
@@ -49,7 +49,7 @@ const Registration = () => {
     }
 
     try {
-      await dispatch(registrationThunk(candidate)).unwrap();
+      await dispatch(registerUserThunk(candidate)).unwrap();
 
       navigate(APP_ROUTES_PATH.ACCOUNT);
     } catch (error) {

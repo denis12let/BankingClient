@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import styles from './PartnersList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPartnersThunk } from 'store/actions/bankActions/partnerActions';
 import Loader from 'ui/Loader/Loader';
 import Partner from './Partner/Partner';
+import { fetchAllPartnersThunk } from 'store/actions';
 
 const PartnersList = () => {
   const dispatch = useDispatch();
-  const { partners, isLoading, error } = useSelector((state) => state.partners);
+  const { partners, isLoading } = useSelector((state) => state.partners);
 
   useEffect(() => {
-    dispatch(getPartnersThunk());
-  }, []);
+    dispatch(fetchAllPartnersThunk());
+  }, [dispatch]);
 
   const partnersList = partners.map((item) => <Partner {...item} key={item.id} />);
 

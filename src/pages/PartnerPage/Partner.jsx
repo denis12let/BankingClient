@@ -8,18 +8,18 @@ import arrowLeft from './../../assets/icons/common/arrow-left.svg';
 import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPartnerThunk } from 'store/actions/bankActions/partnerActions';
 import Loader from 'ui/Loader/Loader';
+import { fetchOnePartnerByIdThunk } from 'store/actions';
 
 const Partner = () => {
   const dispatch = useDispatch();
-  const { partner, isLoading } = useSelector((state) => state.partners);
+  const { partner, isLoading, error } = useSelector((state) => state.partners);
 
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(getPartnerThunk(id));
-  }, []);
+    dispatch(fetchOnePartnerByIdThunk(id));
+  }, [id, dispatch]);
 
   const blockStyle = {
     width: '100%',

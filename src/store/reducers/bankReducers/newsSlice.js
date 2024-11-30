@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getNewsThunk } from 'store/actions/bankActions/newsActions';
+import { fetchAllNewsThunk } from 'store/actions';
 
 const newsSlice = createSlice({
   name: 'news',
@@ -17,14 +17,14 @@ const newsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       //getNews
-      .addCase(getNewsThunk.pending, (state) => {
+      .addCase(fetchAllNewsThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getNewsThunk.fulfilled, (state, action) => {
+      .addCase(fetchAllNewsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.news = action.payload.bankNews;
       })
-      .addCase(getNewsThunk.rejected, (state, action) => {
+      .addCase(fetchAllNewsThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });

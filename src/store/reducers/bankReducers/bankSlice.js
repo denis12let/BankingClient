@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FETCH_STATUS } from 'constants/fetchStatus';
-import { getBankThunk } from 'store/actions/bankActions/bankActions';
+import { fetchBankThunk } from 'store/actions';
 
 const bankSlice = createSlice({
   name: 'bank',
@@ -12,14 +11,14 @@ const bankSlice = createSlice({
   extraReducers: (builder) => {
     builder
       //getBank
-      .addCase(getBankThunk.pending, (state) => {
+      .addCase(fetchBankThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getBankThunk.fulfilled, (state, action) => {
+      .addCase(fetchBankThunk.fulfilled, (state, action) => {
         state.bank = action.payload.bank;
         state.isLoading = false;
       })
-      .addCase(getBankThunk.rejected, (state, action) => {
+      .addCase(fetchBankThunk.rejected, (state, action) => {
         state.error = action.error.message;
         state.isLoading = false;
       });

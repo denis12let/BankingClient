@@ -3,15 +3,15 @@ import styles from './NewsList.module.css';
 import News from 'pages/MainPage/NewsList/News/News';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove } from 'store/reducers/bankReducers/newsSlice';
-import { getNewsThunk } from 'store/actions/bankActions/newsActions';
+import { fetchAllNewsThunk } from 'store/actions';
 
 const NewsList = () => {
   const dispatch = useDispatch();
-  const { news, isLoading } = useSelector((state) => state.news);
+  const { news } = useSelector((state) => state.news);
 
   useEffect(() => {
-    dispatch(getNewsThunk());
-  }, []);
+    dispatch(fetchAllNewsThunk());
+  }, [dispatch]);
 
   const removeNews = (id) => {
     dispatch(remove(id));

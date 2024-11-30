@@ -6,7 +6,7 @@ export class PartnerServices {
     return data;
   }
   static async getOneById(id) {
-    const { data } = await $host.get('/bank/partners/' + `${id}`);
+    const { data } = await $host.get('/bank/partners/' + id);
     return data;
   }
   static async create(partnerData) {
@@ -14,11 +14,11 @@ export class PartnerServices {
     return data;
   }
   static async update(id, partnerData) {
-    const { data } = await $authHost.put('/bank/partners/admin/' + `${id}`, { ...partnerData });
+    const { data } = await $authHost.put('/bank/partners/admin/' + id, { ...partnerData });
     return data;
   }
   static async delete(id) {
-    const { data } = await $authHost.delete('/bank/partners/admin/' + `${id}`);
+    const { data } = await $authHost.delete('/bank/partners/admin/' + id);
     return data;
   }
 }
