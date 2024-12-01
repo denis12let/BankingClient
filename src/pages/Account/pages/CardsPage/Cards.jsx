@@ -1,7 +1,8 @@
+import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLayout';
 import React from 'react';
 
 const Cards = () => {
-  return <div>/* Your code here */</div>;
+  return <CommonAccountLayout></CommonAccountLayout>;
 };
 
 export default Cards;

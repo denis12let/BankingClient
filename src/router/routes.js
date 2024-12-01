@@ -64,7 +64,7 @@ export const routeConfig = {
     element: <Profile />,
   },
   [APP_ROUTES.CARD]: {
-    path: APP_ROUTES_PATH.CARD + ':id',
+    path: APP_ROUTES_PATH.CARD,
     element: <Cards />,
   },
   [APP_ROUTES.USER_SERVICES]: {

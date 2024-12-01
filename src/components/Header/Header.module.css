@@ -4,6 +4,12 @@
   cursor: pointer;
 }
 
+.header__logo {
+  width: 260px;
+  height: 45px;
+  cursor: pointer;
+}
+
 .header {
   height: 100px;
   width: 100%;

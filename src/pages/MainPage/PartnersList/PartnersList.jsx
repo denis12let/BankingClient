@@ -10,7 +10,9 @@ const PartnersList = () => {
   const { partners, isLoading } = useSelector((state) => state.partners);
 
   useEffect(() => {
-    dispatch(fetchAllPartnersThunk());
+    if (!partners) {
+      dispatch(fetchAllPartnersThunk());
+    }
   }, [dispatch]);
 
   const partnersList = partners.map((item) => <Partner {...item} key={item.id} />);

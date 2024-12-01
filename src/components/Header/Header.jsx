@@ -26,9 +26,11 @@ const Header = () => {
   return (
     <div className={header.header}>
       <div className={header.header__inner}>
-        <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
-          <img src={fonbet} className={header.header__img} alt="" />
-        </NavLinkItem>
+        <div className={header.header__logo}>
+          <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+            <img src={fonbet} className={header.header__img} alt="" />
+          </NavLinkItem>
+        </div>
         <HeaderNavbar />
         <TooltipTrigger text="+375 (44) 123 12 23" info={info} />
         <div className={header.settings}>

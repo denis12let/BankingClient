@@ -1,4 +1,5 @@
 .simplebar-scrollbar::before {
   opacity: 1 !important;
   background-color: #9b9fa0;
+  padding: 0 15px;
 }

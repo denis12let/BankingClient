@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import navlink from './Link.module.css';
+import styles from './Link.module.css';
 
 const NavLinkItem = ({ children, to: path, icon }) => {
   return (
-    <NavLink to={path} className={navlink.navLink}>
-      {/* {icon || <img src="icon" className={navlink.img} />} */}
+    <NavLink to={path} className={styles.navLink}>
+      {/* {icon || <img src="icon" className={styles.img} />} */}
       {children}
     </NavLink>
   );

@@ -10,7 +10,9 @@ const NewsList = () => {
   const { news } = useSelector((state) => state.news);
 
   useEffect(() => {
-    dispatch(fetchAllNewsThunk());
+    if (!news) {
+      dispatch(fetchAllNewsThunk());
+    }
   }, [dispatch]);
 
   const removeNews = (id) => {

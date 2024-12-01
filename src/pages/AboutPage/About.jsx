@@ -15,7 +15,9 @@ const About = () => {
   const { bank, isLoading } = useSelector((state) => state.bank);
 
   useEffect(() => {
-    dispatch(fetchBankThunk());
+    if (!bank) {
+      dispatch(fetchBankThunk());
+    }
   }, [dispatch]);
 
   const blockStyle = {

@@ -40,16 +40,16 @@ export const APP_ROUTES_PATH = {
   LOGIN: '/login',
 
   ACCOUNT: '/account',
-  SETTINGS: '/settings',
+  SETTINGS: '/account/settings',
 
-  CARD: '/card/',
-  USER_SERVICES: '/user_services',
-  INTERNAL_TRANSFER: '/internal_transfer',
-  EXTERNAL_TRANSFER: '/external_transfer',
-  ACCOUNT_STATEMENT: '/account_statement',
-  CALENDAR: '/calendar',
-  TRANSACTIONS: '/transactions',
-  TRANSACTION: '/transaction/',
+  CARD: '/account/card',
+  USER_SERVICES: '/account/user_services',
+  INTERNAL_TRANSFER: '/account/internal_transfer',
+  EXTERNAL_TRANSFER: '/account/external_transfer',
+  ACCOUNT_STATEMENT: '/account/account_statement',
+  CALENDAR: '/account/calendar',
+  TRANSACTIONS: '/account/transactions',
+  TRANSACTION: '/account/transaction/',
 
-  NOT_FOUND: '/not_found',
+  NOT_FOUND: '/account/not_found',
 };
