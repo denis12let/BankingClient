@@ -3,12 +3,13 @@
   flex-direction: column;
   gap: 60px;
   align-items: center;
-  background-color: #f2f3f7;
+  background-color: #fff;
   height: 100vh;
 }
 
 .main {
   display: flex;
+  flex-direction: column;
   gap: 25px;
   max-width: 1230px;
   padding: 0 15px;
@@ -17,6 +18,17 @@
   flex-grow: 1;
 }
 
-.section {
+.accountInner {
+  display: flex;
+  gap: 85px;
+  justify-content: space-between;
+}
+
+.accountManagement {
+  max-width: 285px;
+  width: 100%;
+}
+
+.accountForm {
   width: 100%;
 }

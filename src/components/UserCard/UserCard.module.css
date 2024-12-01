@@ -1,0 +1,66 @@
+.wrapper {
+  position: relative;
+  color: white;
+  width: 380px;
+  height: 230px;
+  border-radius: 15px;
+  padding: 10px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 18px;
+  text-align: start;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customName {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: -10px;
+}
+
+.holderName {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.number {
+  font-size: 20px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.cardDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.expiryBlock,
+.balanceBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.balanceText {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.typeImg {
+  width: 60px;
+  height: auto;
+}

@@ -1,7 +1,8 @@
+import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLayout';
 import React from 'react';
 
 const Account = () => {
-  return <div>/* Your code here */</div>;
+  return <CommonAccountLayout>Хуй</CommonAccountLayout>;
 };
 
 export default Account;
