@@ -16,8 +16,8 @@ export const validateAuth = ({ email, password, repeatedPassword }, error) => {
     errors.password = 'Пароли не совпадают';
   }
 
-  if (password && password.length < 6) {
-    errors.passwordLength = 'Пароль должен быть не менее 6 символов';
+  if (password && password.length < 5) {
+    errors.passwordLength = 'Пароль должен быть не менее 5 символов';
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

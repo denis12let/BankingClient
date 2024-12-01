@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.form__row_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__row_3 {
+  display: flex;
+  gap: 10px;
+}
+
+.monthSelect,
+.yearSelect {
+  max-width: 80px;
+  width: 100%;
+}
+
+.submitButton {
+  margin-top: 10px;
+}
+
+.focused {
+  color: #20be69;
+  /* border: 1px solid #20be69;
+  box-shadow: 0 0 3px rgba(32, 190, 105, 0.5); */
+}
+
+.error {
+  color: red;
+}

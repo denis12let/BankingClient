@@ -4,6 +4,7 @@ import AmericanExpress from './../assets/icons/card/american-express.svg';
 import Discover from './../assets/icons/card/discover-card.svg';
 import DinersClub from './../assets/icons/card/diners-club-international.svg';
 import JCB from './../assets/icons/card/jcb.svg';
+import card from './../assets/icons/card/card.svg';
 
 export function getCardDetails(number) {
   const cardTypes = {
@@ -38,7 +39,7 @@ export function getCardDetails(number) {
       return { type: key, color: cardColors[key], icon: cardImages[key] };
     }
   }
-  return 'Unknow';
+  return { type: 'Unknow', color: 'gray', icon: card };
 }
 
 export const convertDateToCard = (dateString) => {

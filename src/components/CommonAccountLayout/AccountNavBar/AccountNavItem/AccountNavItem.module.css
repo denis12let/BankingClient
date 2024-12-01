@@ -15,8 +15,8 @@
 .active::after {
   content: '';
   position: absolute;
-  left: 51px;
-  bottom: 0;
+  left: 50px;
+  bottom: 2px;
   height: 2px;
   background-color: #87898b;
   animation: lineFill 0.2s linear forwards;
@@ -27,6 +27,6 @@
     width: 0px;
   }
   100% {
-    width: 100px;
+    width: 70px;
   }
 }

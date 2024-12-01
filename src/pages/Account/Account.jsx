@@ -2,7 +2,7 @@ import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLay
 import React from 'react';
 
 const Account = () => {
-  return <CommonAccountLayout>Хуй</CommonAccountLayout>;
+  return <CommonAccountLayout></CommonAccountLayout>;
 };
 
 export default Account;

@@ -3,11 +3,19 @@ import styles from './Input.module.css';
 import openEye from './../../assets/icons/input/eye-open.svg';
 import closeEye from './../../assets/icons/input/eye-close.svg';
 
-const Input = ({ type, required = false, text, setText, ...props }) => {
+const Input = ({ type, required = false, text, setText, pattern, patternOnChange, ...props }) => {
   const [showText, setShowText] = useState(false);
 
   const toggleTextVisibility = () => {
     setShowText((prev) => !prev);
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+
+    if (!patternOnChange || new RegExp(patternOnChange).test(value) || value === '') {
+      setText(value);
+    }
   };
 
   return (
@@ -15,8 +23,9 @@ const Input = ({ type, required = false, text, setText, ...props }) => {
       <input
         className={styles.input}
         {...props}
+        pattern={pattern}
         required={required}
-        onChange={(e) => setText(e.target.value)}
+        onChange={handleInputChange}
         type={type === 'password' && !showText ? 'password' : 'text'}
         value={text}
       />
