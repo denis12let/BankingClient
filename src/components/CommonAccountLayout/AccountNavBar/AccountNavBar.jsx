@@ -16,7 +16,9 @@ const AccountNavBar = () => {
   };
 
   const linksList = Object.keys(linksObjectNames).map((key) => (
-    <AccountNavItem path={APP_ROUTES_PATH[key]}>{linksObjectNames[key]}</AccountNavItem>
+    <AccountNavItem key={key} path={APP_ROUTES_PATH[key]}>
+      {linksObjectNames[key]}
+    </AccountNavItem>
   ));
 
   return <div className={styles.navList}>{linksList}</div>;

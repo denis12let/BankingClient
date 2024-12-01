@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import styles from './UserCardsList.module.css';
 import UserCard from '../../UserCard/UserCard';
@@ -14,12 +13,12 @@ const UserCardsList = () => {
   const { cards, isLoading, error } = useSelector((state) => state.card);
 
   useEffect(() => {
-    if (!cards) {
+    if (!cards.length) {
       dispatch(fetchAllCurrentUserCardsThunk());
     }
   }, []);
 
-  const cardsArray = cards.length ? cards.map((item) => <UserCard cardData={item} />) : [];
+  const cardsArray = cards.length ? cards.map((item) => <UserCard key={item.number} cardData={item} />) : [];
 
   return (
     <Scroll>

@@ -10,7 +10,7 @@ const NewsList = () => {
   const { news } = useSelector((state) => state.news);
 
   useEffect(() => {
-    if (!news) {
+    if (!news.length) {
       dispatch(fetchAllNewsThunk());
     }
   }, [dispatch]);

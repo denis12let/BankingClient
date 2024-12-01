@@ -4,6 +4,7 @@ import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 import UserCardsList from './UserCardsList/UserCardsList';
 import AccountNavBar from './AccountNavBar/AccountNavBar';
+import Wallet from './Wallet/Wallet';
 
 const CommonAccountLayout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const CommonAccountLayout = ({ children }) => {
         </section>
         <div className={styles.accountInner}>
           <aside className={styles.accountManagement}>
+            <Wallet />
             <AccountNavBar />
           </aside>
           <section className={styles.accountForm}>{children}</section>

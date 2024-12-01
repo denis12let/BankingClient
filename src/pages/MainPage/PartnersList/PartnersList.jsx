@@ -10,7 +10,7 @@ const PartnersList = () => {
   const { partners, isLoading } = useSelector((state) => state.partners);
 
   useEffect(() => {
-    if (!partners) {
+    if (!partners.length) {
       dispatch(fetchAllPartnersThunk());
     }
   }, [dispatch]);

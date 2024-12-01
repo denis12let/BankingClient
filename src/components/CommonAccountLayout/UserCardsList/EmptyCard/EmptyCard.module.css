@@ -1,3 +1,8 @@
+.emptyCard {
+  width: 380px;
+  height: 230px;
+}
+
 .card {
   display: flex;
   justify-content: center;
