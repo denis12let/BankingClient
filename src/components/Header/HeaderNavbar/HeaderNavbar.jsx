@@ -6,21 +6,21 @@ import { APP_ROUTES_PATH } from 'constants/app';
 const HeaderNavbar = () => {
   return (
     <ul className={styles.navbar}>
-      <div className={styles.link}>
-        <NavLinkItem to={APP_ROUTES_PATH.MAIN}>Лента</NavLinkItem>
-      </div>
-      <div className={styles.link}>
-        <NavLinkItem to={APP_ROUTES_PATH.ACCOUNT}>Карты</NavLinkItem>
-      </div>
-      <div className={styles.link}>
-        <NavLinkItem to={APP_ROUTES_PATH.DEPOSITS}>Вклады</NavLinkItem>
-      </div>
-      <div className={styles.link}>
-        <NavLinkItem to={APP_ROUTES_PATH.LOANS}>Кредиты</NavLinkItem>
-      </div>
-      <div className={styles.link}>
-        <NavLinkItem to={APP_ROUTES_PATH.ABOUT}>О нас</NavLinkItem>
-      </div>
+      <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+        <div className={styles.link}>Лента</div>
+      </NavLinkItem>
+      <NavLinkItem to={APP_ROUTES_PATH.ACCOUNT}>
+        <div className={styles.link}>Карты</div>
+      </NavLinkItem>
+      <NavLinkItem to={APP_ROUTES_PATH.DEPOSITS}>
+        <div className={styles.link}>Вклады</div>
+      </NavLinkItem>
+      <NavLinkItem to={APP_ROUTES_PATH.LOANS}>
+        <div className={styles.link}>Кредиты</div>
+      </NavLinkItem>
+      <NavLinkItem to={APP_ROUTES_PATH.ABOUT}>
+        <div className={styles.link}>О нас</div>
+      </NavLinkItem>
     </ul>
   );
 };

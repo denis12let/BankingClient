@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ServiceServices } from 'api/services';
 
-export const fetchAllServicesThunk = createAsyncThunk('/services/getAll', async (query, { rejectWithValue }) => {
+export const fetchAllServicesThunk = createAsyncThunk('/services/getAll', async (query = '', { rejectWithValue }) => {
   try {
     const data = await ServiceServices.getAll(query);
     return data;

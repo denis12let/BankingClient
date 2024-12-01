@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchAllPartnersThunk, fetchOnePartnerByIdThunk } from 'store/actions';
 
-const partnersSlice = createSlice({
-  name: 'partners',
+const partnerSlice = createSlice({
+  name: 'partner',
   initialState: {
     partners: [],
     isLoading: false,
@@ -39,5 +39,5 @@ const partnersSlice = createSlice({
   },
 });
 
-export default partnersSlice.reducer;
+export default partnerSlice.reducer;
 // export const { resetPartnerStatus } = partnersSlice.actions;

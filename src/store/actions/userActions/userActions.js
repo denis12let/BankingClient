@@ -55,7 +55,7 @@ export const fetchUserByEmailThunk = createAsyncThunk('/users/getUserByEmail', a
   }
 });
 
-export const fetchAllUsersThunk = createAsyncThunk('/users/getAll', async (query, { rejectWithValue }) => {
+export const fetchAllUsersThunk = createAsyncThunk('/users/getAll', async (query = '', { rejectWithValue }) => {
   try {
     const data = await UserServices.getAll(query);
     return data;

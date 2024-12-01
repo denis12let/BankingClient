@@ -13,7 +13,7 @@ import { fetchOnePartnerByIdThunk } from 'store/actions';
 
 const Partner = () => {
   const dispatch = useDispatch();
-  const { partner, isLoading, error } = useSelector((state) => state.partners);
+  const { partner, isLoading, error } = useSelector((state) => state.partner);
 
   const { id } = useParams();
 

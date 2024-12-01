@@ -7,7 +7,7 @@ import { fetchAllPartnersThunk } from 'store/actions';
 
 const PartnersList = () => {
   const dispatch = useDispatch();
-  const { partners, isLoading } = useSelector((state) => state.partners);
+  const { partners, isLoading } = useSelector((state) => state.partner);
 
   useEffect(() => {
     if (!partners.length) {

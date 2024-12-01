@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { BasketServices } from 'api/services';
 
-export const fetchAllBasketTransactionsThunk = createAsyncThunk('/basket/getAll', async (query, { rejectWithValue }) => {
+export const fetchAllBasketTransactionsThunk = createAsyncThunk('/basket/getAll', async (query = '', { rejectWithValue }) => {
   try {
     const data = await BasketServices.getAll(query);
     return data;
