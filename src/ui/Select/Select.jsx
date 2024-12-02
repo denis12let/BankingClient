@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Select.module.css';
 
 const Select = ({ options, value, onChange, name, placeholder, required = false, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
 
   const handleOptionClick = (option) => {
     onChange({ target: { name, value: option } });
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.wrapper} {...props}>
+    <div className={styles.wrapper} ref={wrapperRef} {...props}>
       <div
         className={`${styles.selected} ${isOpen ? styles.selectedOpen : ''} ${required && !value ? styles.required : ''}`}
         onClick={() => setIsOpen((prev) => !prev)}
@@ -29,21 +43,5 @@ const Select = ({ options, value, onChange, name, placeholder, required = false,
     </div>
   );
 };
-
-//   return (
-//     <div className={styles.wrapper}>
-//       <select name={name} value={value} onChange={onChange} required={required} className={styles.select}>
-//         <option value="" disabled>
-//           {placeholder}
-//         </option>
-//         {options.map((option) => (
-//           <option key={option} value={option}>
-//             {option}
-//           </option>
-//         ))}
-//       </select>
-//     </div>
-//   );
-// };
 
 export default Select;

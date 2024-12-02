@@ -19,7 +19,6 @@ const UserCardsList = () => {
   }, []);
 
   const cardsArray = cards.length ? cards.map((item) => <UserCard key={item.number} cardData={item} />) : [];
-
   return (
     <Scroll>
       <div className={styles.list}>

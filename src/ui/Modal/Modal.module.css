@@ -12,11 +12,15 @@
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 90%;
+  max-width: 300px;
+  height: 250px;
+  width: 100%;
   padding: 20px;
   position: relative;
   animation: fadeIn 0.3s ease-out;
@@ -35,20 +39,23 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   padding-bottom: 10px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
-  margin: 0;
   color: #333;
+  margin-top: -5px;
 }
 
 .closeButton {
+  position: absolute;
+  right: 0;
   background: url('assets/icons/common/close.svg') no-repeat center;
   background-size: contain;
   width: 20px;
@@ -65,4 +72,17 @@
 .content {
   font-size: 16px;
   color: #555;
+}
+
+.content__inner {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60px;
+}
+
+.error {
+  color: red;
 }

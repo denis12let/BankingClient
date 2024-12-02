@@ -1,50 +1,3 @@
-/* .expirySelect {
-  display: flex;
-  gap: 10px;
-}
-
-.select {
-  width: 100%;
-  height: 30px;
-  border: 1px solid #b2b9bb;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #333;
-}
-
-.select:focus {
-  border-color: #20be69;
-  box-shadow: 0 0 5px rgba(32, 190, 105, 0.5);
-  outline: none;
-} */
-
-/* .wrapper {
-  width: 100%;
-  flex-grow: 1;
-}
-
-.select {
-  width: 100%;
-  height: 35px;
-  border: 1px solid #b2b9bb;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #333;
-  appearance: none;
-  cursor: pointer;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.select:focus {
-  border-color: #20be69;
-  box-shadow: 0 0 5px rgba(32, 190, 105, 0.5);
-  outline: none;
-} */
-
 .wrapper {
   position: relative;
   width: 100%;
@@ -61,10 +14,11 @@
   cursor: pointer;
   font-size: 14px;
   color: #333;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .selected.required {
-  color: #aaa; /* серый цвет для placeholder */
+  color: #aaa;
 }
 
 .selectedOpen {

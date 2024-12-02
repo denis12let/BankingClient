@@ -48,3 +48,11 @@ export const convertDateToCard = (dateString) => {
   const year = date.getFullYear().toString().slice(-2);
   return `${month}/${year}`;
 };
+
+// export const getLastSymbolsCard = (string, n = 4) => {
+//   if (n > string.length) {
+//     return string;
+//   }
+
+//   return string.slice(-n);
+// };

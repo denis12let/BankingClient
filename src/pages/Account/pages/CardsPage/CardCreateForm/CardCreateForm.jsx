@@ -3,6 +3,7 @@ import styles from './CardCreateForm.module.css';
 import Select from 'ui/Select/Select';
 import Input from 'ui/Input/Input';
 import CustomButton from 'ui/CustomButton/CustomButton';
+import Error from 'ui/Error/Error';
 
 const CardCreateForm = ({
   number,
@@ -36,7 +37,7 @@ const CardCreateForm = ({
     <form className={styles.form}>
       <div className={`${styles.form__row_1} ${styles.form__group}`}>
         <div className={styles.name}>
-          <small className={focus === 'cardName' ? styles.focused : ''}>Имя карты</small>
+          <small>Имя карты</small>
           <Input
             type="text"
             name="cardName"
@@ -49,7 +50,7 @@ const CardCreateForm = ({
           />
         </div>
         <div className={styles.holderName}>
-          <small className={focus === 'name' ? styles.focused : ''}>Имя держателя</small>
+          <small>Имя держателя</small>
           <Input
             type="text"
             name="name"
@@ -66,7 +67,7 @@ const CardCreateForm = ({
       </div>
       <div className={`${styles.form__row_2} ${styles.form__group}`}>
         <div className={styles.number}>
-          <small className={focus === 'number' ? styles.focused : ''}>Номер</small>
+          <small>Номер</small>
           <Input
             type="tel"
             name="number"
@@ -83,7 +84,7 @@ const CardCreateForm = ({
       </div>
       <div className={`${styles.form__row_3} ${styles.form__group}`}>
         <div className={styles.monthSelect}>
-          <small className={focus === 'expiry' ? styles.focused : ''}>Месяц</small>
+          <small>Месяц</small>
           <Select
             name="expiry"
             value={expiryMonth}
@@ -95,7 +96,7 @@ const CardCreateForm = ({
           />
         </div>
         <div className={styles.yearSelect}>
-          <small className={focus === 'expiry' ? styles.focused : ''}>Год</small>
+          <small>Год</small>
           <Select
             name="expiry"
             value={expiryYear}
@@ -107,7 +108,7 @@ const CardCreateForm = ({
           />
         </div>
         <div className={styles.cvc}>
-          <small className={focus === 'cvc' ? styles.focused : ''}>CVC</small>
+          <small>CVC</small>
           <Input
             type="tel"
             name="cvc"
@@ -122,7 +123,7 @@ const CardCreateForm = ({
           />
         </div>
       </div>
-      {error ? <div className={styles.error}>{error}</div> : ''}
+      {error ? <Error>{error}</Error> : ''}
       <div className={styles.submitButton}>
         <CustomButton onClick={(e) => submitHandler(e)} disabled={isLoading}>
           Добавить

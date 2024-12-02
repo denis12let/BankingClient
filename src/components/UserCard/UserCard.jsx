@@ -3,14 +3,6 @@ import styles from './UserCard.module.css';
 import { convertDateToCard, getCardDetails } from 'utils/cardUtils';
 
 const UserCard = ({ cardData, ...props }) => {
-  // const cardData = {
-  //   customName: 'Карта Карта',
-  //   balance: '1000',
-  //   number: '5451 2341 3442 1233',
-  //   date: '14/21',
-  //   holderName: 'Ivanov Ivan',
-  // };
-
   const { type, color, icon } = getCardDetails(cardData.number);
   return (
     <div className={styles.wrapper} style={{ background: color }}>
