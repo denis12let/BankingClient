@@ -1,15 +1,20 @@
 import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLayout';
 import React, { useEffect, useState } from 'react';
 import styles from './InternalTransfer.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'ui/Select/Select';
 import Input from 'ui/Input/Input';
 import CustomButton from 'ui/CustomButton/CustomButton';
 import Error from 'ui/Error/Error';
 import { getCardDetails } from 'utils/cardUtils';
 import CardString from './CardString/CardString';
+import { updateCardBalanceThunk } from 'store/actions';
+import Modal from 'ui/Modal/Modal';
 
 const InternalTransfer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
   const { cards } = useSelector((state) => state.card);
   const { balance, isLoading, error } = useSelector((state) => state.account);
   const [amount, setAmount] = useState();
@@ -19,39 +24,45 @@ const InternalTransfer = () => {
   const [cardsList2, setCardsList2] = useState([]);
   const [err, setErr] = useState();
 
-  const getCardString = (item) => `${item.customName}#${item.id} ${item.balance} BYN`;
+  const makeCardString = (item) => (
+    <CardString
+      key={`${item.customName}#${item.id}`}
+      number={item.number}
+      customName={item.customName}
+      id={item.id}
+      balance={item.balance}
+    />
+  );
+
+  const accountString = { customName: 'Аккаунт', id: 0, balance };
 
   const updateCardsList1 = () => {
-    const newList = cards.filter((item) => getCardString(item) !== selectedCard2).map((item) => getCardString(item));
+    const newList = cards.map((item) => makeCardString(item));
 
-    newList.push(`Аккаунт ${balance} BYN`);
+    newList.unshift(makeCardString(accountString));
 
     setCardsList1(newList);
   };
 
   const updateCardsList2 = () => {
-    const newList = cards.filter((item) => getCardString(item) !== selectedCard1).map((item) => getCardString(item));
+    const newList = cards.map((item) => makeCardString(item));
 
-    newList.push(`Аккаунт ${balance} BYN`);
+    newList.unshift(makeCardString(accountString));
 
     setCardsList2(newList);
   };
-
-  useEffect(() => {
-    setSelectedCard1(`Аккаунт ${balance} BYN`);
-    setSelectedCard2(`Аккаунт ${balance} BYN`);
-    updateCardsList1();
-    updateCardsList2();
-  }, [balance]);
 
   useEffect(() => {
     updateCardsList1();
     updateCardsList2();
   }, [cards, selectedCard1, selectedCard2, balance]);
 
-  const submitHandler = () => {
-    if (selectedCard1 === selectedCard2) {
-      setErr('Выберите разные элементы');
+  const submitHandler = async () => {
+    const card1 = selectedCard1.props;
+    const card2 = selectedCard2.props;
+
+    if (card1.id === card2.id) {
+      setErr('Перевод с/на не уникален');
       return;
     }
     if (!amount) {
@@ -59,6 +70,22 @@ const InternalTransfer = () => {
       return;
     }
     setErr(null);
+
+    const transferData = {
+      type: 'PAYMENT',
+      amount: amount,
+      number: card1.number,
+      secondNumber: card2.number,
+    };
+
+    try {
+      await dispatch(updateCardBalanceThunk(transferData)).unwrap();
+
+      setIsModalOpen(true);
+    } catch (error) {
+      setErr(error);
+      return;
+    }
   };
 
   return (
@@ -94,6 +121,7 @@ const InternalTransfer = () => {
           Перевести
         </CustomButton>
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </CommonAccountLayout>
   );
 };

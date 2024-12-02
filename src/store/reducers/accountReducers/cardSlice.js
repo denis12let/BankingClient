@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createCardThunk, fetchAllCurrentUserCardsThunk } from 'store/actions';
+import { createCardThunk, fetchAllCurrentUserCardsThunk, updateCardBalanceThunk } from 'store/actions';
 
 const cardSlice = createSlice({
   name: 'card',
@@ -34,6 +34,18 @@ const cardSlice = createSlice({
       })
       .addCase(createCardThunk.rejected, (state, action) => {
         console.log(action);
+        state.error = action.error.message;
+        state.isLoading = false;
+      })
+      //updateBalance
+      .addCase(updateCardBalanceThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateCardBalanceThunk.fulfilled, (state, action) => {
+        state.card = action.payload.card;
+        state.isLoading = false;
+      })
+      .addCase(updateCardBalanceThunk.rejected, (state, action) => {
         state.error = action.error.message;
         state.isLoading = false;
       });

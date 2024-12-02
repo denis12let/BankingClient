@@ -33,8 +33,8 @@ const Select = ({ options, value, onChange, name, placeholder, required = false,
       </div>
       {isOpen && (
         <div className={styles.options}>
-          {options.map((option) => (
-            <div key={option} className={styles.option} onClick={() => handleOptionClick(option)}>
+          {options.map((option, index) => (
+            <div key={`${option}#${index}`} className={styles.option} onClick={() => handleOptionClick(option)}>
               {option}
             </div>
           ))}

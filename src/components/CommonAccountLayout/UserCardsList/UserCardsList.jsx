@@ -10,13 +10,11 @@ import Scroll from 'ui/Scroll/Scroll';
 
 const UserCardsList = () => {
   const dispatch = useDispatch();
-  const { cards, isLoading, error } = useSelector((state) => state.card);
+  const { card, cards, isLoading, error } = useSelector((state) => state.card);
 
   useEffect(() => {
-    if (!cards.length) {
-      dispatch(fetchAllCurrentUserCardsThunk());
-    }
-  }, []);
+    dispatch(fetchAllCurrentUserCardsThunk());
+  }, [card]);
 
   const cardsArray = cards.length ? cards.map((item) => <UserCard key={item.number} cardData={item} />) : [];
   return (

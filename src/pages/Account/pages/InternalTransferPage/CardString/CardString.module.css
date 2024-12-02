@@ -1,0 +1,15 @@
+.string {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 10px;
+}
+.img {
+  width: 30px;
+}
