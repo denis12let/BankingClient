@@ -4,6 +4,7 @@ import styles from './BankServicesList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllServicesThunk } from 'store/actions';
 import Loader from 'ui/Loader/Loader';
+import { SERVICE_TYPE } from 'constants/services';
 
 const BankServices = ({ type }) => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const BankServices = ({ type }) => {
 
   return (
     <div className={styles.deposits}>
-      <h2 className={styles.title}>Вклады</h2>
+      <h2 className={styles.title}>{type === SERVICE_TYPE.DEPOSIT ? 'Вклады' : 'Кредиты'}</h2>
       <div className={styles.list}>{isLoading ? <Loader /> : servicesList}</div>
     </div>
   );
