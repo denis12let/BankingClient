@@ -1,8 +1,8 @@
 import Card from 'components/Card/Card';
 import React from 'react';
 import styles from './Partner.module.css';
-import cardImg from './../../../../assets/images/BGPB_MC_Standard.png';
-import arrowRigth from './../../../../assets/icons/common/arrow-right.svg';
+import cardImg from 'assets/images/BGPB_MC_Standard.png';
+import arrowRigth from 'assets/icons/common/arrow-right.svg';
 import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
 

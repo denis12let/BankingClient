@@ -4,11 +4,7 @@ import { SERVICE_TYPE } from 'constants/services';
 import React from 'react';
 
 const Deposits = () => {
-  return (
-    <CommonBankLayout>
-      <BankServices type={SERVICE_TYPE.DEPOSIT} />
-    </CommonBankLayout>
-  );
+  return <BankServices type={SERVICE_TYPE.DEPOSIT} />;
 };
 
 export default Deposits;

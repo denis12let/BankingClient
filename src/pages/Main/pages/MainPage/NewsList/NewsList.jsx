@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './NewsList.module.css';
-import News from 'pages/MainPage/NewsList/News/News';
+import News from './News/News';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove } from 'store/reducers/bankReducers/newsSlice';
 import { fetchAllNewsThunk } from 'store/actions';

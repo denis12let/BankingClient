@@ -1,7 +1,7 @@
 import Card from 'components/Card/Card';
 import React from 'react';
 import styles from './News.module.css';
-import closeBtn from './../../../../assets/icons/common/close.svg';
+import closeBtn from 'assets/icons/common/close.svg';
 
 const News = ({ removeNews, ...props }) => {
   const stylesValues = {

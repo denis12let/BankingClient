@@ -1,5 +1,5 @@
 import { APP_ROUTES, APP_ROUTES_PATH } from 'constants/app';
-import About from 'pages/AboutPage/About';
+import About from 'pages/Main/pages/AboutPage/About';
 import AccountRouter from 'pages/Account/AccountRouter';
 import Calendar from 'pages/Account/pages/CalendarPage/Calendar';
 import Cards from 'pages/Account/pages/CardsPage/Cards';
@@ -9,16 +9,40 @@ import Services from 'pages/Account/pages/ServicesPage/Services';
 import Transaction from 'pages/Account/pages/TransactionPage/Transaction';
 import Transactions from 'pages/Account/pages/TransactionsPage/Transactions';
 import Auth from 'pages/AuthPage/Auth';
-import Deposit from 'pages/DepositPage/Deposit';
-import Deposits from 'pages/DepositsPage/Deposits';
-import Loan from 'pages/LoanPage/Loan';
-import Loans from 'pages/LoansPage/Loans';
-import Main from 'pages/MainPage/Main';
+import Deposit from 'pages/Main/pages/DepositPage/Deposit';
+import Deposits from 'pages/Main/pages/DepositsPage/Deposits';
+import Loan from 'pages/Main/pages/LoanPage/Loan';
+import Loans from 'pages/Main/pages/LoansPage/Loans';
+import MainRouter from 'pages/Main/MainRouter';
 import NotFound from 'pages/NotFoundPage/NotFound';
-import Partner from 'pages/PartnerPage/Partner';
-import Profile from 'pages/ProfilePage/Profile';
+import Partner from 'pages/Main/pages/PartnerPage/Partner';
+import Profile from 'pages/Account/pages/ProfilePage/Profile';
+import Main from 'pages/Main/pages/MainPage/Main';
 
 export const routeConfig = {
+  [APP_ROUTES.MAIN]: {
+    path: APP_ROUTES_PATH.MAIN + '/*',
+    element: <MainRouter />,
+  },
+  [APP_ROUTES.REGISTRATION]: {
+    path: APP_ROUTES_PATH.REGISTRATION,
+    element: <Auth />,
+  },
+  [APP_ROUTES.LOGIN]: {
+    path: APP_ROUTES_PATH.LOGIN,
+    element: <Auth />,
+  },
+  [APP_ROUTES.ACCOUNT]: {
+    path: APP_ROUTES_PATH.ACCOUNT + '/*',
+    element: <AccountRouter />,
+  },
+  [APP_ROUTES.NOT_FOUND]: {
+    path: APP_ROUTES_PATH.NOT_FOUND,
+    element: <NotFound />,
+  },
+};
+
+export const bankRouteConfig = {
   [APP_ROUTES.MAIN]: {
     path: APP_ROUTES_PATH.MAIN,
     element: <Main />,
@@ -46,22 +70,6 @@ export const routeConfig = {
   [APP_ROUTES.PARTNER]: {
     path: APP_ROUTES_PATH.PARTNER + ':id',
     element: <Partner />,
-  },
-  [APP_ROUTES.REGISTRATION]: {
-    path: APP_ROUTES_PATH.REGISTRATION,
-    element: <Auth />,
-  },
-  [APP_ROUTES.LOGIN]: {
-    path: APP_ROUTES_PATH.LOGIN,
-    element: <Auth />,
-  },
-  [APP_ROUTES.ACCOUNT]: {
-    path: APP_ROUTES_PATH.ACCOUNT + '/*',
-    element: <AccountRouter />,
-  },
-  [APP_ROUTES.NOT_FOUND]: {
-    path: APP_ROUTES_PATH.NOT_FOUND,
-    element: <NotFound />,
   },
 };
 

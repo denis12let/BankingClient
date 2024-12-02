@@ -6,7 +6,7 @@ import { APP_ROUTES_PATH } from 'constants/app';
 const HeaderNavbar = () => {
   return (
     <ul className={styles.navbar}>
-      <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+      <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
         <div className={styles.link}>Лента</div>
       </NavLinkItem>
       <NavLinkItem to={APP_ROUTES_PATH.ACCOUNT}>

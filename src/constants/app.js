@@ -27,7 +27,8 @@ export const APP_ROUTES = {
 };
 
 export const APP_ROUTES_PATH = {
-  MAIN: '/',
+  ROOT: '/',
+  MAIN: '',
   ABOUT: '/about',
   LOANS: '/loans',
   DEPOSITS: '/deposits',

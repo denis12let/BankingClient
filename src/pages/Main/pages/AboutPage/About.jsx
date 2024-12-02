@@ -2,9 +2,9 @@ import Card from 'components/Card/Card';
 import CommonBankLayout from 'components/CommonBankLayout/CommonBankLayout';
 import React, { useEffect } from 'react';
 import styles from './About.module.css';
-import cardImg from './../../assets/images/BGPB_MC_Standard.png';
+import cardImg from 'assets/images/BGPB_MC_Standard.png';
 import NavLinkItem from 'ui/Link/Link';
-import arrowLeft from './../../assets/icons/common/arrow-left.svg';
+import arrowLeft from 'assets/icons/common/arrow-left.svg';
 import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'ui/Loader/Loader';
@@ -25,7 +25,7 @@ const About = () => {
     heigth: '100%',
   };
   return (
-    <CommonBankLayout>
+    <>
       {isLoading === true || bank === null ? (
         <Loader />
       ) : (
@@ -43,7 +43,7 @@ const About = () => {
             </div>
             <div className={styles.description}>{bank.description}</div>
             <div className={styles.returnBtn}>
-              <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+              <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
                 <div className={styles.returnBtnInner}>
                   <img src={arrowLeft} className={styles.btnIcon} alt="" />
                   <span className={styles.btnText}>Вернуться на главную</span>
@@ -53,7 +53,7 @@ const About = () => {
           </div>
         </Card>
       )}
-    </CommonBankLayout>
+    </>
   );
 };
 

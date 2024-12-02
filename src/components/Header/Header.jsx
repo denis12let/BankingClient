@@ -27,7 +27,7 @@ const Header = () => {
     <div className={header.header}>
       <div className={header.header__inner}>
         <div className={header.header__logo}>
-          <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+          <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
             <img src={fonbet} className={header.header__img} alt="" />
           </NavLinkItem>
         </div>

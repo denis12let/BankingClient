@@ -4,11 +4,7 @@ import { SERVICE_TYPE } from 'constants/services';
 import React from 'react';
 
 const Loans = () => {
-  return (
-    <CommonBankLayout>
-      <BankServices type={SERVICE_TYPE.LOAN} />
-    </CommonBankLayout>
-  );
+  return <BankServices type={SERVICE_TYPE.LOAN} />;
 };
 
 export default Loans;
