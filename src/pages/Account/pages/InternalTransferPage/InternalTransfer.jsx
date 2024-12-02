@@ -1,4 +1,3 @@
-import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLayout';
 import React, { useEffect, useState } from 'react';
 import styles from './InternalTransfer.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -89,7 +88,7 @@ const InternalTransfer = () => {
   };
 
   return (
-    <CommonAccountLayout>
+    <div className={styles.wrapper}>
       <div className={styles.content}>
         <h2 className={styles.title}>Перевод между своими</h2>
         <div className={styles.select}>
@@ -122,7 +121,7 @@ const InternalTransfer = () => {
         </CustomButton>
       </div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
-    </CommonAccountLayout>
+    </div>
   );
 };
 

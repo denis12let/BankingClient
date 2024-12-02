@@ -1,4 +1,3 @@
-import CommonAccountLayout from 'components/CommonAccountLayout/CommonAccountLayout';
 import React, { useState } from 'react';
 import CreditCard from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
@@ -39,33 +38,31 @@ const Cards = () => {
   };
 
   return (
-    <CommonAccountLayout>
-      <div className={styles.wrapper}>
-        <h2 className={styles.title}>Добавить карту</h2>
-        <div className={styles.inner}>
-          <CardCreateForm
-            number={number}
-            setNumber={setNumber}
-            expiryMonth={expiryMonth}
-            setExpiryMonth={setExpiryMonth}
-            expiryYear={expiryYear}
-            setExpiryYear={setExpiryYear}
-            cvc={cvc}
-            setCvc={setCvc}
-            name={name}
-            setName={setName}
-            holderName={holderName}
-            setHolderName={setHolderName}
-            focus={focus}
-            setFocus={setFocus}
-            submitHandler={submitHandler}
-            error={err}
-            isLoading={isLoading}
-          />
-          <CreditCard number={number} expiry={`${expiryMonth}/${expiryYear}`} cvc={cvc} name={holderName} focused={focus} />
-        </div>
+    <div className={styles.wrapper}>
+      <h2 className={styles.title}>Добавить карту</h2>
+      <div className={styles.inner}>
+        <CardCreateForm
+          number={number}
+          setNumber={setNumber}
+          expiryMonth={expiryMonth}
+          setExpiryMonth={setExpiryMonth}
+          expiryYear={expiryYear}
+          setExpiryYear={setExpiryYear}
+          cvc={cvc}
+          setCvc={setCvc}
+          name={name}
+          setName={setName}
+          holderName={holderName}
+          setHolderName={setHolderName}
+          focus={focus}
+          setFocus={setFocus}
+          submitHandler={submitHandler}
+          error={err}
+          isLoading={isLoading}
+        />
+        <CreditCard number={number} expiry={`${expiryMonth}/${expiryYear}`} cvc={cvc} name={holderName} focused={focus} />
       </div>
-    </CommonAccountLayout>
+    </div>
   );
 };
 

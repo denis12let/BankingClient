@@ -1,6 +1,6 @@
 import { APP_ROUTES, APP_ROUTES_PATH } from 'constants/app';
 import About from 'pages/AboutPage/About';
-import Account from 'pages/Account/Account';
+import AccountRouter from 'pages/Account/AccountRouter';
 import Calendar from 'pages/Account/pages/CalendarPage/Calendar';
 import Cards from 'pages/Account/pages/CardsPage/Cards';
 import ExternalTransfer from 'pages/Account/pages/ExternalTransferPage/ExternalTransfer';
@@ -56,9 +56,16 @@ export const routeConfig = {
     element: <Auth />,
   },
   [APP_ROUTES.ACCOUNT]: {
-    path: APP_ROUTES_PATH.ACCOUNT,
-    element: <Account />,
+    path: APP_ROUTES_PATH.ACCOUNT + '/*',
+    element: <AccountRouter />,
   },
+  [APP_ROUTES.NOT_FOUND]: {
+    path: APP_ROUTES_PATH.NOT_FOUND,
+    element: <NotFound />,
+  },
+};
+
+export const accountRouteConfig = {
   [APP_ROUTES.SETTINGS]: {
     path: APP_ROUTES_PATH.SETTINGS,
     element: <Profile />,
@@ -90,9 +97,5 @@ export const routeConfig = {
   [APP_ROUTES.TRANSACTION]: {
     path: APP_ROUTES_PATH.TRANSACTION + ':id',
     element: <Transaction />,
-  },
-  [APP_ROUTES.NOT_FOUND]: {
-    path: APP_ROUTES_PATH.NOT_FOUND,
-    element: <NotFound />,
   },
 };

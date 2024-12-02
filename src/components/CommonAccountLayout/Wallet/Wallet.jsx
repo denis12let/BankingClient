@@ -11,7 +11,7 @@ const Wallet = () => {
     if (!balance) {
       dispatch(fetchCurrentUserAccountThunk());
     }
-  });
+  }, []);
 
   return (
     <div className={styles.wallet}>
