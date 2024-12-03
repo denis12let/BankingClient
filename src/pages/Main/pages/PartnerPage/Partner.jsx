@@ -30,7 +30,7 @@ const Partner = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      {isLoading === true || partner === null ? (
+      {isLoading || !partner ? (
         <Loader />
       ) : (
         <Card styles={blockStyle}>
