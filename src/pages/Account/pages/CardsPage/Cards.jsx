@@ -30,16 +30,23 @@ const Cards = () => {
     }
 
     const card = {
-      number,
+      number: number.replace(/(.{4})/g, '$1 ').trim(),
       date: `20${expiryYear}-${expiryMonth}`,
       CVC: cvc,
-      holderName,
+      holderName: holderName.toUpperCase(),
       customName: name,
     };
 
     try {
       await dispatch(createCardThunk(card)).unwrap();
       setIsModalOpen(true);
+      setNumber('');
+      setCvc('');
+      setExpiryMonth('');
+      setExpiryYear('');
+      setFocus('number');
+      setHolderName('');
+      setName('');
     } catch (error) {
       return;
     }

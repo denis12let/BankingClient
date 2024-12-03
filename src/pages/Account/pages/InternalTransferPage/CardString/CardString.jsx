@@ -4,7 +4,7 @@ import { getCardDetails } from 'utils/cardUtils';
 import visaBlue from 'assets/icons/card/visa-blue.svg';
 import americanExpressBlue from 'assets/icons/card/american-express-blue.svg';
 
-const CardString = ({ customName, id, balance, number }) => {
+const CardString = ({ customName, id, balance, number, isAccountTransfer }) => {
   const card = getCardDetails(number);
   if (card.type === 'Visa') card.icon = visaBlue;
   if (card.type === 'AmericanExpress') card.icon = americanExpressBlue;

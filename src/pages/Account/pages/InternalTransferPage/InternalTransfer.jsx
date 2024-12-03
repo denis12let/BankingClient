@@ -7,7 +7,7 @@ import CustomButton from 'ui/CustomButton/CustomButton';
 import Error from 'ui/Error/Error';
 import { getCardDetails } from 'utils/cardUtils';
 import CardString from './CardString/CardString';
-import { updateCardBalanceThunk } from 'store/actions';
+import { fetchAllCurrentUserCardsThunk, updateAccountBalanceThunk, updateCardBalanceThunk } from 'store/actions';
 import Modal from 'ui/Modal/Modal';
 import { SERVICE_TRANSACTION } from 'constants/services';
 
@@ -26,15 +26,16 @@ const InternalTransfer = () => {
 
   const makeCardString = (item) => (
     <CardString
-      key={`${item.customName}#${item.id}`}
+      key={`${item.customName}#${item.isAccountTransfer ? '' : item.id}`}
       number={item.number}
       customName={item.customName}
       id={item.id}
       balance={item.balance}
+      isAccountTransfer={item.isAccountTransfer}
     />
   );
 
-  const accountString = { customName: 'Аккаунт', id: 0, balance };
+  const accountString = { customName: 'Аккаунт', id: '0', balance, isAccountTransfer: true };
 
   const updateCardsList1 = () => {
     const newList = cards.map((item) => makeCardString(item));
@@ -73,15 +74,27 @@ const InternalTransfer = () => {
 
     setErr(null);
 
+    const isAccountTransfer = card1.isAccountTransfer || card2.isAccountTransfer;
+    const cardNumber = isAccountTransfer ? (card1.isAccountTransfer ? card2.number : card1.number) : undefined;
+
     const transferData = {
-      type: SERVICE_TRANSACTION.PAYMENT,
+      type: isAccountTransfer
+        ? card1.isAccountTransfer
+          ? SERVICE_TRANSACTION.PAYMENT
+          : SERVICE_TRANSACTION.DEPOSIT
+        : SERVICE_TRANSACTION.PAYMENT,
       amount: amount,
-      number: card1.number,
-      secondNumber: card2.number,
+      number: isAccountTransfer ? cardNumber : card1.number,
+      secondNumber: isAccountTransfer ? undefined : card2.number,
     };
 
     try {
-      await dispatch(updateCardBalanceThunk(transferData)).unwrap();
+      if (isAccountTransfer) {
+        await dispatch(updateAccountBalanceThunk(transferData)).unwrap();
+        dispatch(fetchAllCurrentUserCardsThunk());
+      } else {
+        await dispatch(updateCardBalanceThunk(transferData)).unwrap();
+      }
       setSelectedCard1('');
       setSelectedCard2('');
       setAmount('');

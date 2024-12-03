@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCurrentUserAccountThunk } from 'store/actions';
+import { fetchCurrentUserAccountThunk, updateAccountBalanceThunk } from 'store/actions';
 
 const accountSlice = createSlice({
   name: 'account',
@@ -21,6 +21,19 @@ const accountSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCurrentUserAccountThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
+      })
+      //updateBalance
+      .addCase(updateAccountBalanceThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateAccountBalanceThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.balance = action.payload.account.balance;
+        state.error = null;
+      })
+      .addCase(updateAccountBalanceThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

@@ -8,9 +8,7 @@ const Wallet = () => {
   const { balance, isLoading, error } = useSelector((state) => state.account);
 
   useEffect(() => {
-    if (!balance) {
-      dispatch(fetchCurrentUserAccountThunk());
-    }
+    dispatch(fetchCurrentUserAccountThunk());
   }, []);
 
   return (
