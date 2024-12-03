@@ -1,7 +1,6 @@
 .wallet {
   position: relative;
   padding: 7px 10px 7px 60px;
-  flex-grow: 1;
   width: 100%;
   border-radius: 5px;
   text-align: start;

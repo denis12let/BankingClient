@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inner span:not(:last-child) {
+  font-weight: 600;
+}

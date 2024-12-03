@@ -10,6 +10,8 @@ export const COLORS = {
 
   green: '#20BE69',
   gray: '#f2f3f7',
+  red: '#DB4645',
+  blue: '#3E5CED',
 
   black: '#000',
   black100: 'rgba(0,0,0,0.1)',

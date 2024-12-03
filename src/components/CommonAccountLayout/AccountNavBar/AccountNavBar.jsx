@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AccountNavBar.module.css';
 import AccountNavItem from './AccountNavItem/AccountNavItem';
-import { APP_ROUTES } from 'constants/app';
+import { APP_ROUTES, APP_ROUTES_PATH } from 'constants/app';
 
 const AccountNavBar = () => {
   const linksObjectNames = {
@@ -16,7 +16,7 @@ const AccountNavBar = () => {
   };
 
   const linksList = Object.keys(linksObjectNames).map((key) => (
-    <AccountNavItem key={key} path={'/account/' + APP_ROUTES[key]}>
+    <AccountNavItem key={key} path={APP_ROUTES_PATH.ACCOUNT + '/' + APP_ROUTES[key]}>
       {linksObjectNames[key]}
     </AccountNavItem>
   ));

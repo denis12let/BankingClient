@@ -9,6 +9,7 @@ import { getCardDetails } from 'utils/cardUtils';
 import CardString from './CardString/CardString';
 import { updateCardBalanceThunk } from 'store/actions';
 import Modal from 'ui/Modal/Modal';
+import { SERVICE_TRANSACTION } from 'constants/services';
 
 const InternalTransfer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,24 +55,26 @@ const InternalTransfer = () => {
   useEffect(() => {
     updateCardsList1();
     updateCardsList2();
-  }, [cards, selectedCard1, selectedCard2, balance]);
+  }, [cards, balance]);
 
   const submitHandler = async () => {
     const card1 = selectedCard1.props;
     const card2 = selectedCard2.props;
 
+    if (!amount || !card1 || !card2) {
+      setErr('Заполните все поля');
+      return;
+    }
+
     if (card1.id === card2.id) {
       setErr('Перевод с/на не уникален');
       return;
     }
-    if (!amount) {
-      setErr('Заполните все поля');
-      return;
-    }
+
     setErr(null);
 
     const transferData = {
-      type: 'PAYMENT',
+      type: SERVICE_TRANSACTION.PAYMENT,
       amount: amount,
       number: card1.number,
       secondNumber: card2.number,
@@ -79,7 +82,9 @@ const InternalTransfer = () => {
 
     try {
       await dispatch(updateCardBalanceThunk(transferData)).unwrap();
-
+      setSelectedCard1('');
+      setSelectedCard2('');
+      setAmount('');
       setIsModalOpen(true);
     } catch (error) {
       setErr(error);
@@ -113,7 +118,7 @@ const InternalTransfer = () => {
         </div>
         <div className={styles.input}>
           <small>Сумма (BYN)</small>
-          <Input placeholder="BYN" text={amount} setText={setAmount} maxLength="5" patternOnChange="\d" />
+          <Input placeholder="BYN" text={amount} setText={setAmount} maxLength="5" patternOnChange="\d" pattern="\d" />
         </div>
         <Error>{err}</Error>
         <CustomButton onClick={(e) => submitHandler(e)} disabled={isLoading}>

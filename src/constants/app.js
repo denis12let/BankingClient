@@ -49,7 +49,7 @@ export const APP_ROUTES_PATH = {
   EXTERNAL_TRANSFER: '/external_transfer',
   ACCOUNT_STATEMENT: '/account_statement',
   CALENDAR: '/calendar',
-  TRANSACTIONS: '/transactions',
+  TRANSACTIONS: '/transactions/',
   TRANSACTION: '/transaction/',
 
   NOT_FOUND: '/not_found',

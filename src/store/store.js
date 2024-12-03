@@ -6,10 +6,12 @@ import serviceSlice from './reducers/bankReducers/serviceSlice';
 import userSlice from './reducers/userReducers/userSlice';
 import cardSlice from './reducers/accountReducers/cardSlice';
 import accountSlice from './reducers/accountReducers/accountSlice';
+import transactionSlice from './reducers/accountReducers/transactionSlice';
 
 const reducers = combineReducers({
   account: accountSlice,
   card: cardSlice,
+  transaction: transactionSlice,
 
   news: newsSlice,
   partner: partnerSlice,

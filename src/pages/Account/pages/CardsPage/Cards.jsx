@@ -6,8 +6,11 @@ import 'styles/card.css';
 import CardCreateForm from './CardCreateForm/CardCreateForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCardThunk } from 'store/actions';
+import Modal from 'ui/Modal/Modal';
 
 const Cards = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const dispatch = useDispatch();
   const { card, error, isLoading } = useSelector((state) => state.card);
   const [number, setNumber] = useState('');
@@ -19,7 +22,7 @@ const Cards = () => {
   const [focus, setFocus] = useState('number');
   const [err, setErr] = useState('');
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (!expiryMonth || !expiryYear) {
       setErr('Не все поля введены');
@@ -34,7 +37,12 @@ const Cards = () => {
       customName: name,
     };
 
-    dispatch(createCardThunk(card));
+    try {
+      await dispatch(createCardThunk(card)).unwrap();
+      setIsModalOpen(true);
+    } catch (error) {
+      return;
+    }
   };
 
   return (
@@ -62,6 +70,7 @@ const Cards = () => {
         />
         <CreditCard number={number} expiry={`${expiryMonth}/${expiryYear}`} cvc={cvc} name={holderName} focused={focus} />
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </div>
   );
 };
