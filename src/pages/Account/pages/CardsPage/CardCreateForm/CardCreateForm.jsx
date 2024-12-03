@@ -26,7 +26,7 @@ const CardCreateForm = ({
 }) => {
   const generateYears = () => {
     const currentYear = new Date().getFullYear();
-    return Array.from({ length: 8 }, (_, i) => (currentYear + i).toString().slice(-2));
+    return Array.from({ length: 8 }, (_, i) => (currentYear + i + 1).toString().slice(-2));
   };
 
   const generateMonths = () => {
@@ -75,10 +75,11 @@ const CardCreateForm = ({
             required
             pattern="\d{16}"
             patternOnChange="\d"
-            maxLength="16"
+            maxLength="19"
             text={number}
             setText={setNumber}
             onClick={(e) => setFocus(e.target.name)}
+            isCardNumber={true}
           />
         </div>
       </div>

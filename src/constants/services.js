@@ -16,6 +16,6 @@ export const SERVICE_TRANSACTION = {
 
 export const SERVICE_TRANSACTION_TITLE = {
   DEPOSIT: 'Получено',
-  PAYMENT: 'Оплачено',
+  PAYMENT: 'Переведено',
   TRANSFER: 'Перевод между своими',
 };

@@ -9,7 +9,11 @@ const transactionSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    setTransactions(state, action) {
+      state.transactions = state.transactions.filter((item) => item.id !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       //getTransactions
@@ -52,3 +56,4 @@ const transactionSlice = createSlice({
 });
 
 export default transactionSlice.reducer;
+export const { setTransactions } = transactionSlice.actions;

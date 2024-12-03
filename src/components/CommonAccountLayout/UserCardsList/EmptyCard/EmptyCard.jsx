@@ -8,7 +8,7 @@ import { APP_ROUTES_PATH } from 'constants/app';
 const EmptyCard = () => {
   return (
     <div className={styles.emptyCard}>
-      <NavLinkItem to={APP_ROUTES_PATH.CARD}>
+      <NavLinkItem to={APP_ROUTES_PATH.ACCOUNT + APP_ROUTES_PATH.CARD}>
         <DefaultButton>
           <div className={styles.card}>
             <img src={plus} className={styles.add} alt="" />

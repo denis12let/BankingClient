@@ -3,17 +3,25 @@ import styles from './Input.module.css';
 import openEye from './../../assets/icons/input/eye-open.svg';
 import closeEye from './../../assets/icons/input/eye-close.svg';
 
-const Input = ({ type, required = false, text, setText, pattern, patternOnChange, ...props }) => {
+const Input = ({ type, required = false, text, setText, pattern, patternOnChange, isCardNumber = false, ...props }) => {
   const [showText, setShowText] = useState(false);
 
   const toggleTextVisibility = () => {
     setShowText((prev) => !prev);
   };
 
+  const formatCardNumber = (value) => {
+    const rawValue = value.replace(/\D/g, '');
+    return rawValue.match(/.{1,4}/g)?.join(' ') || '';
+  };
+
   const handleInputChange = (e) => {
-    const value = e.target.value;
+    let value = e.target.value;
 
     if (!patternOnChange || new RegExp(patternOnChange).test(value) || value === '') {
+      if (isCardNumber) {
+        value = formatCardNumber(value);
+      }
       setText(value);
     }
   };

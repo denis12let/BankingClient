@@ -5,6 +5,7 @@ import styles from './TransactionsList.module.css';
 import React, { useEffect, useState } from 'react';
 import Loader from 'ui/Loader/Loader';
 import { deleteTransactionThunk, fetchAllCurrentUserTransactionsThunk } from 'store/actions';
+import { setTransactions } from 'store/reducers/accountReducers/transactionSlice';
 
 const TransactionsList = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,12 @@ const TransactionsList = () => {
 
   useEffect(() => {
     dispatch(fetchAllCurrentUserTransactionsThunk());
-  }, [transaction]);
+  }, []);
 
   const deleteTransaction = async (id) => {
     try {
       await dispatch(deleteTransactionThunk(id)).unwrap();
+      dispatch(setTransactions(id));
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +26,7 @@ const TransactionsList = () => {
 
   const transactionsArray = transactions.map((item) => <Transaction key={item.id} {...item} deleteTransaction={deleteTransaction} />);
 
-  return <div className={styles.list}>{isLoading ? <Loader /> : transactionsArray}</div>;
+  return <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>;
 };
 
 export default TransactionsList;

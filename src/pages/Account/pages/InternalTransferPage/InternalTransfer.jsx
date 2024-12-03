@@ -5,11 +5,11 @@ import Select from 'ui/Select/Select';
 import Input from 'ui/Input/Input';
 import CustomButton from 'ui/CustomButton/CustomButton';
 import Error from 'ui/Error/Error';
-import { getCardDetails } from 'utils/cardUtils';
-import CardString from './CardString/CardString';
+import CardString from 'components/CardString/CardString';
 import { fetchAllCurrentUserCardsThunk, updateAccountBalanceThunk, updateCardBalanceThunk } from 'store/actions';
 import Modal from 'ui/Modal/Modal';
 import { SERVICE_TRANSACTION } from 'constants/services';
+import TextArea from 'ui/TextArea/TextArea';
 
 const InternalTransfer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,6 +18,7 @@ const InternalTransfer = () => {
   const { cards } = useSelector((state) => state.card);
   const { balance, isLoading, error } = useSelector((state) => state.account);
   const [amount, setAmount] = useState();
+  const [comment, setComment] = useState();
   const [selectedCard1, setSelectedCard1] = useState();
   const [selectedCard2, setSelectedCard2] = useState();
   const [cardsList1, setCardsList1] = useState([]);
@@ -86,6 +87,7 @@ const InternalTransfer = () => {
       amount: amount,
       number: isAccountTransfer ? cardNumber : card1.number,
       secondNumber: isAccountTransfer ? undefined : card2.number,
+      description: comment,
     };
 
     try {
@@ -132,6 +134,10 @@ const InternalTransfer = () => {
         <div className={styles.input}>
           <small>Сумма (BYN)</small>
           <Input placeholder="BYN" text={amount} setText={setAmount} maxLength="5" patternOnChange="\d" pattern="\d" />
+        </div>
+        <div className={styles.input}>
+          <small>Комментарий</small>
+          <TextArea placeholder="Комментарий" text={comment} setText={setComment} maxLength="255" />
         </div>
         <Error>{err}</Error>
         <CustomButton onClick={(e) => submitHandler(e)} disabled={isLoading}>

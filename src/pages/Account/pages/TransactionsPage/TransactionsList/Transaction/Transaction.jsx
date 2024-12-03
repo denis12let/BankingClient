@@ -33,7 +33,7 @@ const Transaction = ({ id, amount, currency, date, status, type, deleteTransacti
       </div>
       <div className={styles.right}>
         <div className={styles.icons}>
-          <img src={download} alt="" className={`${styles.icon} ${styles.btnIcon}`} />
+          {/* <img src={download} alt="" className={`${styles.icon} ${styles.btnIcon}`} /> */}
           <NavLinkItem to={APP_ROUTES_PATH.ACCOUNT + APP_ROUTES_PATH.TRANSACTION + id}>
             <img src={open} alt="" className={`${styles.icon} ${styles.btnIcon}`} />
           </NavLinkItem>

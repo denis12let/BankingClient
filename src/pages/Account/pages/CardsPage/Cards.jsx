@@ -30,7 +30,7 @@ const Cards = () => {
     }
 
     const card = {
-      number: number.replace(/(.{4})/g, '$1 ').trim(),
+      number,
       date: `20${expiryYear}-${expiryMonth}`,
       CVC: cvc,
       holderName: holderName.toUpperCase(),
