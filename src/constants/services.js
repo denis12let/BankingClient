@@ -4,8 +4,8 @@ export const SERVICE_TYPE = {
 };
 
 export const SERVICE_TYPE_RUS = {
-  DEPOSIT: 'Кредит',
-  LOAN: 'Депозит',
+  DEPOSIT: 'Депозит',
+  LOAN: 'Кредит',
 };
 
 export const SERVICE_TRANSACTION = {

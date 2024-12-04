@@ -89,3 +89,27 @@
 .transfer {
   color: #81c2ff;
 } */
+
+.transaction {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  transition: background 0.3s ease;
+}
+
+.transaction::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: 100;
+}
+
+.transaction:last-child::after {
+  display: none;
+}

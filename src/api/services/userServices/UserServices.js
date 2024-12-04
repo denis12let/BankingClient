@@ -37,7 +37,7 @@ export class UserServices {
   static async getAll({ email = '' }) {
     const { data } = await $authHost.get('/users/admin/all', {
       params: {
-        _email: email,
+        email,
       },
     });
     return data;

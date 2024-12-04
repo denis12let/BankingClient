@@ -4,7 +4,7 @@ export class BasketServices {
   static async getAll({ type = '' }) {
     const { data } = await $authHost.get('/accounts/basket/services', {
       params: {
-        _type: type,
+        type,
       },
     });
     return data;

@@ -4,7 +4,7 @@ export class ServiceServices {
   static async getAll({ type = '' }) {
     const { data } = await $host.get('/bank/services', {
       params: {
-        _type: type,
+        type,
       },
     });
     return data;
