@@ -1,8 +1,22 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .title {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: start;
+}
+
+.balance {
+  font-size: 18px;
+}
+
+.balance span {
+  font-weight: 600;
 }
 
 .list {

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { BasketServices } from 'api/services';
 
-export const fetchAllBasketTransactionsThunk = createAsyncThunk('/basket/getAll', async (query = '', { rejectWithValue }) => {
+export const fetchAllBasketServicesThunk = createAsyncThunk('/basket/getAll', async (query = '', { rejectWithValue }) => {
   try {
     const data = await BasketServices.getAll(query);
     return data;
@@ -28,9 +28,9 @@ export const fetchOneBasketServiceByIdThunk = createAsyncThunk('/basket/getBaske
   }
 });
 
-export const addBasketServiceThunk = createAsyncThunk('/basket/add', async ({ id, serviceData }, { rejectWithValue }) => {
+export const addBasketServiceThunk = createAsyncThunk('/basket/add', async (serviceData, { rejectWithValue }) => {
   try {
-    const data = await BasketServices.addService(id, serviceData);
+    const data = await BasketServices.addService(serviceData);
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);

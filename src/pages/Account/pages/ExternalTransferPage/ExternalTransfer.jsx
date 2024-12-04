@@ -15,8 +15,8 @@ const ExternalTransfer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const { cards } = useSelector((state) => state.card);
-  const { balance, isLoading, error } = useSelector((state) => state.account);
+  const { cards, isLoading } = useSelector((state) => state.card);
+  const { balance, error } = useSelector((state) => state.account);
   const [comment, setComment] = useState();
 
   const [amount, setAmount] = useState();

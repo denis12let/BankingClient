@@ -17,8 +17,8 @@ export class BasketServices {
     const { data } = await $authHost.get('/accounts/basket/services/' + id);
     return data;
   }
-  static async addService(id, serviceData) {
-    const { data } = await $authHost.post('/accounts/basket/services/' + id, { ...serviceData });
+  static async addService(serviceData) {
+    const { data } = await $authHost.post('/accounts/basket/services/' + serviceData.id, { ...serviceData });
     return data;
   }
   static async deleteService(id) {

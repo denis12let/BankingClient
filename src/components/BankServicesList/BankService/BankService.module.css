@@ -44,3 +44,16 @@
 .type {
   width: 60px;
 }
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.paymentField {
+  display: flex;
+  gap: 5px;
+  max-width: 160px;
+  margin-top: -55px;
+}
