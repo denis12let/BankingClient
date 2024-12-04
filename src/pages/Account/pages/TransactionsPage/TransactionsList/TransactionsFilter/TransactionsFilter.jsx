@@ -6,16 +6,17 @@ import styles from './TransactionsFilter.module.css';
 import Select from 'ui/Select/Select';
 import Input from 'ui/Input/Input';
 
-const TransactionsFilter = ({ setFilters, isOpen }) => {
-  const [dateFrom, setDateFrom] = useState();
-  const [dateTo, setDateTo] = useState();
-  const [type, setType] = useState();
+const TransactionsFilter = ({ setFilters, isOpen, isLoading }) => {
+  const lastMonthDates = generateDatesLastMonth();
+
+  const [dateFrom, setDateFrom] = useState(lastMonthDates[lastMonthDates.length - 1]);
+  const [dateTo, setDateTo] = useState(lastMonthDates[0]);
+  const [type, setType] = useState('Все');
   const [minSum, setMinSum] = useState();
   const [maxSum, setMaxSum] = useState();
-  const [sortBy, setSortBy] = useState();
+  const [sortBy, setSortBy] = useState('По дате ↓');
 
-  const lastMonthDates = generateDatesLastMonth();
-  const typesArray = [SERVICE_TRANSACTION_RUS.DEPOSIT, SERVICE_TRANSACTION_RUS.PAYMENT, SERVICE_TRANSACTION_RUS.TRANSFER];
+  const typesArray = ['Все', SERVICE_TRANSACTION_RUS.DEPOSIT, SERVICE_TRANSACTION_RUS.PAYMENT, SERVICE_TRANSACTION_RUS.TRANSFER];
   const sortedByList = ['По цене ↑', 'По цене ↓', 'По дате ↑', 'По дате ↓'];
 
   return (
@@ -47,6 +48,7 @@ const TransactionsFilter = ({ setFilters, isOpen }) => {
       <CustomButton
         onClick={() => setFilters({ dateFrom, dateTo, type, minSum, maxSum, sortBy })}
         style={{ width: '100px', height: '35px' }}
+        disabled={isLoading}
       >
         Ок
       </CustomButton>

@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import Loader from 'ui/Loader/Loader';
 import { deleteTransactionThunk, fetchAllCurrentUserTransactionsThunk } from 'store/actions';
 import TransactionsFilter from './TransactionsFilter/TransactionsFilter';
+import { SERVICE_TRANSACTION_RUS } from 'constants/services';
+import { convertDateToISO } from 'utils/dateUtils';
 
 const TransactionsList = ({ isFilterOpen }) => {
   const dispatch = useDispatch();
@@ -23,7 +25,16 @@ const TransactionsList = ({ isFilterOpen }) => {
     let { sortBy } = filters;
     filters.sortBy = sortBy === 'По цене ↑' || sortBy === 'По цене ↓' ? 'amount' : 'date';
     filters.sortOrder = sortBy === 'По цене ↑' || sortBy === 'По дате ↑' ? 'asc' : 'desc';
+    filters.dateFrom = filters.dateFrom && convertDateToISO(filters.dateFrom);
+    filters.dateTo = filters.dateTo && convertDateToISO(filters.dateTo);
+
+    const getKeyByValue = (obj, value) => {
+      return Object.keys(obj).find((key) => obj[key] === value);
+    };
+
+    filters.type = getKeyByValue(SERVICE_TRANSACTION_RUS, filters.type);
     console.log(filters);
+
     dispatch(fetchAllCurrentUserTransactionsThunk(filters));
   };
 
@@ -31,7 +42,7 @@ const TransactionsList = ({ isFilterOpen }) => {
 
   return (
     <div className={styles.transactions}>
-      <TransactionsFilter setFilters={setFilters} isOpen={isFilterOpen} />
+      <TransactionsFilter setFilters={setFilters} isOpen={isFilterOpen} isLoading={isLoading} />
       <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>
     </div>
   );

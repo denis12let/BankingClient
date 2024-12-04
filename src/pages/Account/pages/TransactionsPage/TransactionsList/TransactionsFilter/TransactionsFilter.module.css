@@ -38,7 +38,7 @@
 }
 
 .group {
-  max-width: 110px;
+  max-width: 120px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -48,4 +48,8 @@
 
 .amount {
   max-width: 80px;
+}
+
+.sort {
+  max-width: 100px;
 }
