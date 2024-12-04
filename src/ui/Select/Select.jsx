@@ -29,7 +29,7 @@ const Select = ({ options, value, onChange, name, placeholder, required = false,
         className={`${styles.selected} ${isOpen ? styles.selectedOpen : ''} ${required && !value ? styles.required : ''}`}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        {value || placeholder}
+        {value || <p className={styles.placeholder}>{placeholder}</p>}
       </div>
       {isOpen && (
         <div className={styles.options}>

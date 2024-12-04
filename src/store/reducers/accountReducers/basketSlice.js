@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBasketServiceThunk, fetchAllBasketServicesThunk } from 'store/actions';
+import { addBasketServiceThunk, deleteBasketServiceThunk, fetchAllBasketServicesThunk } from 'store/actions';
 
 const basketSlice = createSlice({
   name: 'basket',
@@ -10,7 +10,11 @@ const basketSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    setBasketServices(state, action) {
+      state.basketServices = state.basketServices.filter((item) => item.id !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       //addServiceToBasket
@@ -39,8 +43,22 @@ const basketSlice = createSlice({
       .addCase(fetchAllBasketServicesThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
+      })
+      //deleteBasketServices
+      .addCase(deleteBasketServiceThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteBasketServiceThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.basketService = action.payload.service;
+        state.error = null;
+      })
+      .addCase(deleteBasketServiceThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
       });
   },
 });
 
 export default basketSlice.reducer;
+export const { setBasketServices } = basketSlice.actions;

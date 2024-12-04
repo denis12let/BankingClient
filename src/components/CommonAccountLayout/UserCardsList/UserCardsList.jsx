@@ -5,7 +5,6 @@ import UserCard from '../../UserCard/UserCard';
 import EmptyCard from './EmptyCard/EmptyCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllCurrentUserCardsThunk } from 'store/actions';
-import Loader from 'ui/Loader/Loader';
 import Scroll from 'ui/Scroll/Scroll';
 
 const UserCardsList = () => {
@@ -21,7 +20,7 @@ const UserCardsList = () => {
   return (
     <Scroll>
       <div className={styles.list}>
-        {isLoading && !cards.length ? <Loader /> : cardsArray}
+        {isLoading && !cards.length ? '' : cardsArray}
         <EmptyCard />
       </div>
     </Scroll>

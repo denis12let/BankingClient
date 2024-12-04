@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { TransactionServices } from 'api/services';
+import { setTransactions } from 'store/reducers/accountReducers/transactionSlice';
 
 export const fetchAllCurrentUserTransactionsThunk = createAsyncThunk(
   '/transactions/getAllUser',
@@ -40,9 +41,11 @@ export const fetchAllTransactionsThunk = createAsyncThunk('/transactions/getAll'
   }
 });
 
-export const deleteTransactionThunk = createAsyncThunk('/transactions/delete', async (id, { rejectWithValue }) => {
+export const deleteTransactionThunk = createAsyncThunk('/transactions/delete', async (id, { rejectWithValue, dispatch }) => {
   try {
     const data = await TransactionServices.delete(id);
+    dispatch(setTransactions(id));
+
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);

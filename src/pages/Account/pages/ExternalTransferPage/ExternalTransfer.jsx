@@ -113,7 +113,7 @@ const ExternalTransfer = () => {
             options={cardsList1}
           />
         </div>
-        <div className={styles.input}>
+        <div className={styles.number}>
           <small>Перевести на</small>
           <Input
             placeholder="1234 1234 1234 1234"

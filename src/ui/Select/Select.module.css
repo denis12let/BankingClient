@@ -50,3 +50,7 @@
 .option:hover {
   background-color: #f5f5f5;
 }
+
+.placeholder {
+  color: #9b9fa0;
+}
