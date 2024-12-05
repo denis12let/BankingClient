@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { accountRouteConfig } from 'router/routes';
+import Services from './pages/ServicesPage/Services';
 
 const AccountRouter = () => {
   const { isAuth } = useSelector((state) => state.user);
@@ -29,7 +30,7 @@ const AccountRouter = () => {
         {Object.entries(accountRouteConfig).map(([routeKey, { path, element }]) => (
           <Route key={routeKey} path={path} element={element} />
         ))}
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Services />} />
       </Routes>
     </CommonAccountLayout>
   );

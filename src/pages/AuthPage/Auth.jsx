@@ -9,11 +9,10 @@ import { APP_ROUTES_PATH } from 'constants/app';
 const Auth = () => {
   const location = useLocation();
   const currentPathName = location.pathname;
-
   const { isAuth } = useSelector((state) => state.user);
   const { isProfile } = useSelector((state) => state.profile);
   const navigate = useNavigate();
-
+  console.log(isAuth, isProfile);
   useEffect(() => {
     if (isAuth && isProfile) {
       navigate(APP_ROUTES_PATH.ACCOUNT);

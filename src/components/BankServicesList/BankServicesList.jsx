@@ -6,6 +6,8 @@ import { addBasketServiceThunk, fetchAllServicesThunk, fetchCurrentUserAccountTh
 import Loader from 'ui/Loader/Loader';
 import { SERVICE_TYPE } from 'constants/services';
 import Modal from 'ui/Modal/Modal';
+import NavLinkItem from 'ui/Link/Link';
+import { APP_ROUTES_PATH } from 'constants/app';
 
 const BankServices = ({ type }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +16,7 @@ const BankServices = ({ type }) => {
   const { services, isLoading: isLoadingServices } = useSelector((state) => state.service);
   const { basketService, isLoading: isLoadingBasket, error } = useSelector((state) => state.basket);
   const { balance } = useSelector((state) => state.account);
+  const { isAuth } = useSelector((state) => state.user);
 
   const [amount, setAmount] = useState('');
   const [minSum, setMinSum] = useState('');
@@ -56,9 +59,18 @@ const BankServices = ({ type }) => {
     <div className={styles.deposits}>
       <div className={styles.top}>
         <h2 className={styles.title}>{type === SERVICE_TYPE.DEPOSIT ? 'Вклады' : 'Кредиты'}</h2>
-        <p className={styles.balance}>
-          Баланс аккаунта: <span>{balance} BYN</span>{' '}
-        </p>
+        {isAuth ? (
+          <p className={styles.balance}>
+            Баланс аккаунта: <span>{balance} BYN</span>{' '}
+          </p>
+        ) : (
+          <div className={styles.noBalance}>
+            <NavLinkItem to={APP_ROUTES_PATH.LO}>
+              <div className={styles.link}>Авторизируйтесь</div>
+            </NavLinkItem>
+            <div className={styles.afterLink}>для просмотра баланса</div>
+          </div>
+        )}
       </div>
       <div className={styles.list}>{isLoadingServices ? <Loader /> : servicesList}</div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />

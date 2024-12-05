@@ -19,6 +19,7 @@ import Partner from 'pages/Main/pages/PartnerPage/Partner';
 import Profile from 'pages/ProfilePage/Profile';
 import Main from 'pages/Main/pages/MainPage/Main';
 import Settings from 'pages/Account/pages/SettingsPage/Settings';
+import AccountStatement from 'pages/Account/pages/AccountStatementPage/AccountStatement';
 
 export const routeConfig = {
   [APP_ROUTES.MAIN]: {
@@ -110,5 +111,9 @@ export const accountRouteConfig = {
   [APP_ROUTES.TRANSACTION]: {
     path: APP_ROUTES_PATH.TRANSACTION + ':id',
     element: <Transaction />,
+  },
+  [APP_ROUTES.ACCOUNT_STATEMENT]: {
+    path: APP_ROUTES_PATH.ACCOUNT_STATEMENT,
+    element: <AccountStatement />,
   },
 };

@@ -2,12 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './ServicesList.module.css';
 import Service from './Service/Service';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  deleteBasketServiceThunk,
-  fetchAllBasketServicesThunk,
-  fetchCurrentUserAccountThunk,
-  fetchOneServiceByIdThunk,
-} from 'store/actions';
+import { deleteBasketServiceThunk, fetchAllBasketServicesThunk, fetchCurrentUserAccountThunk } from 'store/actions';
 import Loader from 'ui/Loader/Loader';
 import { setBasketServices } from 'store/reducers/accountReducers/basketSlice';
 import { SERVICE_TYPE_RUS } from 'constants/services';
@@ -22,7 +17,6 @@ const ServicesList = ({ setIsModalOpen, type }) => {
     };
 
     const convertedType = getKeyByValue(SERVICE_TYPE_RUS, type);
-    console.log(convertedType);
 
     dispatch(fetchAllBasketServicesThunk({ type: convertedType }));
   }, [type]);

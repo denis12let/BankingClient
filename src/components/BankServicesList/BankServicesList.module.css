@@ -25,3 +25,20 @@
   align-items: center;
   gap: 15px;
 }
+
+.noBalance {
+  display: flex;
+  justify-content: end;
+}
+
+.link {
+  border-bottom: 1px solid gray;
+}
+.link:hover {
+  opacity: 0.5;
+}
+
+.afterLink {
+  margin-left: 10px;
+  white-space: nowrap;
+}

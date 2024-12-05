@@ -9,7 +9,6 @@ const apiService = axios.create({
     Accept: 'application/json',
   },
 });
-
 const $host = apiService;
 const $authHost = apiService;
 
