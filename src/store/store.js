@@ -4,6 +4,7 @@ import partnerSlice from './reducers/bankReducers/partnersSlice';
 import bankSlice from './reducers/bankReducers/bankSlice';
 import serviceSlice from './reducers/bankReducers/serviceSlice';
 import userSlice from './reducers/userReducers/userSlice';
+import profileSlice from './reducers/userReducers/profileSlice';
 import cardSlice from './reducers/accountReducers/cardSlice';
 import accountSlice from './reducers/accountReducers/accountSlice';
 import transactionSlice from './reducers/accountReducers/transactionSlice';
@@ -21,6 +22,7 @@ const reducers = combineReducers({
   service: serviceSlice,
 
   user: userSlice,
+  profile: profileSlice,
 });
 
 export const store = configureStore({

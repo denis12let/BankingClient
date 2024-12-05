@@ -11,6 +11,8 @@ export const APP_ROUTES = {
   REGISTRATION: 'registration',
   LOGIN: 'login',
 
+  PROFILE: 'profile',
+
   ACCOUNT: 'account',
   SETTINGS: 'settings',
 
@@ -39,6 +41,8 @@ export const APP_ROUTES_PATH = {
 
   REGISTRATION: '/registration',
   LOGIN: '/login',
+
+  PROFILE: '/profile',
 
   ACCOUNT: '/account',
   SETTINGS: '/settings',

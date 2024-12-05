@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Error from 'ui/Error/Error';
 import { loginUserThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
-import { setError } from 'store/reducers/userReducers/userSlice';
+import { setAuthFlag, setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -36,7 +36,6 @@ const Login = () => {
     const errorsArray = validateAuth(candidate, error);
     if (errorsArray) {
       setErrors(Object.keys(errorsArray).map((key) => <Error key={key}>{errorsArray[key]}</Error>));
-
       return;
     } else {
       setErrors(null);
@@ -44,7 +43,7 @@ const Login = () => {
 
     try {
       await dispatch(loginUserThunk(candidate)).unwrap();
-
+      dispatch(setAuthFlag(true));
       navigate(APP_ROUTES_PATH.ACCOUNT);
     } catch (error) {
       setErrors([<Error key="error">{error}</Error>]);
@@ -86,7 +85,7 @@ const Login = () => {
         </div>
       </Card>
       <div className={styles.returnBtn}>
-        <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+        <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
           <div className={styles.returnBtnInner}>
             <img src={arrowLeft} className={styles.btnIcon} alt="" />
             <span className={styles.btnText}>Вернуться на главную</span>

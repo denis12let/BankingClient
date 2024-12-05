@@ -3,7 +3,6 @@ import NotFound from 'pages/NotFoundPage/NotFound';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { bankRouteConfig } from 'router/routes';
-import Main from './pages/MainPage/Main';
 
 const MainRouter = () => {
   return (

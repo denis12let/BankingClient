@@ -35,3 +35,31 @@ export const validateAuth = ({ email, password, repeatedPassword }, error) => {
 
   return null;
 };
+
+export const validateProfile = ({ name, surname, telephone, identifier }, error) => {
+  const errors = {};
+
+  if (!name) {
+    errors.name = 'Введите имя';
+  }
+
+  if (!surname) {
+    errors.surname = 'Введите фамилию';
+  }
+  if (!telephone) {
+    errors.telephone = 'Введите телефон';
+  }
+  if (!identifier) {
+    errors.identifier = 'Введите идентификатор';
+  }
+
+  if (error) {
+    errors.error = error;
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return errors;
+  }
+
+  return null;
+};

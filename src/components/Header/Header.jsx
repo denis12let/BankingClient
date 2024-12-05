@@ -11,13 +11,12 @@ import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
 import DefaultButton from 'ui/DefaultButton/DefaultButton';
 import styles from './Header.module.css';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const info = [<p key="1">qweqwfe</p>, <p key="2">werfewf</p>];
   const [isLightTheme, setIsLightTheme] = useState(theme === THEME.LIGHT);
-
-  const isAuth = !!localStorage.getItem('token');
 
   const handleToggleTheme = () => {
     setIsLightTheme((prev) => !prev);
@@ -43,7 +42,7 @@ const Header = () => {
               <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} alt="" />
             </div>
           </DefaultButton>
-          <Avatar isAuth={isAuth} />
+          <Avatar />
         </div>
       </div>
     </div>

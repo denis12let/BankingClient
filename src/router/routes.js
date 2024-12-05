@@ -16,8 +16,9 @@ import Loans from 'pages/Main/pages/LoansPage/Loans';
 import MainRouter from 'pages/Main/MainRouter';
 import NotFound from 'pages/NotFoundPage/NotFound';
 import Partner from 'pages/Main/pages/PartnerPage/Partner';
-import Profile from 'pages/Account/pages/ProfilePage/Profile';
+import Profile from 'pages/ProfilePage/Profile';
 import Main from 'pages/Main/pages/MainPage/Main';
+import Settings from 'pages/Account/pages/SettingsPage/Settings';
 
 export const routeConfig = {
   [APP_ROUTES.MAIN]: {
@@ -35,6 +36,10 @@ export const routeConfig = {
   [APP_ROUTES.ACCOUNT]: {
     path: APP_ROUTES_PATH.ACCOUNT + '/*',
     element: <AccountRouter />,
+  },
+  [APP_ROUTES.PROFILE]: {
+    path: APP_ROUTES_PATH.PROFILE,
+    element: <Profile />,
   },
   [APP_ROUTES.NOT_FOUND]: {
     path: APP_ROUTES_PATH.NOT_FOUND,
@@ -76,7 +81,7 @@ export const bankRouteConfig = {
 export const accountRouteConfig = {
   [APP_ROUTES.SETTINGS]: {
     path: APP_ROUTES_PATH.SETTINGS,
-    element: <Profile />,
+    element: <Settings />,
   },
   [APP_ROUTES.CARD]: {
     path: APP_ROUTES_PATH.CARD,

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Transaction.module.css';
 import successful from 'assets/icons/transaction/successful.svg';
-import download from 'assets/icons/transaction/download.svg';
 import del from 'assets/icons/transaction/delete.svg';
 import open from 'assets/icons/transaction/open.svg';
 import NavLinkItem from 'ui/Link/Link';

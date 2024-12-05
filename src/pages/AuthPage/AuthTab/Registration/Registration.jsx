@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUserThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
 import Error from 'ui/Error/Error';
-import { setError } from 'store/reducers/userReducers/userSlice';
+import { setAuthFlag, setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
@@ -50,8 +50,8 @@ const Registration = () => {
 
     try {
       await dispatch(registerUserThunk(candidate)).unwrap();
-
-      navigate(APP_ROUTES_PATH.ACCOUNT);
+      dispatch(setAuthFlag(true));
+      navigate(APP_ROUTES_PATH.PROFILE);
     } catch (error) {
       setErrors([<Error key="error">{error}</Error>]);
     }
@@ -96,7 +96,7 @@ const Registration = () => {
         </div>
       </Card>
       <div className={styles.returnBtn}>
-        <NavLinkItem to={APP_ROUTES_PATH.MAIN}>
+        <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
           <div className={styles.returnBtnInner}>
             <img src={arrowLeft} className={styles.btnIcon} alt="" />
             <span className={styles.btnText}>Вернуться на главную</span>
