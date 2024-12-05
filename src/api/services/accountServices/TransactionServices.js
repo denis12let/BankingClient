@@ -19,7 +19,7 @@ export class TransactionServices {
     const { data } = await $authHost.get('/accounts/transactions/' + id);
     return data;
   }
-  static async getCalendar({ month = 11, year = 2024 }) {
+  static async getCalendar({ month, year }) {
     const { data } = await $authHost.get('/accounts/transactions/calendar', {
       params: {
         month,

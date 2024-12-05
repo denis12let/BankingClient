@@ -1,6 +1,27 @@
+.inner {
+  position: relative;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: start;
+}
+
+.tooltipContainer {
+  position: absolute;
+  width: 118.28px;
+  height: 48px;
+  transform: translate(-7px, -33px);
+}
+
+.depositTotal,
+.depositCount {
+  color: #20be69;
+}
+
+.paymentTotal,
+.paymentCount {
+  color: #db4645;
 }

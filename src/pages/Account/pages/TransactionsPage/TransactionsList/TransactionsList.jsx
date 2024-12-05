@@ -43,7 +43,7 @@ const TransactionsList = ({ isFilterOpen }) => {
   return (
     <div className={styles.transactions}>
       <TransactionsFilter setFilters={setFilters} isOpen={isFilterOpen} isLoading={isLoading} />
-      <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>
+      <div className={styles.list}>{isLoading ? <Loader /> : transactionsArray}</div>
     </div>
   );
 };

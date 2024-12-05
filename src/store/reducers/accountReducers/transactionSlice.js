@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { deleteTransactionThunk, fetchAllCurrentUserTransactionsThunk, fetchOneTransactionByIdThunk } from 'store/actions';
+import {
+  deleteTransactionThunk,
+  fetchAllCurrentUserTransactionsThunk,
+  fetchCalendarThunk,
+  fetchOneTransactionByIdThunk,
+} from 'store/actions';
 
 const transactionSlice = createSlice({
   name: 'transaction',
@@ -37,6 +42,18 @@ const transactionSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(fetchOneTransactionByIdThunk.rejected, (state, action) => {
+        state.error = action.error.message;
+        state.isLoading = false;
+      })
+      //getCalendar
+      .addCase(fetchCalendarThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCalendarThunk.fulfilled, (state, action) => {
+        state.transactions = action.payload.transactions;
+        state.isLoading = false;
+      })
+      .addCase(fetchCalendarThunk.rejected, (state, action) => {
         state.error = action.error.message;
         state.isLoading = false;
       })

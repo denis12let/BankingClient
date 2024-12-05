@@ -38,7 +38,7 @@ const Transaction = ({ id, amount, currency, date, status, type, deleteTransacti
           </NavLinkItem>
           <img src={del} alt="" onClick={() => deleteTransaction(id)} className={`${styles.icon} ${styles.btnIcon}`} />
         </div>
-        <div className={`${styles.amount} ${styles[type.toLowerCase()]}`}>
+        <div className={`${styles.amount} ${styles[type && type.toLowerCase()]}`}>
           {getTypeSymbol(type)}
           {amount} {currency}
         </div>

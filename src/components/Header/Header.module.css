@@ -60,3 +60,7 @@
 .hidden {
   opacity: 0;
 }
+
+.tooltipContainer {
+  max-width: 150px;
+}

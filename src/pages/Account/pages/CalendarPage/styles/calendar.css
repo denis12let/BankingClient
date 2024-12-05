@@ -1,0 +1,46 @@
+.react-calendar {
+  max-width: 100%; /* Для адаптивности */
+  width: 100%;
+}
+
+.react-calendar__tile--now {
+  background: none;
+  color: inherit;
+  font-weight: normal;
+}
+
+.react-calendar__tile {
+  transition: background-color 0.3s ease, color 0.4s ease;
+  font-weight: bold;
+  height: 48px;
+}
+
+.react-calendar__tile:hover,
+.react-calendar__month-view__days__day:hover {
+  filter: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
+  border: inherit !important;
+}
+
+.tile-green-light {
+  background-color: #d4edda;
+}
+
+.tile-green-medium {
+  background-color: #a9dfbf;
+}
+
+.tile-green-dark {
+  background-color: #7dcea0;
+}
+
+.tile-green-very-dark {
+  background-color: #52be80;
+}
+
+.tile-neutral {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #e0e0e0;
+}

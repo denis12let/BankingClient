@@ -12,7 +12,7 @@ const TooltipTrigger = ({ text, info }) => {
     setIsTooltipVisible(false);
   };
 
-  const infoArray = info.map((item) => <p key={item}>{item}</p>);
+  const infoArray = info.map((item, index) => item);
 
   return (
     <div className={tooltip.tooltip__box}>
