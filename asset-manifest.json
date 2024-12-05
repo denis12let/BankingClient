@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b5d06d1.css",
+    "main.js": "/static/js/main.937842be.js",
+    "static/media/googlePlay.png": "/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
+    "static/media/appStore.png": "/static/media/appStore.af0f26dd1c38810e62d2.png",
+    "static/media/BGPB_MC_Standard.png": "/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
+    "static/media/RUB.png": "/static/media/RUB.088cd00121a8b03fbaf2.png",
+    "static/media/fonbet.png": "/static/media/fonbet.ebad190086d17f05b594.png",
+    "static/media/USA.png": "/static/media/USA.82bd821876ded6ae7d38.png",
+    "static/media/light-theme.svg": "/static/media/light-theme.b6d60654cefd2fb71b9d9583a14e0208.svg",
+    "static/media/EUR.png": "/static/media/EUR.307338295a9820fe06bf.png",
+    "static/media/diners-club-international.svg": "/static/media/diners-club-international.70fd0c979015f8cb97fe8ff035422c84.svg",
+    "static/media/american-express-blue.svg": "/static/media/american-express-blue.07009f210396cfcda36b1e7b48132c18.svg",
+    "static/media/american-express.svg": "/static/media/american-express.c4504d41cbdd876f02f6ba1a4a6ad1ee.svg",
+    "static/media/Spinner@1x-1.0s-200px-200px.svg": "/static/media/Spinner@1x-1.0s-200px-200px.190bed338bf1dd32d5fe382c3376c741.svg",
+    "static/media/discover-card.svg": "/static/media/discover-card.d7cda9fed8889348ceaf177e45ea9f81.svg",
+    "static/media/jcb.svg": "/static/media/jcb.4841d461208dedb9d2073b508ac91c18.svg",
+    "static/media/open.svg": "/static/media/open.2aa99c31721137e7ed5761fc7958a63e.svg",
+    "static/media/dark-theme.svg": "/static/media/dark-theme.c310dea69e68292ebeb631a780dd2746.svg",
+    "static/media/visa-blue.svg": "/static/media/visa-blue.8ce967edc1801182e82a823718bd131b.svg",
+    "static/media/visa.svg": "/static/media/visa.5ebe95a4f9327c94956ffc271a1a1a38.svg",
+    "static/media/eye-open.svg": "/static/media/eye-open.b5a6aba2dcdc5094179b8fc6233dfb67.svg",
+    "static/media/delete.svg": "/static/media/delete.64c76676d56db64cf54d1f33306d1ed4.svg",
+    "static/media/successful.svg": "/static/media/successful.895ad17ae999955c782e45e3b1653cf9.svg",
+    "index.html": "/index.html",
+    "static/media/eye-close.svg": "/static/media/eye-close.ce7814046fffd519c448244e1dcf6331.svg",
+    "static/media/mastercard.svg": "/static/media/mastercard.f6e9eb88376e9d47fce528fe9585566f.svg",
+    "static/media/plus.svg": "/static/media/plus.5a52997fca340b6fd1a45c6d5a7414f6.svg",
+    "static/media/close.svg": "/static/media/close.4f631af2b35376ff26ca23d43a7963db.svg",
+    "static/media/card.svg": "/static/media/card.4af52e388f29cd79df980ad7ba2b329a.svg",
+    "static/media/avatar.svg": "/static/media/avatar.e122c2394c9e2162fc072dab92562986.svg",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
+    "static/media/arrow-left.svg": "/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
+    "main.1b5d06d1.css.map": "/static/css/main.1b5d06d1.css.map",
+    "main.937842be.js.map": "/static/js/main.937842be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b5d06d1.css",
+    "static/js/main.937842be.js"
+  ]
+}
