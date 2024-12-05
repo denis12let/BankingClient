@@ -10,14 +10,22 @@ import {
 } from 'store/actions';
 import Loader from 'ui/Loader/Loader';
 import { setBasketServices } from 'store/reducers/accountReducers/basketSlice';
+import { SERVICE_TYPE_RUS } from 'constants/services';
 
-const ServicesList = ({ setIsModalOpen }) => {
+const ServicesList = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();
   const { basketServices, basketService, isLoading, error } = useSelector((state) => state.basket);
 
   useEffect(() => {
-    dispatch(fetchAllBasketServicesThunk());
-  }, []);
+    const getKeyByValue = (obj, value) => {
+      return Object.keys(obj).find((key) => obj[key] === value);
+    };
+
+    const convertedType = getKeyByValue(SERVICE_TYPE_RUS, type);
+    console.log(convertedType);
+
+    dispatch(fetchAllBasketServicesThunk({ type: convertedType }));
+  }, [type]);
 
   const deleteService = async (serviceData) => {
     try {
@@ -30,11 +38,11 @@ const ServicesList = ({ setIsModalOpen }) => {
     }
   };
 
-  const basketServicesList =
-    basketServices.length &&
-    basketServices.map((item) => <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />);
+  const basketServicesList = basketServices.map((item) => (
+    <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />
+  ));
 
-  return <div className={styles.list}>{!basketServices.length ? <Loader /> : basketServicesList}</div>;
+  return <div className={styles.list}>{isLoading ? <Loader /> : basketServicesList}</div>;
   // return <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>;
 };
 

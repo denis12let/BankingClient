@@ -1,3 +1,15 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.typeSelect {
+  max-width: 120px;
+  width: 100%;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;
