@@ -20,8 +20,6 @@ const serviceSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(fetchAllServicesThunk.rejected, (state, action) => {
-        console.log(action);
-
         state.error = action.error.message;
         state.isLoading = false;
       });

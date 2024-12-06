@@ -12,17 +12,28 @@ const Auth = () => {
   const { isAuth } = useSelector((state) => state.user);
   const { isProfile } = useSelector((state) => state.profile);
   const navigate = useNavigate();
-  console.log(isAuth, isProfile);
+
   useEffect(() => {
-    if (isAuth && isProfile) {
+    const localIsProfile = localStorage.getItem('isProgile');
+    const localIsAuth = localStorage.getItem('isAuth');
+    if (localIsAuth && localIsProfile) {
       navigate(APP_ROUTES_PATH.ACCOUNT);
       return;
     }
 
-    if (isAuth) {
+    if (localIsAuth) {
       navigate(APP_ROUTES_PATH.PROFILE);
       return;
     }
+    // if (isAuth && isProfile) {
+    //   navigate(APP_ROUTES_PATH.ACCOUNT);
+    //   return;
+    // }
+
+    // if (isAuth) {
+    //   navigate(APP_ROUTES_PATH.PROFILE);
+    //   return;
+    // }
   }, []);
 
   return <>{currentPathName === '/login' ? <Login /> : <Registration />}</>;

@@ -31,6 +31,7 @@ export const fetchCurrentProfileThunk = createAsyncThunk('/profiles/get', async 
 export const createProfileThunk = createAsyncThunk('/profiles/create', async (profileData, { rejectWithValue }) => {
   try {
     const data = await ProfileServices.create(profileData);
+    localStorage.setItem('isProfile', true);
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);

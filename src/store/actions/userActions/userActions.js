@@ -4,6 +4,7 @@ import { UserServices } from 'api/services';
 export const registerUserThunk = createAsyncThunk('/users/registration', async (userData, { rejectWithValue }) => {
   try {
     const data = await UserServices.registration(userData);
+    localStorage.setItem('isAuth', true);
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);
@@ -13,6 +14,7 @@ export const registerUserThunk = createAsyncThunk('/users/registration', async (
 export const loginUserThunk = createAsyncThunk('/users/login', async (userData, { rejectWithValue }) => {
   try {
     const data = await UserServices.login(userData);
+    localStorage.setItem('isAuth', true);
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);

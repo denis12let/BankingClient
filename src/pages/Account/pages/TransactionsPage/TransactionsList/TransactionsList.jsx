@@ -33,7 +33,6 @@ const TransactionsList = ({ isFilterOpen }) => {
     };
 
     filters.type = getKeyByValue(SERVICE_TRANSACTION_RUS, filters.type);
-    console.log(filters);
 
     dispatch(fetchAllCurrentUserTransactionsThunk(filters));
   };

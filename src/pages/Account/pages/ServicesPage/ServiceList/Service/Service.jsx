@@ -25,10 +25,10 @@ const Service = ({ serviceData, isLoading, deleteService, ...props }) => {
         </div>
         <div className={`${styles.date} ${styles.column}`}>
           <div className={styles['date-time']}>
-            <span>Оформление:</span> {formatDate(serviceData.maturityDate)}
+            <span>Оформление:</span> {formatDate(serviceData.serviceDate).slice(0, 10)}
           </div>
           <div className={styles['date-time']}>
-            <span>Завершение:</span> {formatDate(serviceData.serviceDate)}
+            <span>Завершение:</span> {formatDate(serviceData.maturityDate).slice(0, 10)}
           </div>
         </div>
         <div className={`${styles.info} ${styles.column}`}>

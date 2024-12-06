@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import tooltip from './TooltipTrigger.module.css';
+import styles from './TooltipTrigger.module.css';
 
 const TooltipTrigger = ({ text, info }) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -12,19 +12,17 @@ const TooltipTrigger = ({ text, info }) => {
     setIsTooltipVisible(false);
   };
 
-  const infoArray = info.map((item, index) => item);
-
   return (
-    <div className={tooltip.tooltip__box}>
-      <div className={tooltip.tooltip__trigger} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff}>
-        <p>{text}</p>
+    <div className={styles.tooltip__box}>
+      <div className={styles.tooltip__trigger} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff}>
+        <p className={styles.text}>{text}</p>
       </div>
       <div
-        className={`${tooltip.tooltip} ${isTooltipVisible ? tooltip.show : ''}`}
+        className={`${styles.tooltip} ${isTooltipVisible ? styles.show : ''}`}
         onMouseEnter={handleHoverOn}
         onMouseLeave={handleHoverOff}
       >
-        {infoArray}
+        {info}
       </div>
     </div>
   );

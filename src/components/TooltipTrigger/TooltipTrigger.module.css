@@ -34,3 +34,7 @@
   visibility: visible;
   transition: opacity 0.3s ease;
 }
+
+.text {
+  white-space: nowrap;
+}

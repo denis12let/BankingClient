@@ -28,12 +28,20 @@ const Profile = () => {
   const { profile, isProfile, isLoading, error } = useSelector((state) => state.profile);
 
   useEffect(() => {
-    if (!isAuth) {
+    const localIsProfile = localStorage.getItem('isProgile');
+    const localIsAuth = localStorage.getItem('isAuth');
+    if (!localIsAuth) {
       navigate(APP_ROUTES_PATH.REGISTRATION);
     }
-    if (isProfile) {
+    if (localIsProfile) {
       navigate(APP_ROUTES_PATH.ACCOUNT);
     }
+    // if (!isAuth) {
+    //   navigate(APP_ROUTES_PATH.REGISTRATION);
+    // }
+    // if (isProfile) {
+    //   navigate(APP_ROUTES_PATH.ACCOUNT);
+    // }
   }, []);
 
   const blockStyle = {
@@ -54,8 +62,6 @@ const Profile = () => {
     }
 
     candidate.profileImg = profileImg;
-
-    console.log(candidate);
 
     try {
       await dispatch(createProfileThunk(candidate)).unwrap();

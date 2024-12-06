@@ -1,12 +1,14 @@
 .navbar {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .link {
   padding: 10px 25px;
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .link:hover {

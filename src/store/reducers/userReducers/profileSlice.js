@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createProfileThunk } from 'store/actions';
+import { createProfileThunk, fetchCurrentProfileThunk } from 'store/actions';
 
 const profileSlice = createSlice({
   name: 'profile',
@@ -26,6 +26,19 @@ const profileSlice = createSlice({
         state.error = null;
       })
       .addCase(createProfileThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
+      })
+      //getProfile
+      .addCase(fetchCurrentProfileThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCurrentProfileThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.profile = action.payload.profile;
+        state.error = null;
+      })
+      .addCase(fetchCurrentProfileThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

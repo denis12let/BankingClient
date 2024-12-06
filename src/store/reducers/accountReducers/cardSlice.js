@@ -33,7 +33,6 @@ const cardSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(createCardThunk.rejected, (state, action) => {
-        console.log(action);
         state.error = action.error.message;
         state.isLoading = false;
       })

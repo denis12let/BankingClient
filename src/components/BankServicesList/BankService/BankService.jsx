@@ -5,7 +5,7 @@ import CustomButton from 'ui/CustomButton/CustomButton';
 import { SERVICE_TYPE, SERVICE_TYPE_RUS } from 'constants/services';
 import Input from 'ui/Input/Input';
 
-const BankService = ({ serviceData, balance, addServiceHandler, isLoadingServices, isLoadingBasket, amount, setAmount }) => {
+const BankService = ({ serviceData, balance, addServiceHandler, isLoadingServices, isLoadingBasket, amount, setAmount, isAuth }) => {
   const [isPaymentFieldOpen, setIsPaymentFieldOpen] = useState(false);
 
   return (
@@ -37,7 +37,10 @@ const BankService = ({ serviceData, balance, addServiceHandler, isLoadingService
                 <CustomButton
                   onClick={() => addServiceHandler(serviceData)}
                   disabled={
-                    +amount < +serviceData.minSum || (serviceData.type === SERVICE_TYPE.DEPOSIT && +amount > +balance) || isLoadingBasket
+                    !isAuth ||
+                    +amount < +serviceData.minSum ||
+                    (serviceData.type === SERVICE_TYPE.DEPOSIT && +amount > +balance) ||
+                    isLoadingBasket
                   }
                 >
                   Взять

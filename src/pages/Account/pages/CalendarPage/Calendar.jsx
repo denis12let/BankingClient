@@ -13,7 +13,7 @@ const Calendar = () => {
   const { transactions, isLoading } = useSelector((state) => state.transaction);
 
   const getTileClass = (date) => {
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate() + 2);
 
     const localDate = date.toISOString().split('T')[0];
     const transaction = transactions.find((t) => t.date === localDate);

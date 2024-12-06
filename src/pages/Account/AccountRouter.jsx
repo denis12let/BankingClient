@@ -13,15 +13,26 @@ const AccountRouter = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuth) {
+    const localIsProfile = localStorage.getItem('isProfile');
+    const localIsAuth = localStorage.getItem('isAuth');
+    if (!localIsAuth) {
       navigate(APP_ROUTES_PATH.REGISTRATION);
       return;
     }
 
-    if (!isProfile) {
+    if (!localIsProfile) {
       navigate(APP_ROUTES_PATH.LOGIN);
       return;
     }
+    // if (!isAuth) {
+    //   navigate(APP_ROUTES_PATH.REGISTRATION);
+    //   return;
+    // }
+
+    // if (!isProfile) {
+    //   navigate(APP_ROUTES_PATH.LOGIN);
+    //   return;
+    // }
   }, []);
 
   return (
