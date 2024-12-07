@@ -6,6 +6,7 @@ import './styles/calendar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCalendarThunk } from 'store/actions';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';
+import CalendarInfo from './CalendarInfo/CalendarInfo';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
@@ -43,6 +44,7 @@ const Calendar = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Календарь</h2>
+
       <div className={styles.inner}>
         <CustomCalendar
           onChange={setDate}
@@ -64,10 +66,10 @@ const Calendar = () => {
                       Сумма платежей: {transaction.paymentTotal} 🠗
                     </p>,
                     <p key="3" className={styles.depositCount}>
-                      Депозиты: {transaction.depositCount}{' '}
+                      Зачисления: {transaction.depositCount}{' '}
                     </p>,
                     <p key="4" className={styles.depositTotal}>
-                      Сумма депозитов: {transaction.depositTotal} 🠕
+                      Сумма зачислений: {transaction.depositTotal} 🠕
                     </p>,
                     <p key="5" className={styles.totalCount}>
                       Всего операций: {transaction.depositCount + transaction.paymentCount}
@@ -79,6 +81,7 @@ const Calendar = () => {
           }}
           tileClassName={({ date }) => getTileClass(date)}
         />
+        <CalendarInfo />
       </div>
     </div>
   );

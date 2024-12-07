@@ -1,0 +1,22 @@
+.colorBox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  max-height: 200px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+}
+
+.legendItem span {
+  white-space: nowrap;
+}
