@@ -7,6 +7,7 @@ import { deleteTransactionThunk, fetchAllCurrentUserTransactionsThunk } from 'st
 import TransactionsFilter from './TransactionsFilter/TransactionsFilter';
 import { SERVICE_TRANSACTION_RUS } from 'constants/services';
 import { convertDateToISO } from 'utils/dateUtils';
+import Empty from 'components/Empty/Empty';
 
 const TransactionsList = ({ isFilterOpen }) => {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const TransactionsList = ({ isFilterOpen }) => {
   return (
     <div className={styles.transactions}>
       <TransactionsFilter setFilters={setFilters} isOpen={isFilterOpen} isLoading={isLoading} />
-      <div className={styles.list}>{isLoading ? <Loader /> : transactionsArray}</div>
+      <div className={styles.list}>{isLoading ? <Loader /> : transactionsArray.length === 0 ? <Empty /> : transactionsArray}</div>
     </div>
   );
 };

@@ -13,6 +13,11 @@ const profileSlice = createSlice({
     setProfileFlag(state, action) {
       state.isProfile = action.payload;
     },
+    resetProfile(state, action) {
+      console.log(1);
+      state.profile = null;
+      state.isProfile = false;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -59,4 +64,4 @@ const profileSlice = createSlice({
 });
 
 export default profileSlice.reducer;
-export const { setProfileFlag } = profileSlice.actions;
+export const { setProfileFlag, resetProfile } = profileSlice.actions;

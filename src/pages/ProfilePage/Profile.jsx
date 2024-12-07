@@ -30,10 +30,10 @@ const Profile = () => {
   useEffect(() => {
     const localIsProfile = localStorage.getItem('isProgile');
     const localIsAuth = localStorage.getItem('isAuth');
-    if (!localIsAuth) {
+    if (localIsAuth === 'false') {
       navigate(APP_ROUTES_PATH.REGISTRATION);
     }
-    if (localIsProfile) {
+    if (localIsProfile === 'true') {
       navigate(APP_ROUTES_PATH.ACCOUNT);
     }
     // if (!isAuth) {

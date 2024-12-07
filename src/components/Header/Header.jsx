@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
-  const info = [<p key="1">qweqwfe</p>, <p key="2">werfewf</p>];
+  const info = [<p key="1">Звоните в любое время</p>, <p key="2">Всегда на связи</p>];
   const [isLightTheme, setIsLightTheme] = useState(theme === THEME.LIGHT);
 
   const handleToggleTheme = () => {

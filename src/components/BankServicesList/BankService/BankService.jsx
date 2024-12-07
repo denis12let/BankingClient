@@ -6,6 +6,7 @@ import { SERVICE_TYPE, SERVICE_TYPE_RUS } from 'constants/services';
 import Input from 'ui/Input/Input';
 
 const BankService = ({ serviceData, balance, addServiceHandler, isLoadingServices, isLoadingBasket, amount, setAmount, isAuth }) => {
+  const isProfile = localStorage.getItem('isProfile');
   const [isPaymentFieldOpen, setIsPaymentFieldOpen] = useState(false);
 
   return (
@@ -49,7 +50,7 @@ const BankService = ({ serviceData, balance, addServiceHandler, isLoadingService
             )}
             <CustomButton
               onClick={() => setIsPaymentFieldOpen(!isPaymentFieldOpen)}
-              disabled={serviceData.type === SERVICE_TYPE.DEPOSIT && +balance < +serviceData.minSum ? true : false}
+              disabled={!isProfile || (serviceData.type === SERVICE_TYPE.DEPOSIT && +balance < +serviceData.minSum) ? true : false}
             >
               Открыть
             </CustomButton>

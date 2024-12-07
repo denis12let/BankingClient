@@ -17,6 +17,12 @@ const userSlice = createSlice({
     setAuthFlag(state, action) {
       state.isAuth = action.payload;
     },
+    resetUser(state, action) {
+      console.log(1);
+      state.user = null;
+      state.token = null;
+      state.isAuth = false;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -76,4 +82,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { setError, setAuthFlag } = userSlice.actions;
+export const { setError, setAuthFlag, resetUser } = userSlice.actions;

@@ -1,0 +1,18 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.boxImg {
+  max-width: 150px;
+}

@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { accountRouteConfig } from 'router/routes';
-import Services from './pages/ServicesPage/Services';
+import Cards from './pages/CardsPage/Cards';
 
 const AccountRouter = () => {
   const { isAuth } = useSelector((state) => state.user);
@@ -15,12 +15,13 @@ const AccountRouter = () => {
   useEffect(() => {
     const localIsProfile = localStorage.getItem('isProfile');
     const localIsAuth = localStorage.getItem('isAuth');
-    if (!localIsAuth) {
+
+    if (localIsAuth === 'false') {
       navigate(APP_ROUTES_PATH.REGISTRATION);
       return;
     }
 
-    if (!localIsProfile) {
+    if (localIsProfile === 'false') {
       navigate(APP_ROUTES_PATH.LOGIN);
       return;
     }
@@ -41,7 +42,7 @@ const AccountRouter = () => {
         {Object.entries(accountRouteConfig).map(([routeKey, { path, element }]) => (
           <Route key={routeKey} path={path} element={element} />
         ))}
-        <Route path="*" element={<Services />} />
+        <Route path="*" element={<Cards />} />
       </Routes>
     </CommonAccountLayout>
   );

@@ -6,6 +6,7 @@ import { deleteBasketServiceThunk, fetchAllBasketServicesThunk, fetchCurrentUser
 import Loader from 'ui/Loader/Loader';
 import { setBasketServices } from 'store/reducers/accountReducers/basketSlice';
 import { SERVICE_TYPE_RUS } from 'constants/services';
+import Empty from 'components/Empty/Empty';
 
 const ServicesList = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const ServicesList = ({ setIsModalOpen, type }) => {
     <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />
   ));
 
-  return <div className={styles.list}>{isLoading ? <Loader /> : basketServicesList}</div>;
+  return <div className={styles.list}>{isLoading ? <Loader /> : basketServicesList.length === 0 ? <Empty /> : basketServicesList}</div>;
   // return <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>;
 };
 

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentProfileThunk, fetchCurrentUserThunk, updateProfileThunk, updateUserThunk } from 'store/actions';
 import SettingsTab from './SettingsTab/SettingsTab';
 import Modal from 'ui/Modal/Modal';
+import DefaultButton from 'ui/DefaultButton/DefaultButton';
 
 const Settings = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

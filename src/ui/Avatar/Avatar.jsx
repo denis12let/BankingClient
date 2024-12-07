@@ -8,13 +8,13 @@ import { fetchCurrentProfileThunk } from 'store/actions';
 
 const Avatar = () => {
   const dispatch = useDispatch();
-  const { profile } = useSelector((state) => state.profile);
+  const { profile, isProfile } = useSelector((state) => state.profile);
 
   useEffect(() => {
-    if (!profile) {
+    if (!profile && isProfile) {
       dispatch(fetchCurrentProfileThunk());
     }
-  }, []);
+  }, [isProfile]);
 
   return (
     <NavLink to={APP_ROUTES_PATH.ACCOUNT}>

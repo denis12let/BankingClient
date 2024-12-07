@@ -8,6 +8,7 @@ import { SERVICE_TYPE } from 'constants/services';
 import Modal from 'ui/Modal/Modal';
 import NavLinkItem from 'ui/Link/Link';
 import { APP_ROUTES_PATH } from 'constants/app';
+import Empty from 'components/Empty/Empty';
 
 const BankServices = ({ type }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -73,7 +74,7 @@ const BankServices = ({ type }) => {
           </div>
         )}
       </div>
-      <div className={styles.list}>{isLoadingServices ? <Loader /> : servicesList}</div>
+      <div className={styles.list}>{isLoadingServices ? <Loader /> : servicesList.length === 0 ? <Empty /> : servicesList}</div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </div>
   );

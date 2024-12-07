@@ -14,14 +14,15 @@ const Auth = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const localIsProfile = localStorage.getItem('isProgile');
+    const localIsProfile = localStorage.getItem('isProfile');
     const localIsAuth = localStorage.getItem('isAuth');
-    if (localIsAuth && localIsProfile) {
+
+    if (localIsAuth === 'true' && localIsProfile === 'true') {
       navigate(APP_ROUTES_PATH.ACCOUNT);
       return;
     }
 
-    if (localIsAuth) {
+    if (localIsAuth === 'true') {
       navigate(APP_ROUTES_PATH.PROFILE);
       return;
     }
