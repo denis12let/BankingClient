@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BankingClient/static/css/main.9b2d46bb.css",
-    "main.js": "/BankingClient/static/js/main.4bafd483.js",
+    "main.css": "/BankingClient/static/css/main.61737085.css",
+    "main.js": "/BankingClient/static/js/main.78c892c8.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
@@ -17,6 +17,7 @@
     "static/media/discover-card.svg": "/BankingClient/static/media/discover-card.d7cda9fed8889348ceaf177e45ea9f81.svg",
     "static/media/jcb.svg": "/BankingClient/static/media/jcb.4841d461208dedb9d2073b508ac91c18.svg",
     "static/media/open.svg": "/BankingClient/static/media/open.2aa99c31721137e7ed5761fc7958a63e.svg",
+    "static/media/empty-box-icon.svg": "/BankingClient/static/media/empty-box-icon.d124f061ef518f564698638dfa3f5402.svg",
     "static/media/dark-theme.svg": "/BankingClient/static/media/dark-theme.c310dea69e68292ebeb631a780dd2746.svg",
     "static/media/visa-blue.svg": "/BankingClient/static/media/visa-blue.8ce967edc1801182e82a823718bd131b.svg",
     "static/media/visa.svg": "/BankingClient/static/media/visa.5ebe95a4f9327c94956ffc271a1a1a38.svg",
@@ -33,11 +34,11 @@
     "static/media/avatar.svg": "/BankingClient/static/media/avatar.e122c2394c9e2162fc072dab92562986.svg",
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
-    "main.9b2d46bb.css.map": "/BankingClient/static/css/main.9b2d46bb.css.map",
-    "main.4bafd483.js.map": "/BankingClient/static/js/main.4bafd483.js.map"
+    "main.61737085.css.map": "/BankingClient/static/css/main.61737085.css.map",
+    "main.78c892c8.js.map": "/BankingClient/static/js/main.78c892c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b2d46bb.css",
-    "static/js/main.4bafd483.js"
+    "static/css/main.61737085.css",
+    "static/js/main.78c892c8.js"
   ]
 }
