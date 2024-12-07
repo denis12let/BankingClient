@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BankingClient/static/css/main.12476ef9.css",
-    "main.js": "/BankingClient/static/js/main.902ebe45.js",
+    "main.css": "/BankingClient/static/css/main.9b2d46bb.css",
+    "main.js": "/BankingClient/static/js/main.4bafd483.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
@@ -26,17 +26,18 @@
     "static/media/successful.svg": "/BankingClient/static/media/successful.895ad17ae999955c782e45e3b1653cf9.svg",
     "static/media/eye-close.svg": "/BankingClient/static/media/eye-close.ce7814046fffd519c448244e1dcf6331.svg",
     "static/media/mastercard.svg": "/BankingClient/static/media/mastercard.f6e9eb88376e9d47fce528fe9585566f.svg",
+    "static/media/edit.svg": "/BankingClient/static/media/edit.3deaf7b46c31fd9986a5386c8af4dc58.svg",
     "static/media/plus.svg": "/BankingClient/static/media/plus.5a52997fca340b6fd1a45c6d5a7414f6.svg",
     "static/media/close.svg": "/BankingClient/static/media/close.4f631af2b35376ff26ca23d43a7963db.svg",
     "static/media/card.svg": "/BankingClient/static/media/card.4af52e388f29cd79df980ad7ba2b329a.svg",
     "static/media/avatar.svg": "/BankingClient/static/media/avatar.e122c2394c9e2162fc072dab92562986.svg",
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
-    "main.12476ef9.css.map": "/BankingClient/static/css/main.12476ef9.css.map",
-    "main.902ebe45.js.map": "/BankingClient/static/js/main.902ebe45.js.map"
+    "main.9b2d46bb.css.map": "/BankingClient/static/css/main.9b2d46bb.css.map",
+    "main.4bafd483.js.map": "/BankingClient/static/js/main.4bafd483.js.map"
   },
   "entrypoints": [
-    "static/css/main.12476ef9.css",
-    "static/js/main.902ebe45.js"
+    "static/css/main.9b2d46bb.css",
+    "static/js/main.4bafd483.js"
   ]
 }
