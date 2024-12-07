@@ -14,7 +14,7 @@ const Avatar = () => {
     if (!profile) {
       dispatch(fetchCurrentProfileThunk());
     }
-  });
+  }, []);
 
   return (
     <NavLink to={APP_ROUTES_PATH.ACCOUNT}>

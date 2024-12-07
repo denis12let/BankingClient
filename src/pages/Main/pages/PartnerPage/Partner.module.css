@@ -47,3 +47,7 @@
   width: 20px;
   transform: translateY(2px);
 }
+
+.preview {
+  width: 100%;
+}

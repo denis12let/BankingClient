@@ -35,3 +35,7 @@
 .eyeIconImg {
   width: 20px;
 }
+
+.input:disabled {
+  color: rgb(182, 180, 180);
+}

@@ -30,7 +30,7 @@ const AccountStatement = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Информация о счете</h2>
-      {isLoading ? (
+      {isLoading || !user ? (
         <Loader />
       ) : (
         <AccountStatementInfo user={user} balance={balance} transactions={transactions} cards={cards} basketServices={basketServices} />

@@ -18,9 +18,7 @@ const Partner = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (!partner) {
-      dispatch(fetchOnePartnerByIdThunk(id));
-    }
+    dispatch(fetchOnePartnerByIdThunk(id));
   }, [id, dispatch]);
 
   const blockStyle = {

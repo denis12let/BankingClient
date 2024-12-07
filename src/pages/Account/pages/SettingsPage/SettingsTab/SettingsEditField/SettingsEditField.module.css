@@ -1,0 +1,11 @@
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputField {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

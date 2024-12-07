@@ -75,6 +75,15 @@ export const createUserThunk = createAsyncThunk('/users/create', async (userData
   }
 });
 
+export const updateUserThunk = createAsyncThunk('/users/update', async (userData, { rejectWithValue }) => {
+  try {
+    const data = await UserServices.update(userData);
+    return data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
+  }
+});
+
 export const deleteUserThunk = createAsyncThunk('/users/delete', async (id, { rejectWithValue }) => {
   try {
     const data = await UserServices.delete(id);
