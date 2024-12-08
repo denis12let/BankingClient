@@ -30,7 +30,7 @@ const AdminBank = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Настройки банка</h2>
-      {isLoading && !bank ? <Loader /> : <AdminBankTab bank={bank} saveHandler={saveHandler} error={error} isLoading={isLoading} />}
+      {isLoading || !bank ? <Loader /> : <AdminBankTab bank={bank} saveHandler={saveHandler} error={error} isLoading={isLoading} />}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </div>
   );

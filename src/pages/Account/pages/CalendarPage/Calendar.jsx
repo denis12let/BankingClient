@@ -83,6 +83,9 @@ const Calendar = () => {
         />
         <CalendarInfo />
       </div>
+      <div className={styles.notification}>
+        <p>*Наведите на нужный день для получения большей информации</p>
+      </div>
     </div>
   );
 };

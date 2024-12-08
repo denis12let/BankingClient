@@ -11,11 +11,9 @@ const Avatar = () => {
   const { profile, isProfile } = useSelector((state) => state.profile);
 
   useEffect(() => {
-    if (!profile && isProfile) {
-      dispatch(fetchCurrentProfileThunk());
-    }
-  }, [isProfile]);
-  console.log(profile);
+    dispatch(fetchCurrentProfileThunk());
+  }, []);
+
   return (
     <NavLink to={APP_ROUTES_PATH.ACCOUNT}>
       <img className={avatar.avatar} src={profile?.profileImg || avatarIcon} alt="" />

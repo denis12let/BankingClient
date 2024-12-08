@@ -28,3 +28,9 @@
 .paymentCount {
   color: #db4645;
 }
+
+.notification {
+  margin-top: 10px;
+  text-align: start;
+  color: #534f59;
+}
