@@ -24,7 +24,7 @@ const AccountNavBar = () => {
   };
 
   const linksList = Object.keys(linksObjectNames).map((key) => (
-    <AccountNavItem key={key} path={APP_ROUTES_PATH.ACCOUNT + '/' + APP_ROUTES[key]}>
+    <AccountNavItem key={key} path={APP_ROUTES_PATH.ACCOUNT + '/' + APP_ROUTES[key]} itemClass={key.toLowerCase()}>
       {linksObjectNames[key]}
     </AccountNavItem>
   ));
@@ -32,10 +32,10 @@ const AccountNavBar = () => {
   const leaveAccountHandler = () => {
     localStorage.setItem('isAuth', false);
     localStorage.setItem('isProfile', false);
-    // localStorage.setItem('token', '');
+    localStorage.setItem('token', '');
     dispatch(resetUser());
     dispatch(resetProfile());
-    // navigate(APP_ROUTES_PATH.ROOT);
+    navigate(APP_ROUTES_PATH.ROOT);
   };
 
   return (

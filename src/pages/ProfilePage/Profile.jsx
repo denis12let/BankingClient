@@ -9,9 +9,11 @@ import { APP_ROUTES_PATH } from 'constants/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { validateProfile } from 'utils/authValidation';
-import { createProfileThunk } from 'store/actions';
+import { createProfileThunk, fetchCurrentProfileThunk } from 'store/actions';
 import Error from 'ui/Error/Error';
-import { setProfileFlag } from 'store/reducers/userReducers/profileSlice';
+import { resetProfile, setProfileFlag } from 'store/reducers/userReducers/profileSlice';
+import { resetUser } from 'store/reducers/userReducers/userSlice';
+import DefaultButton from 'ui/DefaultButton/DefaultButton';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -36,6 +38,8 @@ const Profile = () => {
     if (localIsProfile === 'true') {
       navigate(APP_ROUTES_PATH.ACCOUNT);
     }
+
+    dispatch(fetchCurrentProfileThunk());
     // if (!isAuth) {
     //   navigate(APP_ROUTES_PATH.REGISTRATION);
     // }
@@ -43,6 +47,20 @@ const Profile = () => {
     //   navigate(APP_ROUTES_PATH.ACCOUNT);
     // }
   }, []);
+
+  if (profile) {
+    localStorage.setItem('isProfile', true);
+    navigate(APP_ROUTES_PATH.ACCOUNT);
+  }
+
+  const leaveAccountHandler = () => {
+    localStorage.setItem('isAuth', false);
+    localStorage.setItem('isProfile', false);
+    localStorage.setItem('token', '');
+    dispatch(resetUser());
+    dispatch(resetProfile());
+    navigate(APP_ROUTES_PATH.ROOT);
+  };
 
   const blockStyle = {
     maxWidth: '400px',
@@ -113,6 +131,7 @@ const Profile = () => {
           </div>
         </NavLinkItem>
       </div>
+      <div className={styles.leaveBtn}></div>
     </div>
   );
 };

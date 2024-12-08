@@ -12,6 +12,11 @@
   background-color: #e2e2e2;
 }
 
+.link::before {
+  content: '';
+  position: absolute;
+}
+
 .active::after {
   content: '';
   position: absolute;

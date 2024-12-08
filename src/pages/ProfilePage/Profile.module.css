@@ -51,6 +51,12 @@
   border-bottom: 1px solid gray;
 }
 
+.returnBtn {
+  display: flex;
+  gap: 20px;
+  align-items: end;
+}
+
 .returnBtnInner {
   display: flex;
   gap: 10px;
