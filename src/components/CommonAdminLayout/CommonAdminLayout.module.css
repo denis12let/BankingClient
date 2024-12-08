@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  gap: 25px;
+  max-width: 1230px;
+  padding: 0 15px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.adminInner {
+  display: flex;
+  gap: 85px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.adminManagement {
+  max-width: 285px;
+  width: 100%;
+}
+
+.adminForm {
+  width: 100%;
+}

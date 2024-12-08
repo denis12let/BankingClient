@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './SettingsTab.module.css';
-import Input from 'ui/Input/Input';
-import SettingsEditField from './SettingsEditField/SettingsEditField';
+import SettingsEditField from '../../../../../components/SettingsEditField/SettingsEditField';
 import CustomButton from 'ui/CustomButton/CustomButton';
 import Error from 'ui/Error/Error';
 
-const SettingsTab = ({ profile, saveHandler, error }) => {
+const SettingsTab = ({ profile, saveHandler, error, isLoading }) => {
   const [userName, setUserName] = useState(profile.userName);
   const [userSurname, setUserSurname] = useState(profile.userSurname);
   const [profileImg, setProfileImg] = useState(profile.profileImg);
@@ -26,7 +25,9 @@ const SettingsTab = ({ profile, saveHandler, error }) => {
       <SettingsEditField fieldName="Пароль пользователя" text={password} setText={setPassword} />
       {error && <Error>{error}</Error>}
       <div className={styles.manageBtns}>
-        <CustomButton onClick={() => saveHandler(userName, userSurname, profileImg, password)}>Сохранить</CustomButton>
+        <CustomButton onClick={() => saveHandler(userName, userSurname, profileImg, password)} disabled={isLoading}>
+          Сохранить
+        </CustomButton>
         <CustomButton
           style={{ backgroundColor: 'transparent', border: '2px solid  #f73b3b', color: '#f73b3b' }}
           onClick={() => resetHandler()}

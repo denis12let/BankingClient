@@ -20,6 +20,12 @@ import Profile from 'pages/ProfilePage/Profile';
 import Main from 'pages/Main/pages/MainPage/Main';
 import Settings from 'pages/Account/pages/SettingsPage/Settings';
 import AccountStatement from 'pages/Account/pages/AccountStatementPage/AccountStatement';
+import AdminRouter from 'pages/Admin/AdminRouter';
+import AdminUsers from 'pages/Admin/pages/AdminUsersPage/AdminUsers';
+import AdminNews from 'pages/Admin/pages/AdminNewsPage/AdminNews';
+import AdminPartners from 'pages/Admin/pages/AdminPartnersPage/AdminPartners';
+import AdminBank from 'pages/Admin/pages/AdminBankPage/AdminBank';
+import AdminServices from 'pages/Admin/pages/AdminServicesPage/AdminServices';
 
 export const routeConfig = {
   [APP_ROUTES.MAIN]: {
@@ -37,6 +43,10 @@ export const routeConfig = {
   [APP_ROUTES.ACCOUNT]: {
     path: APP_ROUTES_PATH.ACCOUNT + '/*',
     element: <AccountRouter />,
+  },
+  [APP_ROUTES.ADMIN]: {
+    path: APP_ROUTES_PATH.ADMIN + '/*',
+    element: <AdminRouter />,
   },
   [APP_ROUTES.PROFILE]: {
     path: APP_ROUTES_PATH.PROFILE,
@@ -115,5 +125,28 @@ export const accountRouteConfig = {
   [APP_ROUTES.ACCOUNT_STATEMENT]: {
     path: APP_ROUTES_PATH.ACCOUNT_STATEMENT,
     element: <AccountStatement />,
+  },
+};
+
+export const adminRouteConfig = {
+  [APP_ROUTES.ADMIN_USERS]: {
+    path: APP_ROUTES_PATH.ADMIN_USERS,
+    element: <AdminUsers />,
+  },
+  [APP_ROUTES.ADMIN_NEWS]: {
+    path: APP_ROUTES_PATH.ADMIN_NEWS,
+    element: <AdminNews />,
+  },
+  [APP_ROUTES.ADMIN_PARTNERS]: {
+    path: APP_ROUTES_PATH.ADMIN_PARTNERS,
+    element: <AdminPartners />,
+  },
+  [APP_ROUTES.ADMIN_BANK]: {
+    path: APP_ROUTES_PATH.ADMIN_BANK,
+    element: <AdminBank />,
+  },
+  [APP_ROUTES.ADMIN_SERVICES]: {
+    path: APP_ROUTES_PATH.ADMIN_SERVICES,
+    element: <AdminServices />,
   },
 };

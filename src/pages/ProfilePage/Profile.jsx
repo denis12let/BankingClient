@@ -14,6 +14,7 @@ import Error from 'ui/Error/Error';
 import { resetProfile, setProfileFlag } from 'store/reducers/userReducers/profileSlice';
 import { resetUser } from 'store/reducers/userReducers/userSlice';
 import DefaultButton from 'ui/DefaultButton/DefaultButton';
+import Loader from 'ui/Loader/Loader';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Profile = () => {
   const { profile, isProfile, isLoading, error } = useSelector((state) => state.profile);
 
   useEffect(() => {
-    const localIsProfile = localStorage.getItem('isProgile');
+    const localIsProfile = localStorage.getItem('isProfile');
     const localIsAuth = localStorage.getItem('isAuth');
     if (localIsAuth === 'false') {
       navigate(APP_ROUTES_PATH.REGISTRATION);
@@ -38,7 +39,7 @@ const Profile = () => {
     if (localIsProfile === 'true') {
       navigate(APP_ROUTES_PATH.ACCOUNT);
     }
-
+    console.log(124);
     dispatch(fetchCurrentProfileThunk());
     // if (!isAuth) {
     //   navigate(APP_ROUTES_PATH.REGISTRATION);
@@ -52,15 +53,6 @@ const Profile = () => {
     localStorage.setItem('isProfile', true);
     navigate(APP_ROUTES_PATH.ACCOUNT);
   }
-
-  const leaveAccountHandler = () => {
-    localStorage.setItem('isAuth', false);
-    localStorage.setItem('isProfile', false);
-    localStorage.setItem('token', '');
-    dispatch(resetUser());
-    dispatch(resetProfile());
-    navigate(APP_ROUTES_PATH.ROOT);
-  };
 
   const blockStyle = {
     maxWidth: '400px',

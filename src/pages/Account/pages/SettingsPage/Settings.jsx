@@ -36,7 +36,11 @@ const Settings = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Настройки аккаунта</h2>
-      {isLoading || !user || !profile ? <Loader /> : <SettingsTab profile={profile} saveHandler={saveHandler} error={error} />}
+      {isLoading || !user || !profile ? (
+        <Loader />
+      ) : (
+        <SettingsTab profile={profile} saveHandler={saveHandler} error={error} isLoading={isLoading} />
+      )}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </div>
   );

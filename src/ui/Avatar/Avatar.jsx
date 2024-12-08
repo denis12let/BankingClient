@@ -15,7 +15,7 @@ const Avatar = () => {
       dispatch(fetchCurrentProfileThunk());
     }
   }, [isProfile]);
-
+  console.log(profile);
   return (
     <NavLink to={APP_ROUTES_PATH.ACCOUNT}>
       <img className={avatar.avatar} src={profile?.profileImg || avatarIcon} alt="" />

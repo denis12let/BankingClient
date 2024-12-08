@@ -25,6 +25,13 @@ export const APP_ROUTES = {
   TRANSACTIONS: 'transactions',
   TRANSACTION: 'transaction',
 
+  ADMIN: 'admin',
+  ADMIN_USERS: 'users',
+  ADMIN_NEWS: 'news',
+  ADMIN_PARTNERS: 'partners',
+  ADMIN_BANK: 'bank',
+  ADMIN_SERVICES: 'services',
+
   NOT_FOUND: 'not_found',
 };
 
@@ -55,6 +62,13 @@ export const APP_ROUTES_PATH = {
   CALENDAR: '/calendar',
   TRANSACTIONS: '/transactions/',
   TRANSACTION: '/transaction/',
+
+  ADMIN: '/admin',
+  ADMIN_USERS: '/users',
+  ADMIN_NEWS: '/news',
+  ADMIN_PARTNERS: '/partners',
+  ADMIN_BANK: '/bank',
+  ADMIN_SERVICES: '/services',
 
   NOT_FOUND: '/not_found',
 };
