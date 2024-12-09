@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllServicesThunk } from 'store/actions';
+import { createServiceThunk, fetchAllServicesThunk } from 'store/actions';
 
 const serviceSlice = createSlice({
   name: 'service',
@@ -7,6 +7,7 @@ const serviceSlice = createSlice({
     services: [],
     isLoading: false,
     error: null,
+    service: null,
   },
   reducers: {
     removeService(state, action) {
@@ -25,6 +26,18 @@ const serviceSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(fetchAllServicesThunk.rejected, (state, action) => {
+        state.error = action.error.message;
+        state.isLoading = false;
+      })
+      //createServices
+      .addCase(createServiceThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(createServiceThunk.fulfilled, (state, action) => {
+        state.service = action.payload.service;
+        state.isLoading = false;
+      })
+      .addCase(createServiceThunk.rejected, (state, action) => {
         state.error = action.error.message;
         state.isLoading = false;
       });

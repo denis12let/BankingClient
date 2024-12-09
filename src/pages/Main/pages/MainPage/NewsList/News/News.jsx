@@ -11,7 +11,7 @@ const News = ({ removeNews, ...props }) => {
 
   return (
     <Card styles={stylesValues}>
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} ${props.img ? styles.isImg : ''}`}>
         <div className={styles.inner}>
           <h3 className={styles.title}>{props.title}</h3>
           <div className={styles.info}>

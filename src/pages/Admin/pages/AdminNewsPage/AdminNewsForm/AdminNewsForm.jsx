@@ -28,11 +28,11 @@ const AdminNewsForm = ({ errors, isLoading, addNewsHandler }) => {
         <div className={styles.row2}>
           <div className={`${styles.title} ${styles.field}`}>
             <span className={`${styles.subtitle}`}>Фоновый цвет</span>
-            <Input placeholder="black" text={backgroundColor} setText={setBackgroundColor} />
+            <Input placeholder="black (#000)" text={backgroundColor} setText={setBackgroundColor} />
           </div>
           <div className={`${styles.title} ${styles.field}`}>
             <span className={`${styles.subtitle} `}>Цвет текста</span>
-            <Input placeholder="white" text={textColor} setText={setTextColor} />
+            <Input placeholder="white (#fff)" text={textColor} setText={setTextColor} />
           </div>
         </div>
         <div className={styles.row3}>

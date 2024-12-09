@@ -1,7 +1,7 @@
 import Card from 'components/Card/Card';
 import styles from './MobileBankingPromo.module.css';
 import React from 'react';
-import logo2 from './../../../assets/images/mobile/logo-2.png';
+import logo2 from './../../../assets/images/mobile/logo-small.jpg';
 import googlePlay from './../../../assets/images/mobile/googlePlay.png';
 import appStore from './../../../assets/images/mobile/appStore.png';
 const MobileBankingPromo = () => {
@@ -13,7 +13,7 @@ const MobileBankingPromo = () => {
             <img src={logo2} alt="" />
           </div>
           <div className={styles.promoTopText}>
-            <h5 className={styles.promoTitle}>FONBET</h5>
+            <h5 className={styles.promoTitle}>Re:fine Bank</h5>
             <span className={styles.promoSubtitle}>Скачайте мобильное приложение</span>
           </div>
         </div>

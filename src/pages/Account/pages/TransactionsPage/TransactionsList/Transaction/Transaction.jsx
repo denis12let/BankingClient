@@ -24,7 +24,7 @@ const Transaction = ({ id, amount, currency, date, status, type, deleteTransacti
             <div className={styles.top}>
               <img src={successful} alt="" className={styles.icon} />
               <div className={styles['date-time']}>{formatDate(date)}</div>
-              <div className={styles.source}>FONBET/ MINSK</div>
+              <div className={styles.source}>Re:fine/ MINSK</div>
             </div>
             <div className={styles.description}>{SERVICE_TRANSACTION_TITLE[type]}</div>
           </div>

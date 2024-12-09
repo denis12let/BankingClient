@@ -1,6 +1,9 @@
 .wrapper {
   position: relative;
   color: #fff;
+}
+
+.isImg {
   padding-right: 200px;
 }
 

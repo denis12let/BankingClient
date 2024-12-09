@@ -16,7 +16,7 @@ const Service = ({ serviceData, isLoading, deleteService, ...props }) => {
         <div className={`${styles.source} ${styles.column}`}>
           <div className={styles.top}>
             <img src={successful} alt="" className={styles.icon} />
-            <div className={styles.source}>FONBET/ MINSK</div>
+            <div className={styles.source}>Re:fine/ MINSK</div>
           </div>
           <div className={styles.type}>
             <span>Тип: </span>

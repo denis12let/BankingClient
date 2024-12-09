@@ -40,6 +40,10 @@
   font-weight: 600;
 }
 
+.infoSubtitle {
+  font-size: 14px;
+}
+
 .openBtn {
   position: absolute;
   bottom: 0;

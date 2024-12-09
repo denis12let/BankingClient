@@ -32,7 +32,6 @@ const ServicesList = ({ setIsModalOpen, type }) => {
       console.log(error);
     }
   };
-
   const basketServicesList = basketServices.map((item) => (
     <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />
   ));

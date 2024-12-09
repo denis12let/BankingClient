@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllPartnersThunk, fetchOnePartnerByIdThunk } from 'store/actions';
+import { createPartnerThunk, fetchAllPartnersThunk, fetchOnePartnerByIdThunk } from 'store/actions';
 
 const partnerSlice = createSlice({
   name: 'partner',
@@ -38,6 +38,18 @@ const partnerSlice = createSlice({
         state.partner = action.payload.partner;
       })
       .addCase(fetchOnePartnerByIdThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
+      })
+      //createPartner
+      .addCase(createPartnerThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(createPartnerThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.partner = action.payload.partner;
+      })
+      .addCase(createPartnerThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

@@ -34,7 +34,7 @@ const AdminPartnersList = () => {
 
   return (
     <div className={styles.list}>
-      <h2 className={styles.title}>Список новостей</h2>
+      <h2 className={styles.title}>Список рекламы</h2>
       {isLoading ? <Loader /> : <div className={styles.partnersList}> {partnersList}</div>}
     </div>
   );

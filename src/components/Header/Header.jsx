@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import fonbet from '../../assets/images/fonbet.png';
+import fonbet from '../../assets/images/logo-big.jpg';
 import header from './Header.module.css';
 import HeaderNavbar from './HeaderNavbar/HeaderNavbar';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';

@@ -11,7 +11,7 @@ const AdminServices = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const { partners, isLoading } = useSelector((state) => state.partner);
+  const { services, isLoading } = useSelector((state) => state.service);
   const [error, setError] = useState();
 
   const addServiceHandler = async (name, interest, duration, minSum, type) => {

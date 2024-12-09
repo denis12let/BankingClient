@@ -40,22 +40,22 @@ const BankServices = ({ type }) => {
       console.log(error);
     }
   };
-  const servicesList = services.map(
-    (item) =>
-      item.type === type && (
-        <BankService
-          key={item.name + item.interest}
-          serviceData={item}
-          balance={balance}
-          addServiceHandler={addServiceHandler}
-          isLoadingServices={isLoadingServices}
-          isLoadingBasket={isLoadingBasket}
-          amount={amount}
-          setAmount={setAmount}
-          isAuth={localeIsAuth}
-        />
-      )
-  );
+
+  const servicesList = services
+    .filter((item) => item.type === type)
+    .map((item) => (
+      <BankService
+        key={item.name + item.interest}
+        serviceData={item}
+        balance={balance}
+        addServiceHandler={addServiceHandler}
+        isLoadingServices={isLoadingServices}
+        isLoadingBasket={isLoadingBasket}
+        amount={amount}
+        setAmount={setAmount}
+        isAuth={localeIsAuth}
+      />
+    ));
 
   return (
     <div className={styles.deposits}>

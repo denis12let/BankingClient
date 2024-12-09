@@ -30,9 +30,10 @@ const Profile = () => {
   const { user, isAuth } = useSelector((state) => state.user);
   const { profile, isProfile, isLoading, error } = useSelector((state) => state.profile);
 
+  const localIsProfile = localStorage.getItem('isProfile');
+  const localIsAuth = localStorage.getItem('isAuth');
+
   useEffect(() => {
-    const localIsProfile = localStorage.getItem('isProfile');
-    const localIsAuth = localStorage.getItem('isAuth');
     if (localIsAuth === 'false') {
       navigate(APP_ROUTES_PATH.REGISTRATION);
     }
@@ -82,48 +83,54 @@ const Profile = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <Card styles={blockStyle}>
-        <h3 className={styles.title}>Создайте профиль</h3>
-        <form className={styles.form}>
-          <div className={`${styles.name} ${styles.field}`}>
-            <span className={`${styles.subtitle} ${styles.required}`}>Имя</span>
-            <Input placeholder="Иван" required={true} text={userName} setText={setUserName} autoFocus maxLength="24" />
+    <>
+      {localIsProfile === 'true' ? (
+        ''
+      ) : (
+        <div className={styles.wrapper}>
+          <Card styles={blockStyle}>
+            <h3 className={styles.title}>Создайте профиль</h3>
+            <form className={styles.form}>
+              <div className={`${styles.name} ${styles.field}`}>
+                <span className={`${styles.subtitle} ${styles.required}`}>Имя</span>
+                <Input placeholder="Иван" required={true} text={userName} setText={setUserName} autoFocus maxLength="24" />
+              </div>
+              <div className={`${styles.surname} ${styles.field}`}>
+                <span className={`${styles.subtitle} ${styles.required}`}>Фамилия</span>
+                <Input placeholder="Иванов" text={userSurname} setText={setUserSurname} autoFocus maxLength="24" />
+              </div>
+              <div className={`${styles.telephone} ${styles.field}`}>
+                <span className={`${styles.subtitle} ${styles.required}`}>Телефон</span>
+                <Input placeholder="(00) 000-00-00" isTelephone required={true} text={telephoneNumber} setText={setTelephoneNumber} />
+              </div>
+              <div className={`${styles.identifier} ${styles.field}`}>
+                <span className={`${styles.subtitle} ${styles.required}`}>Идентификационный номер</span>
+                <Input required={true} text={passportIdentifier} setText={setPassportIdentifier} maxLength="24" />
+              </div>
+              <div className={`${styles.avatar} ${styles.field}`}>
+                <span className={`${styles.subtitle}`}>Ссылка на аватар</span>
+                <Input required={true} text={profileImg} setText={setProfileImg} />
+              </div>
+            </form>
+            {errors ? <div className={styles.errors}>{errors}</div> : <></>}
+            <div className={styles.regBtn}>
+              <CustomButton disabled={isLoading === true ? true : false} onClick={() => createProfileHandler()}>
+                Сохранить
+              </CustomButton>
+            </div>
+          </Card>
+          <div className={styles.returnBtn}>
+            <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
+              <div className={styles.returnBtnInner}>
+                <img src={arrowLeft} className={styles.btnIcon} alt="" />
+                <span className={styles.btnText}>Вернуться на главную</span>
+              </div>
+            </NavLinkItem>
           </div>
-          <div className={`${styles.surname} ${styles.field}`}>
-            <span className={`${styles.subtitle} ${styles.required}`}>Фамилия</span>
-            <Input placeholder="Иванов" text={userSurname} setText={setUserSurname} autoFocus maxLength="24" />
-          </div>
-          <div className={`${styles.telephone} ${styles.field}`}>
-            <span className={`${styles.subtitle} ${styles.required}`}>Телефон</span>
-            <Input placeholder="(00) 000-00-00" isTelephone required={true} text={telephoneNumber} setText={setTelephoneNumber} />
-          </div>
-          <div className={`${styles.identifier} ${styles.field}`}>
-            <span className={`${styles.subtitle} ${styles.required}`}>Идентификационный номер</span>
-            <Input required={true} text={passportIdentifier} setText={setPassportIdentifier} maxLength="24" />
-          </div>
-          <div className={`${styles.avatar} ${styles.field}`}>
-            <span className={`${styles.subtitle}`}>Ссылка на аватар</span>
-            <Input required={true} text={profileImg} setText={setProfileImg} />
-          </div>
-        </form>
-        {errors ? <div className={styles.errors}>{errors}</div> : <></>}
-        <div className={styles.regBtn}>
-          <CustomButton disabled={isLoading === true ? true : false} onClick={() => createProfileHandler()}>
-            Сохранить
-          </CustomButton>
+          <div className={styles.leaveBtn}></div>
         </div>
-      </Card>
-      <div className={styles.returnBtn}>
-        <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
-          <div className={styles.returnBtnInner}>
-            <img src={arrowLeft} className={styles.btnIcon} alt="" />
-            <span className={styles.btnText}>Вернуться на главную</span>
-          </div>
-        </NavLinkItem>
-      </div>
-      <div className={styles.leaveBtn}></div>
-    </div>
+      )}
+    </>
   );
 };
 
