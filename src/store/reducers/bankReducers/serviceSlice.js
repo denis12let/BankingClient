@@ -8,7 +8,12 @@ const serviceSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    removeService(state, action) {
+      const idToDelete = action.payload;
+      state.services = state.services.filter((item) => item.id !== idToDelete);
+    },
+  },
   extraReducers: (builder) => {
     builder
       //getServices
@@ -27,4 +32,4 @@ const serviceSlice = createSlice({
 });
 
 export default serviceSlice.reducer;
-// export const { resetPartnerStatus } = partnersSlice.actions;
+export const { removeService } = serviceSlice.actions;

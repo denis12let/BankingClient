@@ -13,7 +13,6 @@ const AdminNavBar = () => {
   const dispatch = useDispatch();
 
   const linksObjectNames = {
-    ADMIN_USERS: 'Пользователи',
     ADMIN_NEWS: 'Новости',
     ADMIN_PARTNERS: 'Реклама',
     ADMIN_BANK: 'Банк',
@@ -27,12 +26,12 @@ const AdminNavBar = () => {
   ));
 
   const leaveAccountHandler = () => {
-    // localStorage.setItem('isAuth', false);
-    // localStorage.setItem('isProfile', false);
-    // localStorage.setItem('token', '');
-    // dispatch(resetUser());
-    // dispatch(resetProfile());
-    // navigate(APP_ROUTES_PATH.ROOT);
+    localStorage.setItem('isAuth', false);
+    localStorage.setItem('isProfile', false);
+    localStorage.setItem('token', '');
+    dispatch(resetUser());
+    dispatch(resetProfile());
+    navigate(APP_ROUTES_PATH.ROOT);
   };
 
   return (

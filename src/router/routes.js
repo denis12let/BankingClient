@@ -21,7 +21,6 @@ import Main from 'pages/Main/pages/MainPage/Main';
 import Settings from 'pages/Account/pages/SettingsPage/Settings';
 import AccountStatement from 'pages/Account/pages/AccountStatementPage/AccountStatement';
 import AdminRouter from 'pages/Admin/AdminRouter';
-import AdminUsers from 'pages/Admin/pages/AdminUsersPage/AdminUsers';
 import AdminNews from 'pages/Admin/pages/AdminNewsPage/AdminNews';
 import AdminPartners from 'pages/Admin/pages/AdminPartnersPage/AdminPartners';
 import AdminBank from 'pages/Admin/pages/AdminBankPage/AdminBank';
@@ -129,10 +128,6 @@ export const accountRouteConfig = {
 };
 
 export const adminRouteConfig = {
-  [APP_ROUTES.ADMIN_USERS]: {
-    path: APP_ROUTES_PATH.ADMIN_USERS,
-    element: <AdminUsers />,
-  },
   [APP_ROUTES.ADMIN_NEWS]: {
     path: APP_ROUTES_PATH.ADMIN_NEWS,
     element: <AdminNews />,
