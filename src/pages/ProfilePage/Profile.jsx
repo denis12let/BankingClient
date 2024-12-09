@@ -39,7 +39,7 @@ const Profile = () => {
     if (localIsProfile === 'true') {
       navigate(APP_ROUTES_PATH.ACCOUNT);
     }
-    console.log(124);
+
     dispatch(fetchCurrentProfileThunk());
     // if (!isAuth) {
     //   navigate(APP_ROUTES_PATH.REGISTRATION);
@@ -48,7 +48,7 @@ const Profile = () => {
     //   navigate(APP_ROUTES_PATH.ACCOUNT);
     // }
   }, []);
-
+  console.log(profile);
   if (profile) {
     localStorage.setItem('isProfile', true);
     navigate(APP_ROUTES_PATH.ACCOUNT);
