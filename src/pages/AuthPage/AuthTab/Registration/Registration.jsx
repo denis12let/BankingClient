@@ -50,7 +50,9 @@ const Registration = () => {
 
     try {
       await dispatch(registerUserThunk(candidate)).unwrap();
+
       dispatch(setAuthFlag(true));
+
       navigate(APP_ROUTES_PATH.PROFILE);
     } catch (error) {
       setErrors([<Error key="error">{error}</Error>]);

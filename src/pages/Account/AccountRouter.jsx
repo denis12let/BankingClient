@@ -12,10 +12,10 @@ const AccountRouter = () => {
   const { isProfile } = useSelector((state) => state.profile);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const localIsProfile = localStorage.getItem('isProfile');
-    const localIsAuth = localStorage.getItem('isAuth');
+  const localIsProfile = localStorage.getItem('isProfile');
+  const localIsAuth = localStorage.getItem('isAuth');
 
+  useEffect(() => {
     if (localIsAuth === 'false') {
       navigate(APP_ROUTES_PATH.REGISTRATION);
       return;
@@ -37,14 +37,20 @@ const AccountRouter = () => {
   }, []);
 
   return (
-    <CommonAccountLayout>
-      <Routes>
-        {Object.entries(accountRouteConfig).map(([routeKey, { path, element }]) => (
-          <Route key={routeKey} path={path} element={element} />
-        ))}
-        <Route path="*" element={<Cards />} />
-      </Routes>
-    </CommonAccountLayout>
+    <>
+      {localIsProfile === 'true' ? (
+        <CommonAccountLayout>
+          <Routes>
+            {Object.entries(accountRouteConfig).map(([routeKey, { path, element }]) => (
+              <Route key={routeKey} path={path} element={element} />
+            ))}
+            <Route path="*" element={<Cards />} />
+          </Routes>
+        </CommonAccountLayout>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 

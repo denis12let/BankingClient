@@ -13,6 +13,7 @@ import DefaultButton from 'ui/DefaultButton/DefaultButton';
 import styles from './Header.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUserThunk } from 'store/actions';
+import { setError } from 'store/reducers/userReducers/userSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(fetchCurrentUserThunk());
+    return () => {
+      dispatch(setError(null));
+    };
   }, []);
 
   const handleToggleTheme = () => {

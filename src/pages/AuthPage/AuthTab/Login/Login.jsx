@@ -23,6 +23,10 @@ const Login = () => {
   const { isLoading, error } = useSelector((state) => state.user);
 
   useEffect(() => {
+    setErrors(null);
+  }, []);
+
+  useEffect(() => {
     if (error) {
       setErrors([<Error key="error">{error}</Error>]);
     }

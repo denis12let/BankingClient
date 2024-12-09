@@ -48,7 +48,6 @@ const Profile = () => {
     //   navigate(APP_ROUTES_PATH.ACCOUNT);
     // }
   }, []);
-  console.log(profile);
   if (profile) {
     localStorage.setItem('isProfile', true);
     navigate(APP_ROUTES_PATH.ACCOUNT);
