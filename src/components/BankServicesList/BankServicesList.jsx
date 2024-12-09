@@ -61,7 +61,7 @@ const BankServices = ({ type }) => {
     <div className={styles.deposits}>
       <div className={styles.top}>
         <h2 className={styles.title}>{type === SERVICE_TYPE.DEPOSIT ? 'Вклады' : 'Кредиты'}</h2>
-        {localeIsAuth ? (
+        {localeIsAuth === 'true' ? (
           <p className={styles.balance}>
             Баланс аккаунта: <span>{balance} BYN</span>{' '}
           </p>
