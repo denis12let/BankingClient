@@ -9,7 +9,12 @@ const partnerSlice = createSlice({
     error: null,
     partner: null,
   },
-  reducers: {},
+  reducers: {
+    removeOnePartner(state, action) {
+      const idToDelete = action.payload;
+      state.partners = state.partners.filter((item) => item.id !== idToDelete);
+    },
+  },
   extraReducers: (builder) => {
     builder
       //getPartners
@@ -40,4 +45,4 @@ const partnerSlice = createSlice({
 });
 
 export default partnerSlice.reducer;
-// export const { resetPartnerStatus } = partnersSlice.actions;
+export const { removeOnePartner } = partnerSlice.actions;

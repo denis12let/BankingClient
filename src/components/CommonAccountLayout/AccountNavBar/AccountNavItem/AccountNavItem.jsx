@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const AccountNavItem = ({ children, path, itemClass }) => {
   const location = useLocation();
-  console.log(itemClass);
+
   return (
     <NavLinkItem to={path}>
       <div className={`${styles.link} ${styles.itemClass}  ${location.pathname === path ? styles.active : ''}`}>{children}</div>
