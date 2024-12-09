@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/BankingClient/static/css/main.e8fcbd30.css",
-    "main.js": "/BankingClient/static/js/main.4c91e2e5.js",
+    "main.css": "/BankingClient/static/css/main.53c9b965.css",
+    "main.js": "/BankingClient/static/js/main.1edd30be.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
-    "static/media/RUB.png": "/BankingClient/static/media/RUB.088cd00121a8b03fbaf2.png",
-    "static/media/fonbet.png": "/BankingClient/static/media/fonbet.ebad190086d17f05b594.png",
     "static/media/USA.png": "/BankingClient/static/media/USA.82bd821876ded6ae7d38.png",
     "static/media/light-theme.svg": "/BankingClient/static/media/light-theme.b6d60654cefd2fb71b9d9583a14e0208.svg",
     "static/media/EUR.png": "/BankingClient/static/media/EUR.307338295a9820fe06bf.png",
@@ -34,11 +32,11 @@
     "static/media/avatar.svg": "/BankingClient/static/media/avatar.e122c2394c9e2162fc072dab92562986.svg",
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
-    "main.e8fcbd30.css.map": "/BankingClient/static/css/main.e8fcbd30.css.map",
-    "main.4c91e2e5.js.map": "/BankingClient/static/js/main.4c91e2e5.js.map"
+    "main.53c9b965.css.map": "/BankingClient/static/css/main.53c9b965.css.map",
+    "main.1edd30be.js.map": "/BankingClient/static/js/main.1edd30be.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8fcbd30.css",
-    "static/js/main.4c91e2e5.js"
+    "static/css/main.53c9b965.css",
+    "static/js/main.1edd30be.js"
   ]
 }
