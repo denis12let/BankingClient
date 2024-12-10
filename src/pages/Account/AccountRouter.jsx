@@ -16,12 +16,12 @@ const AccountRouter = () => {
   const localIsAuth = localStorage.getItem('isAuth');
 
   useEffect(() => {
-    if (localIsAuth === 'false') {
+    if (localIsAuth === 'false' || !localIsAuth) {
       navigate(APP_ROUTES_PATH.REGISTRATION);
       return;
     }
 
-    if (localIsProfile === 'false') {
+    if (localIsProfile === 'false' || !localIsProfile) {
       navigate(APP_ROUTES_PATH.LOGIN);
       return;
     }

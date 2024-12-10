@@ -34,7 +34,7 @@ const Profile = () => {
   const localIsAuth = localStorage.getItem('isAuth');
 
   useEffect(() => {
-    if (localIsAuth === 'false') {
+    if (localIsAuth === 'false' || !localIsAuth) {
       navigate(APP_ROUTES_PATH.REGISTRATION);
     }
     if (localIsProfile === 'true') {

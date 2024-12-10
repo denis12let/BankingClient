@@ -39,6 +39,7 @@ const BankService = ({ serviceData, balance, addServiceHandler, isLoadingService
                   onClick={() => addServiceHandler(serviceData)}
                   disabled={
                     isAuth === 'false' ||
+                    !isAuth ||
                     +amount < +serviceData.minSum ||
                     (serviceData.type === SERVICE_TYPE.DEPOSIT && +amount > +balance) ||
                     isLoadingBasket
@@ -51,7 +52,9 @@ const BankService = ({ serviceData, balance, addServiceHandler, isLoadingService
             <CustomButton
               onClick={() => setIsPaymentFieldOpen(!isPaymentFieldOpen)}
               disabled={
-                isProfile === 'false' || (serviceData.type === SERVICE_TYPE.DEPOSIT && +balance < +serviceData.minSum) ? true : false
+                isProfile === 'false' || !isProfile || (serviceData.type === SERVICE_TYPE.DEPOSIT && +balance < +serviceData.minSum)
+                  ? true
+                  : false
               }
             >
               Открыть

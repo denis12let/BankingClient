@@ -18,7 +18,7 @@ const BankServices = ({ type }) => {
   const { basketService, isLoading: isLoadingBasket, error } = useSelector((state) => state.basket);
   const { balance } = useSelector((state) => state.account);
   const { isAuth } = useSelector((state) => state.user);
-  const localeIsAuth = localStorage.getItem('isAuth');
+  const localIsAuth = localStorage.getItem('isAuth');
 
   const [amount, setAmount] = useState('');
   const [minSum, setMinSum] = useState('');
@@ -53,7 +53,7 @@ const BankServices = ({ type }) => {
         isLoadingBasket={isLoadingBasket}
         amount={amount}
         setAmount={setAmount}
-        isAuth={localeIsAuth}
+        isAuth={localIsAuth}
       />
     ));
 
@@ -61,7 +61,7 @@ const BankServices = ({ type }) => {
     <div className={styles.deposits}>
       <div className={styles.top}>
         <h2 className={styles.title}>{type === SERVICE_TYPE.DEPOSIT ? 'Вклады' : 'Кредиты'}</h2>
-        {localeIsAuth === 'true' ? (
+        {localIsAuth === 'true' ? (
           <p className={styles.balance}>
             Баланс аккаунта: <span>{balance} BYN</span>{' '}
           </p>

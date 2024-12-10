@@ -41,6 +41,9 @@ const Auth = () => {
     // }
   }, []);
 
+  console.log(location);
+  console.log(currentPathName);
+
   return <>{currentPathName === '/login' ? <Login /> : <Registration />}</>;
 };
 
