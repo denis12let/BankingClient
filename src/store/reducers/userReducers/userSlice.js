@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCurrentUserThunk, loginUserThunk, registerUserThunk, updateUserThunk } from 'store/actions';
+import { fetchAllUsersThunk, fetchCurrentUserThunk, loginUserThunk, registerUserThunk, updateUserThunk } from 'store/actions';
 
 const userSlice = createSlice({
   name: 'user',
@@ -9,6 +9,7 @@ const userSlice = createSlice({
     error: null,
     token: null,
     isAuth: false,
+    users: [],
   },
   reducers: {
     setError(state, action) {
@@ -75,6 +76,19 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(updateUserThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
+      })
+      //getAllSearch
+      .addCase(fetchAllUsersThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchAllUsersThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.users = action.payload.users;
+        state.error = null;
+      })
+      .addCase(fetchAllUsersThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

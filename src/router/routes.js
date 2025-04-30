@@ -25,6 +25,7 @@ import AdminNews from 'pages/Admin/pages/AdminNewsPage/AdminNews';
 import AdminPartners from 'pages/Admin/pages/AdminPartnersPage/AdminPartners';
 import AdminBank from 'pages/Admin/pages/AdminBankPage/AdminBank';
 import AdminServices from 'pages/Admin/pages/AdminServicesPage/AdminServices';
+import UserSearch from 'pages/UserSearchPage/UserSearch';
 
 export const routeConfig = {
   [APP_ROUTES.MAIN]: {
@@ -54,6 +55,10 @@ export const routeConfig = {
   [APP_ROUTES.NOT_FOUND]: {
     path: APP_ROUTES_PATH.NOT_FOUND,
     element: <NotFound />,
+  },
+  [APP_ROUTES.USER_SEARCH]: {
+    path: APP_ROUTES_PATH.USER_SEARCH,
+    element: <UserSearch />,
   },
 };
 

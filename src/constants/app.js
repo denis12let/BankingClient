@@ -33,6 +33,8 @@ export const APP_ROUTES = {
   ADMIN_SERVICES: 'services',
 
   NOT_FOUND: 'not_found',
+
+  USER_SEARCH: 'user_search',
 };
 
 export const APP_ROUTES_PATH = {
@@ -71,4 +73,6 @@ export const APP_ROUTES_PATH = {
   ADMIN_SERVICES: '/services',
 
   NOT_FOUND: '/not_found',
+
+  USER_SEARCH: '/user_search',
 };
