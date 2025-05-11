@@ -1,7 +1,7 @@
 import Card from 'components/Card/Card';
 import styles from './MobileBankingPromo.module.css';
 import React from 'react';
-import logo2 from './../../../assets/images/mobile/logo-small.jpg';
+import logo2 from './../../../assets/images/mobile/logo-small.png';
 import googlePlay from './../../../assets/images/mobile/googlePlay.png';
 import appStore from './../../../assets/images/mobile/appStore.png';
 const MobileBankingPromo = () => {

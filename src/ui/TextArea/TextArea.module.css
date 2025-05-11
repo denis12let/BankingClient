@@ -13,6 +13,16 @@
   font-family: Arial, sans-serif;
 }
 
+.textarea.light {
+  transition: 1s;
+}
+
+.textarea.dark {
+  background-color: #3b3b3b;
+  border: 1px solid #636060;
+  transition: 1s;
+}
+
 .textarea::placeholder {
   color: #9b9fa0;
 }

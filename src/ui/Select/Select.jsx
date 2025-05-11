@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Select.module.css';
+import { THEME, useTheme } from 'context';
 
 const Select = ({ options, value, onChange, name, placeholder, required = false, ...props }) => {
+  const { theme } = useTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -24,7 +27,7 @@ const Select = ({ options, value, onChange, name, placeholder, required = false,
   }, []);
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef} {...props}>
+    <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`} ref={wrapperRef} {...props}>
       <div
         className={`${styles.selected} ${isOpen ? styles.selectedOpen : ''} ${required && !value ? styles.required : ''}`}
         onClick={() => setIsOpen((prev) => !prev)}

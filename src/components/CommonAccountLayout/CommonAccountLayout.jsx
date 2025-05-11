@@ -5,10 +5,13 @@ import Footer from 'components/Footer/Footer';
 import UserCardsList from './UserCardsList/UserCardsList';
 import AccountNavBar from './AccountNavBar/AccountNavBar';
 import Wallet from './Wallet/Wallet';
+import { THEME, useTheme } from 'context';
 
 const CommonAccountLayout = ({ children }) => {
+  const { theme } = useTheme();
+
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
       <Header />
       <main className={styles.main}>
         <section className={styles.cards}>

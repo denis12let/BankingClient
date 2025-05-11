@@ -1,12 +1,21 @@
 .navList {
   padding: 20px 10px;
-  background-color: #f2f3f7;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: start;
   border-radius: 10px;
   text-align: start;
+}
+
+.navList.light {
+  background-color: #f2f3f7;
+  transition: 1s;
+}
+
+.navList.dark {
+  background-color: #5c6e80;
+  transition: 1s;
 }
 
 .leaveBtn {

@@ -3,9 +3,18 @@
   flex-direction: column;
   gap: 60px;
   align-items: center;
-  background-color: #f2f3f7;
   min-height: 100%;
   overflow-y: visible;
+}
+.wrapper.light {
+  background-color: #f2f3f7;
+  transition: 1s;
+}
+
+.wrapper.dark {
+  background-color: #2c3741;
+  transition: 1s;
+  color: #fff;
 }
 
 .main {

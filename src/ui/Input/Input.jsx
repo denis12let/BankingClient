@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import styles from './Input.module.css';
 import openEye from './../../assets/icons/input/eye-open.svg';
 import closeEye from './../../assets/icons/input/eye-close.svg';
+import { THEME, useTheme } from 'context';
 
 const Input = ({ type, required = false, text, setText, pattern, patternOnChange, isCardNumber = false, isTelephone, ...props }) => {
+  const { theme } = useTheme();
+
   const [showText, setShowText] = useState(false);
 
   const toggleTextVisibility = () => {
@@ -52,7 +55,7 @@ const Input = ({ type, required = false, text, setText, pattern, patternOnChange
   return (
     <div className={styles.wrapper}>
       <input
-        className={styles.input}
+        className={`${styles.input} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}
         {...props}
         pattern={pattern}
         required={required}

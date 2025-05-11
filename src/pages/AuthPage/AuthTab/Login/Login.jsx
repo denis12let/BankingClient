@@ -12,8 +12,11 @@ import { loginUserThunk } from 'store/actions/userActions/userActions';
 import { validateAuth } from 'utils/authValidation';
 import { setAuthFlag, setError } from 'store/reducers/userReducers/userSlice';
 import { useNavigate } from 'react-router-dom';
+import { THEME, useTheme } from 'context';
 
 const Login = () => {
+  const { theme } = useTheme();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState(null);
@@ -60,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
       <Card styles={blockStyle}>
         <h3 className={styles.title}>Вход</h3>
         <form className={styles.form}>

@@ -7,10 +7,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2f3f7;
   width: 380px;
   height: 230px;
   border-radius: 10px;
+}
+.card.light {
+  background-color: #f2f3f7;
+  transition: 1s;
+}
+
+.card.dark {
+  background-color: #1e2022;
+  transition: 1s;
 }
 
 .add {

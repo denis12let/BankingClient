@@ -1,15 +1,14 @@
 .navLink {
-  color: #323442;
   width: 100%;
 }
 
-/* .navLink:hover {
-  color: #90929e;
+.navLink.light {
+  color: #323442;
 }
 
-.navLink:active {
-  color: #a9abb8;
-} */
+.navLink.dark {
+  color: #8b909f;
+}
 
 .img {
   width: 32px;

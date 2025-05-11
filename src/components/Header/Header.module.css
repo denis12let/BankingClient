@@ -16,7 +16,16 @@
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+}
+
+.header.light {
   background-color: #fefefe;
+  transition: 1s;
+}
+
+.header.dark {
+  background-color: #2c3741;
+  transition: 1s;
 }
 
 .header__inner {

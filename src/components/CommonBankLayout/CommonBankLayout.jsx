@@ -4,10 +4,13 @@ import Header from 'components/Header/Header';
 import React from 'react';
 import styles from './CommonBankLayout.module.css';
 import MobileBankingPromo from 'components/CommonBankLayout/MobileBankingPromo/MobileBankingPromo';
+import { THEME, useTheme } from 'context';
 
 const CommonBankLayout = ({ children }) => {
+  const { theme } = useTheme();
+
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
       <Header />
       <main className={styles.main}>
         <aside>

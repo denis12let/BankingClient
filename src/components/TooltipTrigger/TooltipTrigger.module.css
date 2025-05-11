@@ -38,3 +38,17 @@
 .text {
   white-space: nowrap;
 }
+
+.light {
+  color: #2c3741;
+  transition: 1s;
+}
+
+.dark {
+  color: #fefefe;
+  transition: 1s;
+}
+
+.tooltip.dark {
+  background-color: #2c3741;
+}

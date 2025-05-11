@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import fonbet from '../../assets/images/logo-big.jpg';
+import fonbet from '../../assets/images/logo-big.png';
 import header from './Header.module.css';
 import HeaderNavbar from './HeaderNavbar/HeaderNavbar';
 import TooltipTrigger from 'components/TooltipTrigger/TooltipTrigger';
@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   return (
-    <div className={header.header}>
+    <div className={`${header.header} ${theme === THEME.LIGHT ? header.light : header.dark}`}>
       <div className={header.header__inner}>
         <div className={header.header__logo}>
           <NavLinkItem to={APP_ROUTES_PATH.ROOT}>
@@ -48,12 +48,12 @@ const Header = () => {
         </div>
         <div className={header.settings}>
           {user?.role === 'ADMIN' ? <NavLinkItem to={APP_ROUTES_PATH.ADMIN}>ADMIN</NavLinkItem> : ''}
-          {/* <DefaultButton onClick={handleToggleTheme}>
+          <DefaultButton onClick={handleToggleTheme}>
             <div className={header.icon__container}>
               <img src={nightTheme} className={`${header.icon} ${isLightTheme ? header.hidden : ''}`} alt="" />
               <img src={lightTheme} className={`${header.icon} ${isLightTheme ? '' : header.hidden}`} alt="" />
             </div>
-          </DefaultButton> */}
+          </DefaultButton>
           <Avatar />
         </div>
       </div>

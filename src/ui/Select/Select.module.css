@@ -1,14 +1,24 @@
 .wrapper {
   position: relative;
   width: 100%;
+  border-radius: 5px;
+}
+
+.wrapper.light {
+  background-color: #fff;
+  border: 1px solid #b2b9bb;
+  transition: 1s;
+}
+
+.wrapper.dark {
+  background-color: #3b3b3b;
+  border: 1px solid #636060;
+  transition: 1s;
 }
 
 .selected {
   height: 35px;
-  border: 1px solid #b2b9bb;
-  border-radius: 5px;
   padding: 5px 10px;
-  background-color: #fff;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -22,7 +32,7 @@
 }
 
 .selectedOpen {
-  border: 1px solid #20be69;
+  border: rgb(32, 190, 105);
   box-shadow: 0 0 3px rgba(32, 190, 105, 0.5);
 }
 

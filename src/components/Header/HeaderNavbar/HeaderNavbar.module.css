@@ -12,6 +12,6 @@
 }
 
 .link:hover {
-  transition: background 0.3s;
-  background-color: #f2f3f7;
+  transition: 0.3s;
+  background-color: #b1aeae;
 }

@@ -7,8 +7,11 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetUser } from 'store/reducers/userReducers/userSlice';
 import { resetProfile } from 'store/reducers/userReducers/profileSlice';
+import { THEME, useTheme } from 'context';
 
 const AccountNavBar = () => {
+  const { theme } = useTheme();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,7 +42,7 @@ const AccountNavBar = () => {
   };
 
   return (
-    <div className={styles.navList}>
+    <div className={`${styles.navList} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
       {linksList}
       <div className={styles.leaveBtn}>
         <DefaultButton
