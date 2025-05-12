@@ -16,15 +16,15 @@ const CurrencyTab = () => {
           </div>
           <div className={currencies.currencies__list}>
             <span className={currencies.currencies__listTitle}>Покупка</span>
-            <span className={currencies.currencies__price}>3.3690</span>
-            <span className={currencies.currencies__price}>3.5790</span>
-            <span className={currencies.currencies__price}>3.4120</span>
+            <span className={currencies.currencies__price}>3.0004</span>
+            <span className={currencies.currencies__price}>3.3640</span>
+            <span className={currencies.currencies__price}>3.6795</span>
           </div>
           <div className={currencies.currencies__list}>
             <span className={currencies.currencies__listTitle}>Продажа</span>
-            <span className={currencies.currencies__price}>3.3570</span>
-            <span className={currencies.currencies__price}>3.5640</span>
-            <span className={currencies.currencies__price}>3.4000</span>
+            <span className={currencies.currencies__price}>2.9909</span>
+            <span className={currencies.currencies__price}>3.3309</span>
+            <span className={currencies.currencies__price}>3.6607</span>
           </div>
         </div>
       </div>

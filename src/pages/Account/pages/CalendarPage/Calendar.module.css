@@ -33,3 +33,10 @@
   margin-top: 10px;
   text-align: start;
 }
+
+@media (max-width: 1000px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

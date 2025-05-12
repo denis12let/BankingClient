@@ -113,3 +113,9 @@
 .transaction:last-child::after {
   display: none;
 }
+
+@media (max-width: 1000px) {
+  .right {
+    max-width: 100px;
+  }
+}
