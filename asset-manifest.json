@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/BankingClient/static/css/main.875abba5.css",
-    "main.js": "/BankingClient/static/js/main.30d7d745.js",
+    "main.css": "/BankingClient/static/css/main.aa7ef9f8.css",
+    "main.js": "/BankingClient/static/js/main.e789cb98.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
+    "static/media/logo-big.png": "/BankingClient/static/media/logo-big.5f71535087de8d1b1452.png",
     "static/media/USA.png": "/BankingClient/static/media/USA.82bd821876ded6ae7d38.png",
-    "static/media/light-theme.svg": "/BankingClient/static/media/light-theme.b6d60654cefd2fb71b9d9583a14e0208.svg",
+    "static/media/light-theme.svg": "/BankingClient/static/media/light-theme.ccb0a2e029b7b2b4bd11498a5df2b3de.svg",
     "static/media/EUR.png": "/BankingClient/static/media/EUR.307338295a9820fe06bf.png",
     "static/media/diners-club-international.svg": "/BankingClient/static/media/diners-club-international.70fd0c979015f8cb97fe8ff035422c84.svg",
     "static/media/american-express-blue.svg": "/BankingClient/static/media/american-express-blue.07009f210396cfcda36b1e7b48132c18.svg",
@@ -16,27 +17,28 @@
     "static/media/jcb.svg": "/BankingClient/static/media/jcb.4841d461208dedb9d2073b508ac91c18.svg",
     "static/media/open.svg": "/BankingClient/static/media/open.2aa99c31721137e7ed5761fc7958a63e.svg",
     "static/media/empty-box-icon.svg": "/BankingClient/static/media/empty-box-icon.d124f061ef518f564698638dfa3f5402.svg",
-    "static/media/dark-theme.svg": "/BankingClient/static/media/dark-theme.c310dea69e68292ebeb631a780dd2746.svg",
     "static/media/visa-blue.svg": "/BankingClient/static/media/visa-blue.8ce967edc1801182e82a823718bd131b.svg",
     "static/media/visa.svg": "/BankingClient/static/media/visa.5ebe95a4f9327c94956ffc271a1a1a38.svg",
+    "static/media/dark-theme.svg": "/BankingClient/static/media/dark-theme.a8284d1c3b728fc39d07e1580ec55384.svg",
     "static/media/eye-open.svg": "/BankingClient/static/media/eye-open.b5a6aba2dcdc5094179b8fc6233dfb67.svg",
     "static/media/delete.svg": "/BankingClient/static/media/delete.64c76676d56db64cf54d1f33306d1ed4.svg",
     "index.html": "/BankingClient/index.html",
     "static/media/successful.svg": "/BankingClient/static/media/successful.895ad17ae999955c782e45e3b1653cf9.svg",
     "static/media/eye-close.svg": "/BankingClient/static/media/eye-close.ce7814046fffd519c448244e1dcf6331.svg",
+    "static/media/burger.svg": "/BankingClient/static/media/burger.56fcbe4e4c784f4ace1839cf642634a2.svg",
     "static/media/mastercard.svg": "/BankingClient/static/media/mastercard.f6e9eb88376e9d47fce528fe9585566f.svg",
     "static/media/edit.svg": "/BankingClient/static/media/edit.3deaf7b46c31fd9986a5386c8af4dc58.svg",
     "static/media/plus.svg": "/BankingClient/static/media/plus.5a52997fca340b6fd1a45c6d5a7414f6.svg",
     "static/media/close.svg": "/BankingClient/static/media/close.4f631af2b35376ff26ca23d43a7963db.svg",
     "static/media/card.svg": "/BankingClient/static/media/card.4af52e388f29cd79df980ad7ba2b329a.svg",
-    "static/media/avatar.svg": "/BankingClient/static/media/avatar.e122c2394c9e2162fc072dab92562986.svg",
+    "static/media/avatar.svg": "/BankingClient/static/media/avatar.c2a267e9439e99ec26e1d0771c526cf9.svg",
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
-    "main.875abba5.css.map": "/BankingClient/static/css/main.875abba5.css.map",
-    "main.30d7d745.js.map": "/BankingClient/static/js/main.30d7d745.js.map"
+    "main.aa7ef9f8.css.map": "/BankingClient/static/css/main.aa7ef9f8.css.map",
+    "main.e789cb98.js.map": "/BankingClient/static/js/main.e789cb98.js.map"
   },
   "entrypoints": [
-    "static/css/main.875abba5.css",
-    "static/js/main.30d7d745.js"
+    "static/css/main.aa7ef9f8.css",
+    "static/js/main.e789cb98.js"
   ]
 }
