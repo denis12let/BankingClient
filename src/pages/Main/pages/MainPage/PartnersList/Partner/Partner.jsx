@@ -9,7 +9,7 @@ import { APP_ROUTES_PATH } from 'constants/app';
 const Partner = ({ style, ...props }) => {
   const stylesValues = {
     width: '100%',
-    maxWidth: '430px',
+    maxWidth: '410px',
     ...style,
   };
   return (
