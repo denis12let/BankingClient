@@ -11,6 +11,19 @@
 .img {
   max-width: 220px;
   max-height: 150px;
+  border-radius: 10px;
+}
+
+@media (max-width: 420px) {
+  .img {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 390px) {
+  .img {
+    display: none;
+  }
 }
 
 .wrapper:hover .img {

@@ -21,6 +21,7 @@
   background-color: #3b3b3b;
   border: 1px solid #636060;
   transition: 1s;
+  color: #fff;
 }
 
 .textarea::placeholder {

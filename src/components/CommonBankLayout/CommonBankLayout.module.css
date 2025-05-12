@@ -29,3 +29,12 @@
 .section {
   width: 100%;
 }
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column-reverse;
+  }
+  .bankAside {
+    margin: 0 auto;
+  }
+}

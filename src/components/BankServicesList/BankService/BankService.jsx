@@ -14,23 +14,24 @@ const BankService = ({ serviceData, balance, addServiceHandler, isLoadingService
       <div className={styles.service}>
         <h3 className={styles.title}>{serviceData.name}</h3>
         <div className={styles.inner}>
-          <div className={styles.detail}>
-            <span className={styles.label}>Тип:</span>
-            <span className={`${styles.value} ${styles.type}`}>{SERVICE_TYPE_RUS[serviceData.type]}</span>
+          <div className={styles.info}>
+            <div className={styles.detail}>
+              <span className={styles.label}>Тип:</span>
+              <span className={`${styles.value} ${styles.type}`}>{SERVICE_TYPE_RUS[serviceData.type]}</span>
+            </div>
+            <div className={styles.detail}>
+              <span className={styles.label}>Минимальная сумма:</span>
+              <span className={styles.value}>{serviceData.minSum} BYN</span>
+            </div>
+            <div className={styles.detail}>
+              <span className={styles.label}>Процентная ставка:</span>
+              <span className={styles.value}>{serviceData.interest}%</span>
+            </div>
+            <div className={styles.detail}>
+              <span className={styles.label}>Срок:</span>
+              <span className={styles.value}>{serviceData.duration} дней</span>
+            </div>
           </div>
-          <div className={styles.detail}>
-            <span className={styles.label}>Минимальная сумма:</span>
-            <span className={styles.value}>{serviceData.minSum} BYN</span>
-          </div>
-          <div className={styles.detail}>
-            <span className={styles.label}>Процентная ставка:</span>
-            <span className={styles.value}>{serviceData.interest}%</span>
-          </div>
-          <div className={styles.detail}>
-            <span className={styles.label}>Срок:</span>
-            <span className={styles.value}>{serviceData.duration} дней</span>
-          </div>
-
           <div className={styles.payment}>
             {isPaymentFieldOpen && (
               <div className={styles.paymentField}>

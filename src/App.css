@@ -96,3 +96,20 @@ button {
   background-color: white;
   outline: none;
 }
+
+@media (max-width: 1020px) {
+  .rccs {
+    width: 240px !important;
+    height: 150px !important;
+  }
+
+  .rccs div[style*='width'] {
+    width: 240px !important;
+    height: 150px !important;
+  }
+
+  .rccs__card {
+    width: 240px !important;
+    height: 150px !important;
+  }
+}

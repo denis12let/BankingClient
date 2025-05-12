@@ -75,7 +75,9 @@ const Cards = () => {
           error={err}
           isLoading={isLoading}
         />
-        <CreditCard number={number} expiry={`${expiryMonth}/${expiryYear}`} cvc={cvc} name={holderName} focused={focus} />
+        <div className={styles.cCard}>
+          <CreditCard number={number} expiry={`${expiryMonth}/${expiryYear}`} cvc={cvc} name={holderName} focused={focus} />
+        </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Окно" />
     </div>

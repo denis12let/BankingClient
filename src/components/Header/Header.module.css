@@ -8,6 +8,7 @@
   width: 260px;
   height: 45px;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 .header {
@@ -16,6 +17,11 @@
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  transition: height 0.05s ease;
+}
+
+.header.active {
+  height: 420px;
 }
 
 .header.light {
@@ -28,9 +34,35 @@
   transition: 1s;
 }
 
+.burgerIcon {
+  width: 50px;
+  padding-top: 10px;
+}
+
+.burger {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: inherit;
+  z-index: 100;
+
+  top: 0;
+  transform: translateY(-100%);
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
 .header__inner {
   max-width: 1230px;
   padding: 0 15px;
+  gap: 10px;
 
   display: flex;
   height: 100%;
@@ -72,4 +104,59 @@
 
 .tooltipContainer {
   max-width: 150px;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+@media (max-width: 1020px) {
+  .tooltipContainer {
+    display: none;
+  }
+  .header__logo {
+    padding-top: 27px;
+    margin: 0 auto;
+  }
+  .header__inner {
+    flex-wrap: wrap;
+  }
+  .header {
+    height: 150px;
+  }
+}
+
+@media (min-width: 560px) {
+  .burgerIcon,
+  .closeIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 559px) {
+  .header__logo {
+    padding-top: 7px;
+  }
+  .burger {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 384px) {
+  .header__logo {
+    padding-top: 10px;
+    width: 150px;
+  }
+  .header__img {
+    width: 150px;
+    max-height: 30px;
+  }
+  .burgerIcon {
+    width: 25px;
+  }
+  .header {
+    height: 50px;
+  }
 }

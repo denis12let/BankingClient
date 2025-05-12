@@ -13,7 +13,7 @@ const CommonBankLayout = ({ children }) => {
     <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
       <Header />
       <main className={styles.main}>
-        <aside>
+        <aside className={styles.bankAside}>
           <CurrencyTab />
           <MobileBankingPromo />
         </aside>

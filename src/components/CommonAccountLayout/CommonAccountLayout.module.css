@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 60px;
   align-items: center;
-  height: 100vh;
 }
 
 .wrapper.light {
@@ -44,4 +43,17 @@
 
 .accountForm {
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  .accountInner {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .accountInner {
+    flex-direction: column;
+    align-items: center;
+  }
 }

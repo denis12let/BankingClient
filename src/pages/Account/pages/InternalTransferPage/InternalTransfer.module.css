@@ -17,3 +17,12 @@
 .input {
   margin-bottom: 10px;
 }
+
+@media (max-width: 530px) {
+  .content {
+    margin: 0 auto;
+  }
+  .title {
+    text-align: center;
+  }
+}
