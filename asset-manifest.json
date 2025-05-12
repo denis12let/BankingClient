@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BankingClient/static/css/main.aa7ef9f8.css",
-    "main.js": "/BankingClient/static/js/main.e789cb98.js",
+    "main.js": "/BankingClient/static/js/main.5e8e39f9.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
@@ -35,10 +35,10 @@
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
     "main.aa7ef9f8.css.map": "/BankingClient/static/css/main.aa7ef9f8.css.map",
-    "main.e789cb98.js.map": "/BankingClient/static/js/main.e789cb98.js.map"
+    "main.5e8e39f9.js.map": "/BankingClient/static/js/main.5e8e39f9.js.map"
   },
   "entrypoints": [
     "static/css/main.aa7ef9f8.css",
-    "static/js/main.e789cb98.js"
+    "static/js/main.5e8e39f9.js"
   ]
 }
