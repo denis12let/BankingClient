@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BankingClient/static/css/main.aa7ef9f8.css",
-    "main.js": "/BankingClient/static/js/main.5e8e39f9.js",
+    "main.css": "/BankingClient/static/css/main.c4ef19f8.css",
+    "main.js": "/BankingClient/static/js/main.7fdc647d.js",
     "static/media/googlePlay.png": "/BankingClient/static/media/googlePlay.2bec0bc6f8c3d0c1daf8.png",
     "static/media/appStore.png": "/BankingClient/static/media/appStore.af0f26dd1c38810e62d2.png",
     "static/media/BGPB_MC_Standard.png": "/BankingClient/static/media/BGPB_MC_Standard.261cb218b3914f5694b5.png",
@@ -22,7 +22,6 @@
     "static/media/dark-theme.svg": "/BankingClient/static/media/dark-theme.a8284d1c3b728fc39d07e1580ec55384.svg",
     "static/media/eye-open.svg": "/BankingClient/static/media/eye-open.b5a6aba2dcdc5094179b8fc6233dfb67.svg",
     "static/media/delete.svg": "/BankingClient/static/media/delete.64c76676d56db64cf54d1f33306d1ed4.svg",
-    "index.html": "/BankingClient/index.html",
     "static/media/successful.svg": "/BankingClient/static/media/successful.895ad17ae999955c782e45e3b1653cf9.svg",
     "static/media/eye-close.svg": "/BankingClient/static/media/eye-close.ce7814046fffd519c448244e1dcf6331.svg",
     "static/media/burger.svg": "/BankingClient/static/media/burger.56fcbe4e4c784f4ace1839cf642634a2.svg",
@@ -31,14 +30,15 @@
     "static/media/plus.svg": "/BankingClient/static/media/plus.5a52997fca340b6fd1a45c6d5a7414f6.svg",
     "static/media/close.svg": "/BankingClient/static/media/close.4f631af2b35376ff26ca23d43a7963db.svg",
     "static/media/card.svg": "/BankingClient/static/media/card.4af52e388f29cd79df980ad7ba2b329a.svg",
+    "index.html": "/BankingClient/index.html",
     "static/media/avatar.svg": "/BankingClient/static/media/avatar.c2a267e9439e99ec26e1d0771c526cf9.svg",
     "static/media/arrow-right.svg": "/BankingClient/static/media/arrow-right.6c6f4edb6b6930d79d29cefa6f1047fb.svg",
     "static/media/arrow-left.svg": "/BankingClient/static/media/arrow-left.b58290e171434bd8b9c9053005f7fc13.svg",
-    "main.aa7ef9f8.css.map": "/BankingClient/static/css/main.aa7ef9f8.css.map",
-    "main.5e8e39f9.js.map": "/BankingClient/static/js/main.5e8e39f9.js.map"
+    "main.c4ef19f8.css.map": "/BankingClient/static/css/main.c4ef19f8.css.map",
+    "main.7fdc647d.js.map": "/BankingClient/static/js/main.7fdc647d.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa7ef9f8.css",
-    "static/js/main.5e8e39f9.js"
+    "static/css/main.c4ef19f8.css",
+    "static/js/main.7fdc647d.js"
   ]
 }
