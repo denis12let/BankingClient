@@ -106,3 +106,10 @@
 .transfer {
   color: #81c2ff;
 } */
+
+@media (max-width: 1080px) {
+  .service {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

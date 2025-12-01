@@ -15,8 +15,11 @@ import { resetProfile, setProfileFlag } from 'store/reducers/userReducers/profil
 import { resetUser } from 'store/reducers/userReducers/userSlice';
 import DefaultButton from 'ui/DefaultButton/DefaultButton';
 import Loader from 'ui/Loader/Loader';
+import { THEME, useTheme } from 'context';
 
 const Profile = () => {
+  const { theme } = useTheme();
+
   const dispatch = useDispatch();
 
   const [userName, setUserName] = useState('');
@@ -87,7 +90,7 @@ const Profile = () => {
       {localIsProfile === 'true' ? (
         ''
       ) : (
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${theme === THEME.LIGHT ? styles.light : styles.dark}`}>
           <Card styles={blockStyle}>
             <h3 className={styles.title}>Создайте профиль</h3>
             <form className={styles.form}>
