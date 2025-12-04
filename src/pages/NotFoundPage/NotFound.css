@@ -1,0 +1,274 @@
+/* Вариант 1 */
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 500px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-icon {
+  margin-bottom: 20px;
+}
+
+.not-found-title {
+  font-size: 72px;
+  font-weight: 900;
+  color: #4f46e5;
+  margin: 0;
+  line-height: 1;
+}
+
+.not-found-subtitle {
+  font-size: 24px;
+  color: #374151;
+  margin: 10px 0;
+}
+
+.not-found-text {
+  color: #6b7280;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 20px 0 30px;
+}
+
+.not-found-button {
+  display: inline-block;
+  background: #4f46e5;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.not-found-button:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* Вариант 2 */
+.not-found-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.not-found-header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 30px;
+  position: relative;
+}
+
+.bank-logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.error-code {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 64px;
+  font-weight: 900;
+  opacity: 0.2;
+}
+
+.not-found-body {
+  padding: 40px;
+}
+
+.transaction-failed {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.transaction-icon {
+  margin-bottom: 20px;
+}
+
+.transaction-failed h1 {
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.error-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.transaction-details {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #6b7280;
+}
+
+.detail-value {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #1e40af;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1e3a8a;
+}
+
+.btn-secondary {
+  background: #10b981;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #059669;
+}
+
+.btn-outline {
+  background: white;
+  color: #374151;
+  border: 2px solid #d1d5db;
+}
+
+.btn-outline:hover {
+  border-color: #9ca3af;
+}
+
+.not-found-footer {
+  background: #f3f4f6;
+  padding: 20px 40px;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+.support-contact {
+  color: #1e40af;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Вариант 3 */
+.minimal-not-found {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.error-badge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 900;
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.minimal-not-found h1 {
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.minimal-not-found p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.currency-message {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 30px 0;
+}
+
+.currency-rate {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.update-time {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.back-to-banking {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-to-banking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
