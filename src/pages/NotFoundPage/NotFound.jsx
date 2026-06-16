@@ -27,7 +27,7 @@ const NotFound = () => {
                 <path d="M15 9l-6 6M9 9l6 6" stroke="#f66" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </div>
-            <h1>Транзакция не выполнена</h1>
+            <h1>Not Found</h1>
             <p className="error-description">
               Страница, которую вы запрашиваете, не найдена в нашей системе. Возможно, она была перемещена или удалена.
             </p>
@@ -45,12 +45,6 @@ const NotFound = () => {
           </div>
 
           <div className="action-buttons">
-            <Link to="/" className="btn-primary">
-              ← На главную
-            </Link>
-            <Link to="/rates" className="btn-secondary">
-              Курсы валют
-            </Link>
             <button onClick={() => window.history.back()} className="btn-outline">
               Назад
             </button>

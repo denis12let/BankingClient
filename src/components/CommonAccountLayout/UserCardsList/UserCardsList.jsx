@@ -15,7 +15,8 @@ const UserCardsList = () => {
     dispatch(fetchAllCurrentUserCardsThunk());
   }, [card]);
 
-  const cardsArray = cards.length ? cards.map((item) => <UserCard key={item.number} cardData={item} />) : [];
+  const cardsArray = cards.length ? cards.map((item) => (item.isActive ? <UserCard key={item.number} cardData={item} /> : <></>)) : [];
+  // const cardsArray = cards.length ? cards.map((item) => <UserCard key={item.number} cardData={item} />) : [];
 
   return (
     <Scroll>

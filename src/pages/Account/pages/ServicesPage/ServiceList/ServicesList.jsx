@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteBasketServiceThunk, fetchAllBasketServicesThunk, fetchCurrentUserAccountThunk } from 'store/actions';
 import Loader from 'ui/Loader/Loader';
 import { setBasketServices } from 'store/reducers/accountReducers/basketSlice';
-import { SERVICE_TYPE_RUS } from 'constants/services';
+import { SERVICE_TYPE, SERVICE_TYPE_RUS } from 'constants/services';
 import Empty from 'components/Empty/Empty';
 
 const ServicesList = ({ setIsModalOpen, type }) => {
@@ -32,9 +32,14 @@ const ServicesList = ({ setIsModalOpen, type }) => {
       console.log(error);
     }
   };
-  const basketServicesList = basketServices.map((item) => (
-    <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />
-  ));
+
+  console.log(basketServices);
+  const basketServicesList = basketServices.map((item) => {
+    if (!item.isApproved && item.type === SERVICE_TYPE.LOAN) {
+      return;
+    }
+    return <Service key={item.createdAt} serviceData={item} isLoading={isLoading} deleteService={deleteService} />;
+  });
 
   return <div className={styles.list}>{isLoading ? <Loader /> : basketServicesList.length === 0 ? <Empty /> : basketServicesList}</div>;
   // return <div className={styles.list}>{isLoading && !transactions.length ? <Loader /> : transactionsArray}</div>;

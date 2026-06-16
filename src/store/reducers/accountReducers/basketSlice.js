@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBasketServiceThunk, deleteBasketServiceThunk, fetchAllBasketServicesThunk } from 'store/actions';
+import {
+  addBasketServiceThunk,
+  deleteBasketServiceThunk,
+  fetchAllBasketServicesThunk,
+  fetchBasketServicesByUserIdThunk,
+} from 'store/actions';
 
 const basketSlice = createSlice({
   name: 'basket',
@@ -9,6 +14,7 @@ const basketSlice = createSlice({
     basketService: null,
     isLoading: false,
     error: null,
+    usersBaskets: {},
   },
   reducers: {
     setBasketServices(state, action) {
@@ -56,6 +62,21 @@ const basketSlice = createSlice({
       .addCase(deleteBasketServiceThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
+      })
+      // getBasketServicesByUserIdThunk (чужая корзина)
+      .addCase(fetchBasketServicesByUserIdThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchBasketServicesByUserIdThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const userId = action.payload.userId;
+        console.log(userId);
+        state.usersBaskets[userId] = action.payload.services;
+        state.error = null;
+      })
+      .addCase(fetchBasketServicesByUserIdThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });

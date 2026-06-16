@@ -9,8 +9,13 @@ export class BasketServices {
     });
     return data;
   }
+
   static async getBasketSize() {
     const { data } = await $authHost.get('/accounts/basket');
+    return data;
+  }
+  static async getServicesByUserId(userId) {
+    const { data } = await $authHost.get(`/accounts/basket/userServices/${userId}`);
     return data;
   }
   static async getServiceById(id) {
@@ -19,6 +24,10 @@ export class BasketServices {
   }
   static async addService(serviceData) {
     const { data } = await $authHost.post('/accounts/basket/services/' + serviceData.id, { ...serviceData });
+    return data;
+  }
+  static async approveService(approveData) {
+    const { data } = await $authHost.post('/accounts/basket/approveService', { ...approveData });
     return data;
   }
   static async deleteService(id) {

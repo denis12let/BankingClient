@@ -19,6 +19,17 @@ export const fetchBasketSizeThunk = createAsyncThunk('/basket/getBasketSize', as
   }
 });
 
+export const fetchBasketServicesByUserIdThunk = createAsyncThunk('basket/getServicesByUserId', async (userId, { rejectWithValue }) => {
+  if (!userId) return rejectWithValue('userId is required');
+  try {
+    const data = await BasketServices.getServicesByUserId(userId);
+    data['userId'] = userId;
+    return data;
+  } catch (error) {
+    return rejectWithValue(error.response?.data?.message || error.message);
+  }
+});
+
 export const fetchOneBasketServiceByIdThunk = createAsyncThunk('/basket/getBasketService', async (id, { rejectWithValue }) => {
   try {
     const data = await BasketServices.getServiceById(id);
@@ -31,6 +42,15 @@ export const fetchOneBasketServiceByIdThunk = createAsyncThunk('/basket/getBaske
 export const addBasketServiceThunk = createAsyncThunk('/basket/add', async (serviceData, { rejectWithValue }) => {
   try {
     const data = await BasketServices.addService(serviceData);
+    return data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
+  }
+});
+export const approveBasketServiceThunk = createAsyncThunk('/basket/approve', async (approveData, { rejectWithValue }) => {
+  try {
+    const data = await BasketServices.approveService(approveData);
+
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);

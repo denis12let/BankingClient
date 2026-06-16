@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllUsersThunk, fetchCurrentUserThunk, loginUserThunk, registerUserThunk, updateUserThunk } from 'store/actions';
+import {
+  fetchAllUsersThunk,
+  fetchCurrentUserThunk,
+  fetchUserByIdThunk,
+  loginUserThunk,
+  registerUserThunk,
+  updateUserThunk,
+} from 'store/actions';
 
 const userSlice = createSlice({
   name: 'user',
@@ -53,6 +60,19 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       })
+      //getAllUsers
+      .addCase(fetchAllUsersThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchAllUsersThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.users = action.payload.users;
+        state.error = null;
+      })
+      .addCase(fetchAllUsersThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || action.error.message;
+      })
       //login
       .addCase(loginUserThunk.pending, (state) => {
         state.isLoading = true;
@@ -76,19 +96,6 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(updateUserThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload || action.error.message;
-      })
-      //getAllSearch
-      .addCase(fetchAllUsersThunk.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(fetchAllUsersThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.users = action.payload.users;
-        state.error = null;
-      })
-      .addCase(fetchAllUsersThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || action.error.message;
       });

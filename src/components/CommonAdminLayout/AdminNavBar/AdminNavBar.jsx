@@ -13,6 +13,7 @@ const AdminNavBar = () => {
   const dispatch = useDispatch();
 
   const linksObjectNames = {
+    ADMIN_USERS: 'Пользователи',
     ADMIN_NEWS: 'Новости',
     ADMIN_PARTNERS: 'Реклама',
     ADMIN_BANK: 'Банк',
